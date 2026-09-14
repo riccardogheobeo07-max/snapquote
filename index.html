@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audit Shopify Gratuito – Scopri cosa manca al tuo store</title>
+<meta name="description" content="Audit gratuito del tuo store Shopify: SEO tecnica, funzionalità mancanti e confronto con la tua categoria. Report pronto in 24 ore.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1f6feb">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔍</text></svg>">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Audit Shopify Gratuito – Scopri cosa manca al tuo store">
+<meta property="og:description" content="SEO tecnica + funzionalità mancanti (email, recensioni, analytics). Report pronto in 24 ore.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Audit Shopify Gratuito – Scopri cosa manca al tuo store">
+<meta name="twitter:description" content="SEO tecnica + funzionalità mancanti (email, recensioni, analytics). Report pronto in 24 ore.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f5f5f5;
+    --text: #1a1a1a;
+    --text-muted: #555555;
+    --border: #e2e2e2;
+    --accent: #1f6feb;
+    --accent-dark: #1657c2;
+    --error: #c0392b;
+    --success-bg: #eaf7ee;
+    --success-border: #2e7d46;
+    --success-text: #1e5631;
+    --radius: 10px;
+    --max-width: 760px;
+    font-size: 16px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  header.hero {
+    padding: 72px 0 56px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(31, 111, 235, 0.08);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+    line-height: 1.2;
+    margin: 0 0 20px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    color: var(--text-muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px 32px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+
+  .cta-btn:hover {
+    background: var(--accent-dark);
+  }
+
+  .cta-btn:active {
+    transform: translateY(1px);
+  }
+
+  section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section:last-of-type {
+    border-bottom: none;
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 1.75rem);
+    text-align: center;
+    margin: 0 0 40px;
+    font-weight: 800;
+  }
+
+  .checks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .check-item {
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: left;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .check-item:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+    transform: translateY(-2px);
+  }
+
+  .check-item .icon {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .check-item h3 {
+    font-size: 1.05rem;
+    margin: 0 0 8px;
+    font-weight: 700;
+  }
+
+  .check-item p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .credibility {
+    background: var(--bg-alt);
+  }
+
+  .credibility .wrap {
+    max-width: 640px;
+  }
+
+  .credibility p {
+    font-size: clamp(1.05rem, 2.4vw, 1.2rem);
+    text-align: center;
+    margin: 0;
+    color: var(--text);
+  }
+
+  .credibility strong {
+    color: var(--accent-dark);
+  }
+
+  .form-section {
+    padding-top: 56px;
+    padding-bottom: 72px;
+  }
+
+  .form-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .form-card h2 {
+    margin-bottom: 8px;
+    scroll-margin-top: 24px;
+  }
+
+  .form-intro {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0 0 28px;
+  }
+
+  form .field {
+    margin-bottom: 18px;
+    text-align: left;
+  }
+
+  label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  label .optional {
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--text);
+    font-family: inherit;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.15);
+  }
+
+  input.invalid {
+    border-color: var(--error);
+  }
+
+  .error-msg {
+    color: var(--error);
+    font-size: 0.82rem;
+    margin-top: 5px;
+    min-height: 1.1em;
+  }
+
+  .form-card .cta-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  .disclaimer {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .success-box {
+    display: none;
+    background: var(--success-bg);
+    border: 1px solid var(--success-border);
+    color: var(--success-text);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .success-box.visible {
+    display: block;
+  }
+
+  .submit-error {
+    display: none;
+    color: var(--error);
+    font-size: 0.88rem;
+    text-align: center;
+    margin-top: 14px;
+  }
+
+  .submit-error.visible {
+    display: block;
+  }
+
+  #audit-form-el.hidden {
+    display: none;
+  }
+
+  footer {
+    text-align: center;
+    padding: 28px 0 40px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 600px) {
+    header.hero {
+      padding: 48px 0 40px;
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    .checks-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .form-card {
+      padding: 24px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">Audit gratuito · Solo store Shopify</span>
+    <h1>Scopri cosa manca al tuo store Shopify prima che se ne accorga un competitor</h1>
+    <p class="subtitle">Audit gratuito: SEO tecnica + funzionalità mancanti (email, recensioni, analytics), report pronto in 24 ore.</p>
+    <a href="#audit-form" class="cta-btn">Richiedi il tuo audit gratuito</a>
+  </div>
+</header>
+
+<section id="cosa-controlliamo">
+  <div class="wrap">
+    <h2>Cosa controlliamo</h2>
+    <div class="checks-grid">
+      <div class="check-item">
+        <span class="icon">🔍</span>
+        <h3>SEO tecnica</h3>
+        <p>Title, meta description, dati strutturati schema.org e velocità di caricamento del tuo store.</p>
+      </div>
+      <div class="check-item">
+        <span class="icon">🧩</span>
+        <h3>App installate</h3>
+        <p>Verifichiamo se hai email marketing, sistema di recensioni e analytics attivi e funzionanti.</p>
+      </div>
+      <div class="check-item">
+        <span class="icon">📊</span>
+        <h3>Confronto di categoria</h3>
+        <p>Come si posiziona il tuo store rispetto alla media della tua categoria di prodotto.</p>
+      </div>
+      <div class="check-item">
+        <span class="icon">📄</span>
+        <h3>Report pronto</h3>
+        <p>Un PDF chiaro, pronto da leggere internamente o da inviare direttamente a un cliente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="credibility">
+  <div class="wrap">
+    <p>Il <strong>70%</strong> degli store Shopify non ha email marketing attivo. Il <strong>95%</strong> non ha un sistema di recensioni. Sono soldi di pubblicità sprecati senza un modo per far tornare il cliente.</p>
+  </div>
+</section>
+
+<section class="form-section" id="audit-form-section">
+  <div class="wrap">
+    <div class="form-card">
+      <h2 id="audit-form">Richiedi il tuo audit gratuito</h2>
+      <p class="form-intro">Compila i campi qui sotto, ti mandiamo il report via email entro 24 ore.</p>
+
+      <form id="audit-form-el" novalidate>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="field">
+          <label for="shop-url">URL dello store Shopify *</label>
+          <input type="text" id="shop-url" name="shop_url" placeholder="tuonegozio.myshopify.com" autocomplete="url" required aria-required="true" aria-describedby="shop-url-error">
+          <div class="error-msg" id="shop-url-error" role="alert"></div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="tuonome@email.com" autocomplete="email" required aria-required="true" aria-describedby="email-error">
+          <div class="error-msg" id="email-error" role="alert"></div>
+        </div>
+
+        <div class="field">
+          <label for="role">Sei un'agenzia o gestisci il tuo store? <span class="optional">(opzionale)</span></label>
+          <select id="role" name="role">
+            <option value="">Preferisco non specificare</option>
+            <option value="agenzia">Agenzia</option>
+            <option value="freelance">Freelance</option>
+            <option value="store_personale">Store personale</option>
+          </select>
+        </div>
+
+        <button type="submit" class="cta-btn">Richiedi il tuo audit gratuito</button>
+        <p class="submit-error" id="submit-error" role="alert"></p>
+        <p class="disclaimer">Niente spam. Usiamo la tua email solo per inviarti il report.</p>
+      </form>
+
+      <div class="success-box" id="success-box" role="status" tabindex="-1">
+        Grazie, riceverai il report entro 24 ore all'indirizzo indicato.
+      </div>
+    </div>
+  </div>
+  <iframe name="formspree-target" id="formspree-target" title="Invio modulo" style="display:none" aria-hidden="true" tabindex="-1"></iframe>
+</section>
+
+<footer>
+  <div class="wrap">
+    &copy; <span id="year"></span> Audit Shopify Gratuito
+  </div>
+</footer>
+
+<script>
+  // Endpoint Formspree dove arrivano le submission.
+  // Per cambiarlo: crea un form su https://formspree.io e incolla qui il nuovo
+  // endpoint (formato: https://formspree.io/f/xxxxxxxx).
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjyvqpkw";
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const form = document.getElementById('audit-form-el');
+  const urlInput = document.getElementById('shop-url');
+  const emailInput = document.getElementById('email');
+  const urlError = document.getElementById('shop-url-error');
+  const emailError = document.getElementById('email-error');
+  const successBox = document.getElementById('success-box');
+  const submitError = document.getElementById('submit-error');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const iframeTarget = document.getElementById('formspree-target');
+
+  // Il fetch verso Formspree richiede http/https: aperta come file locale
+  // (doppio click), il browser blocca la richiesta per policy di sicurezza (CORS).
+  // In quel caso usiamo un invio nativo del form attraverso un iframe nascosto,
+  // che non è soggetto a questa restrizione.
+  const useIframeFallback = window.location.protocol === 'file:';
+  let iframeSubmissionPending = false;
+
+  if (useIframeFallback) {
+    form.action = FORMSPREE_ENDPOINT;
+    form.method = 'POST';
+    form.target = 'formspree-target';
+  }
+
+  iframeTarget.addEventListener('load', function () {
+    if (!iframeSubmissionPending) return;
+    iframeSubmissionPending = false;
+    form.classList.add('hidden');
+    successBox.classList.add('visible');
+    successBox.focus();
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Richiedi il tuo audit gratuito';
+  });
+
+  // Gli utenti scrivono il dominio "nudo" (miostore.com): completiamo noi il
+  // protocollo invece di rifiutare l'input. Restituisce l'URL normalizzato, o
+  // null se non è utilizzabile.
+  function normalizeUrl(value) {
+    const raw = value.trim();
+    if (raw === '') return null;
+
+    const withProtocol = /^https?:\/\//i.test(raw) ? raw : 'https://' + raw;
+
+    try {
+      const parsed = new URL(withProtocol);
+      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return null;
+      if (!parsed.hostname.includes('.')) return null;
+      return parsed.href;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function isValidEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+  }
+
+  function setFieldError(input, errorEl, message) {
+    if (message) {
+      input.classList.add('invalid');
+      input.setAttribute('aria-invalid', 'true');
+      errorEl.textContent = message;
+    } else {
+      input.classList.remove('invalid');
+      input.setAttribute('aria-invalid', 'false');
+      errorEl.textContent = '';
+    }
+  }
+
+  urlInput.addEventListener('blur', function () {
+    if (urlInput.value.trim() === '') return;
+    const normalized = normalizeUrl(urlInput.value);
+    if (normalized) {
+      urlInput.value = normalized;
+      setFieldError(urlInput, urlError, '');
+    } else {
+      setFieldError(urlInput, urlError, 'Inserisci un indirizzo valido (es. tuonegozio.myshopify.com)');
+    }
+  });
+
+  emailInput.addEventListener('blur', function () {
+    if (emailInput.value.trim() === '') return;
+    setFieldError(emailInput, emailError, isValidEmail(emailInput.value) ? '' : 'Inserisci un indirizzo email valido');
+  });
+
+  form.addEventListener('submit', function (e) {
+    const urlValue = urlInput.value.trim();
+    const emailValue = emailInput.value.trim();
+    let valid = true;
+
+    if (urlValue === '') {
+      setFieldError(urlInput, urlError, 'Questo campo è obbligatorio');
+      valid = false;
+    } else {
+      const normalizedUrl = normalizeUrl(urlValue);
+      if (!normalizedUrl) {
+        setFieldError(urlInput, urlError, 'Inserisci un indirizzo valido (es. tuonegozio.myshopify.com)');
+        valid = false;
+      } else {
+        urlInput.value = normalizedUrl;
+        setFieldError(urlInput, urlError, '');
+      }
+    }
+
+    if (emailValue === '') {
+      setFieldError(emailInput, emailError, 'Questo campo è obbligatorio');
+      valid = false;
+    } else if (!isValidEmail(emailValue)) {
+      setFieldError(emailInput, emailError, 'Inserisci un indirizzo email valido');
+      valid = false;
+    } else {
+      setFieldError(emailInput, emailError, '');
+    }
+
+    if (!valid) {
+      e.preventDefault();
+      const firstInvalid = form.querySelector('.invalid');
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    submitError.classList.remove('visible');
+    submitError.textContent = '';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Invio in corso...';
+
+    if (useIframeFallback) {
+      // Non blocchiamo l'invio nativo: il browser lo instrada verso l'iframe
+      // nascosto, che gestiamo con il listener "load" registrato sopra.
+      iframeSubmissionPending = true;
+      return;
+    }
+
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(function (response) {
+        if (response.ok) {
+          form.classList.add('hidden');
+          successBox.classList.add('visible');
+          successBox.focus();
+        } else {
+          submitError.textContent = 'Si è verificato un errore nell\'invio. Riprova tra qualche istante.';
+          submitError.classList.add('visible');
+        }
+      })
+      .catch(function () {
+        submitError.textContent = 'Si è verificato un errore nell\'invio. Controlla la connessione e riprova.';
+        submitError.classList.add('visible');
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Richiedi il tuo audit gratuito';
+      });
+  });
+</script>
+
+</body>
+</html>
