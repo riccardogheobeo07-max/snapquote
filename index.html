@@ -467,7 +467,9 @@
   // In quel caso usiamo un invio nativo del form attraverso un iframe nascosto,
   // che non è soggetto a questa restrizione.
   const useIframeFallback = window.location.protocol === 'file:';
+  const IFRAME_TIMEOUT_MS = 20000;
   let iframeSubmissionPending = false;
+  let iframeTimeoutId = null;
 
   if (useIframeFallback) {
     form.action = FORMSPREE_ENDPOINT;
@@ -475,14 +477,19 @@
     form.target = 'formspree-target';
   }
 
+  function resetSubmitButton() {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Richiedi il tuo audit gratuito';
+  }
+
   iframeTarget.addEventListener('load', function () {
     if (!iframeSubmissionPending) return;
     iframeSubmissionPending = false;
+    clearTimeout(iframeTimeoutId);
     form.classList.add('hidden');
     successBox.classList.add('visible');
     successBox.focus();
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Richiedi il tuo audit gratuito';
+    resetSubmitButton();
   });
 
   // Gli utenti scrivono il dominio "nudo" (miostore.com): completiamo noi il
@@ -581,6 +588,15 @@
       // Non blocchiamo l'invio nativo: il browser lo instrada verso l'iframe
       // nascosto, che gestiamo con il listener "load" registrato sopra.
       iframeSubmissionPending = true;
+      // Se l'iframe non carica (rete assente, invio bloccato) senza questo
+      // timeout il bottone resterebbe su "Invio in corso..." per sempre.
+      iframeTimeoutId = setTimeout(function () {
+        if (!iframeSubmissionPending) return;
+        iframeSubmissionPending = false;
+        submitError.textContent = 'Non è stato possibile completare l\'invio. Controlla la connessione e riprova.';
+        submitError.classList.add('visible');
+        resetSubmitButton();
+      }, IFRAME_TIMEOUT_MS);
       return;
     }
 
@@ -607,10 +623,7 @@
         submitError.textContent = 'Si è verificato un errore nell\'invio. Controlla la connessione e riprova.';
         submitError.classList.add('visible');
       })
-      .finally(function () {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Richiedi il tuo audit gratuito';
-      });
+      .finally(resetSubmitButton);
   });
 </script>
 
