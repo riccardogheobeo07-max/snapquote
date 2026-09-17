@@ -329,7 +329,117 @@
     font-size: 0.8rem;
   }
 
+  /* ---------- piani ---------- */
+
+  .piani-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .piano-card {
+    display: flex;
+    flex-direction: column;
+    padding: 22px 20px 24px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+
+  .piano-card.scelto {
+    border-color: var(--accent);
+    box-shadow: 0 6px 20px -12px rgba(31, 111, 235, 0.55);
+  }
+
+  .piano-nome {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .piano-prezzo {
+    margin: 8px 0 2px;
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .piano-prezzo span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .piano-per {
+    margin: 0 0 14px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .piano-voci {
+    flex: 1;
+    margin: 0 0 18px;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9rem;
+  }
+
+  .piano-voci li {
+    position: relative;
+    padding: 5px 0 5px 20px;
+  }
+
+  .piano-voci li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 12px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .piano-voci li.assente {
+    color: var(--text-muted);
+  }
+
+  .piano-voci li.assente::before {
+    background: var(--border);
+  }
+
+  .piano-btn {
+    display: block;
+    padding: 11px 14px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    color: var(--accent);
+    background: #fff;
+    border: 1.5px solid var(--accent);
+    border-radius: var(--radius);
+  }
+
+  .piano-card.scelto .piano-btn {
+    color: #fff;
+    background: var(--accent);
+  }
+
+  .piani-nota {
+    margin: 22px 0 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
   @media (max-width: 600px) {
+    .piani-grid {
+      grid-template-columns: 1fr;
+    }
+
     header.hero {
       padding: 48px 0 40px;
     }
@@ -394,6 +504,61 @@
   </div>
 </section>
 
+<section id="prezzi">
+  <div class="wrap">
+    <h2>Piani</h2>
+    <p class="subtitle">L'estensione Chrome analizza il sito dentro il tuo browser. I piani a pagamento servono a consegnare il referto a un cliente: report PDF col tuo nome, senza limiti giornalieri.</p>
+
+    <div class="piani-grid">
+      <div class="piano-card">
+        <p class="piano-nome">Free</p>
+        <p class="piano-prezzo">0&euro;</p>
+        <p class="piano-per">per sempre</p>
+        <ul class="piano-voci">
+          <li>Estensione Chrome completa</li>
+          <li>Analisi su pi&ugrave; pagine del sito</li>
+          <li>5 audit al giorno</li>
+          <li class="assente">Niente esportazione per il PDF</li>
+          <li class="assente">Niente marchio personalizzato</li>
+        </ul>
+        <a class="piano-btn" href="#audit-form">Inizia gratis</a>
+      </div>
+
+      <div class="piano-card scelto">
+        <p class="piano-nome">Pro</p>
+        <p class="piano-prezzo">19&euro; <span>/ mese</span></p>
+        <p class="piano-per">per chi cura i propri siti</p>
+        <ul class="piano-voci">
+          <li>Audit senza limiti</li>
+          <li>Esportazione per il report PDF</li>
+          <li>Il tuo nome sul report</li>
+          <li>Tutte le nuove verifiche incluse</li>
+        </ul>
+        <a class="piano-btn" id="btn-pro" href="#audit-form">Attiva Pro</a>
+      </div>
+
+      <div class="piano-card">
+        <p class="piano-nome">Agenzia</p>
+        <p class="piano-prezzo">49&euro; <span>/ mese</span></p>
+        <p class="piano-per">per chi lavora su pi&ugrave; clienti</p>
+        <ul class="piano-voci">
+          <li>Tutto quello che c'&egrave; in Pro</li>
+          <li>Fino a 10 marchi salvati</li>
+          <li>Un marchio diverso per ogni cliente</li>
+          <li>Supporto via email entro un giorno</li>
+        </ul>
+        <a class="piano-btn" id="btn-agenzia" href="#audit-form">Attiva Agenzia</a>
+      </div>
+    </div>
+
+    <p class="piani-nota">
+      Dopo il pagamento ricevi per email una chiave di licenza da incollare nell'estensione.
+      La chiave viene verificata dentro il browser: nessun account da creare, nessun dato dei tuoi
+      clienti che esce dal tuo computer. Si disdice quando vuoi.
+    </p>
+  </div>
+</section>
+
 <section class="form-section" id="audit-form-section">
   <div class="wrap">
     <div class="form-card">
@@ -449,6 +614,29 @@
   // Per cambiarlo: crea un form su https://formspree.io e incolla qui il nuovo
   // endpoint (formato: https://formspree.io/f/xxxxxxxx).
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjyvqpkw";
+
+  /*
+   * Link di pagamento Stripe, uno per piano. Si creano dal pannello Stripe
+   * (Prodotti > Link di pagamento) e si incollano qui: il pagamento avviene
+   * sulle pagine di Stripe, quindi nessun dato di carta passa da questo sito e
+   * non serve un server.
+   *
+   * Finché restano i segnaposto qui sotto i bottoni portano al modulo di
+   * contatto, così la pagina non mostra mai un pagamento che non funziona.
+   */
+  const PAGAMENTI = {
+    "btn-pro": "INCOLLA_QUI_IL_LINK_STRIPE_PRO",
+    "btn-agenzia": "INCOLLA_QUI_IL_LINK_STRIPE_AGENZIA",
+  };
+
+  for (const [id, link] of Object.entries(PAGAMENTI)) {
+    const bottone = document.getElementById(id);
+    if (bottone && link.startsWith("https://")) {
+      bottone.href = link;
+      bottone.rel = "noopener";
+      bottone.target = "_blank";
+    }
+  }
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
