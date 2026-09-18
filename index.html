@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audit Shopify Gratuito – Scopri cosa manca al tuo store</title>
-<meta name="description" content="Audit gratuito del tuo store Shopify: SEO tecnica, funzionalità mancanti e confronto con le best practice. Report pronto in 24 ore.">
+<title>Audit Shopify – Analizza un sito in dieci secondi, dal browser</title>
+<meta name="description" content="Estensione Chrome che analizza SEO tecnica, strumenti installati e velocità reale di un sito, su più pagine. Confronto con i concorrenti, correzioni pronte e referto da consegnare al cliente. Niente dati fuori dal browser.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#1f6feb">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔍</text></svg>">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
-<meta property="og:title" content="Audit Shopify Gratuito – Scopri cosa manca al tuo store">
-<meta property="og:description" content="SEO tecnica + funzionalità mancanti (email, recensioni, analytics). Report pronto in 24 ore.">
+<meta property="og:title" content="Audit Shopify – Analizza un sito in dieci secondi">
+<meta property="og:description" content="SEO tecnica, strumenti installati, velocità reale. Confronto con i concorrenti e referto pronto da consegnare.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Audit Shopify Gratuito – Scopri cosa manca al tuo store">
-<meta name="twitter:description" content="SEO tecnica + funzionalità mancanti (email, recensioni, analytics). Report pronto in 24 ore.">
+<meta name="twitter:title" content="Audit Shopify – Analizza un sito in dieci secondi">
+<meta name="twitter:description" content="SEO tecnica, strumenti installati, velocità reale. Confronto con i concorrenti e referto pronto da consegnare.">
 <style>
   :root {
     --bg: #ffffff;
@@ -329,6 +329,50 @@
     font-size: 0.8rem;
   }
 
+  /* ---------- differenze ---------- */
+
+  .eroe-sotto {
+    margin: 16px 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .differenze-elenco {
+    display: grid;
+    gap: 20px;
+  }
+
+  .differenza-voce {
+    padding-left: 18px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .differenza-voce h3 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .differenza-voce p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  .differenza-voce code {
+    font-size: 0.9em;
+    padding: 1px 4px;
+    background: var(--bg-alt);
+    border-radius: 4px;
+  }
+
+  .differenze-nota {
+    margin: 28px 0 0;
+    padding: 16px 18px;
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+  }
+
   /* ---------- piani ---------- */
 
   .piani-grid {
@@ -463,36 +507,37 @@
 
 <header class="hero">
   <div class="wrap">
-    <span class="badge">Audit gratuito · Solo store Shopify</span>
-    <h1>Scopri cosa manca al tuo store Shopify prima che se ne accorga un competitor</h1>
-    <p class="subtitle">Audit gratuito: SEO tecnica + funzionalità mancanti (email, recensioni, analytics), report pronto in 24 ore.</p>
-    <a href="#audit-form" class="cta-btn">Richiedi il tuo audit gratuito</a>
+    <span class="badge">Estensione Chrome · Nessun dato fuori dal browser</span>
+    <h1>Apri un sito, premi l&rsquo;icona: sai cosa non va e cosa fare</h1>
+    <p class="subtitle">Legge pi&ugrave; pagine del sito, riconosce la piattaforma, misura la velocit&agrave; vera. Poi ti d&agrave; il codice da incollare e il referto da consegnare al cliente.</p>
+    <a href="#prezzi" class="cta-btn">Vedi cosa fa</a>
+    <p class="eroe-sotto">Oppure <a href="#audit-form">fatti fare un audit gratuito</a> da una persona.</p>
   </div>
 </header>
 
 <section id="cosa-controlliamo">
   <div class="wrap">
-    <h2>Cosa controlliamo</h2>
+    <h2>Cosa guarda, una pagina alla volta</h2>
     <div class="checks-grid">
       <div class="check-item">
         <span class="icon">🔍</span>
         <h3>SEO tecnica</h3>
-        <p>Title, meta description, dati strutturati schema.org e velocità di caricamento del tuo store.</p>
+        <p>Title, meta description, canonical, H1, dati strutturati, indicizzabilit&agrave;. Su ogni pagina che legge, non solo sulla home.</p>
       </div>
       <div class="check-item">
         <span class="icon">🧩</span>
-        <h3>App installate</h3>
-        <p>Verifichiamo se hai email marketing, sistema di recensioni e analytics attivi e funzionanti.</p>
+        <h3>Strumenti installati</h3>
+        <p>Email marketing, recensioni, analytics e pixel: rilevati mentre girano davvero, anche quando li carica un tag manager.</p>
       </div>
       <div class="check-item">
-        <span class="icon">📊</span>
-        <h3>Confronto con le best practice</h3>
-        <p>Come si posiziona il tuo store rispetto alle configurazioni tecniche consigliate per Shopify.</p>
+        <span class="icon">⚡</span>
+        <h3>Velocit&agrave; vera</h3>
+        <p>Risposta del server, comparsa del contenuto, stabilit&agrave; del layout, peso di JavaScript e CSS: misurati sulla navigazione reale, non simulati.</p>
       </div>
       <div class="check-item">
-        <span class="icon">📄</span>
-        <h3>Report pronto</h3>
-        <p>Un PDF chiaro, pronto da leggere internamente o da inviare direttamente a un cliente.</p>
+        <span class="icon">🤖</span>
+        <h3>Visibilit&agrave; presso le IA</h3>
+        <p>Se ChatGPT, Perplexity o Gemini possono leggere il sito, e se c&rsquo;&egrave; il file <code>llms.txt</code> che spiega loro di cosa si occupa.</p>
       </div>
     </div>
   </div>
@@ -506,8 +551,8 @@
 
 <section id="estensione">
   <div class="wrap">
-    <h2>Oppure fattelo da solo, in dieci secondi</h2>
-    <p class="subtitle">L'estensione Chrome fa la stessa analisi mentre guardi un sito. Apri una pagina, premi l'icona: legge la pagina aperta e altre tre del sito, e ti dice cosa non va e perché conta.</p>
+    <h2>Come funziona</h2>
+    <p class="subtitle">Premi l&rsquo;icona: l&rsquo;estensione legge la pagina aperta dopo l&rsquo;esecuzione degli script, ne scarica altre dal sito, e giudica una trentina di controlli con soglie dichiarate. In dieci secondi, senza chiedere niente a nessun server.</p>
 
     <div class="checks-grid">
       <div class="check-item">
@@ -527,6 +572,38 @@
         <p>Shopify, WooCommerce, WordPress: i consigli cambiano di conseguenza, invece di parlare sempre di temi Shopify.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="differenze">
+  <div class="wrap">
+    <h2>Quattro cose che nessun altro strumento fa</h2>
+
+    <div class="differenze-elenco">
+      <div class="differenza-voce">
+        <h3>Ti confronta con un concorrente, sul serio</h3>
+        <p>Analizza il loro sito, torna sul tuo e mettili a confronto: gli stessi controlli, le stesse soglie, e l&rsquo;elenco preciso di dove sono messi meglio. &ldquo;Loro hanno le recensioni e tu no. Il loro server risponde 900 ms prima del tuo.&rdquo; &Egrave; la pagina che chiude un preventivo.</p>
+      </div>
+
+      <div class="differenza-voce">
+        <h3>Ti d&agrave; il codice, non il compito</h3>
+        <p>Dove la correzione si pu&ograve; scrivere, la scrive: il tag canonical con l&rsquo;indirizzo giusto, il JSON-LD del prodotto con il nome vero, il file <code>llms.txt</code> gi&agrave; compilato con le tue pagine. Si copia con un tocco. Dove servirebbe inventare un testo, non lo inventa.</p>
+      </div>
+
+      <div class="differenza-voce">
+        <h3>Scrive le descrizioni mancanti sul tuo computer</h3>
+        <p>Chrome ha un modello linguistico che gira in locale. L&rsquo;estensione lo usa per proporti una bozza di meta description o di title, partendo da quello che c&rsquo;&egrave; gi&agrave; nella pagina. Nessuna chiave API, nessun costo a chiamata, e il contenuto dei tuoi clienti non esce dal computer.</p>
+      </div>
+
+      <div class="differenza-voce">
+        <h3>Il referto esce gi&agrave; col tuo nome</h3>
+        <p>Un file HTML autosufficiente: doppio clic e si apre, si manda per email, si stampa in PDF. Con il tuo marchio in cima, il punteggio, da dove partire e ogni rilievo con la prova che lo sostiene. Il cliente legge un documento tuo, non lo schermo di uno strumento.</p>
+      </div>
+    </div>
+
+    <p class="differenze-nota">
+      E una cosa che quasi nessuno fa: <strong>dice quando non sa</strong>. Un controllo che non &egrave; stato possibile eseguire esce dal punteggio invece di passare per superato, e il referto lo dichiara.
+    </p>
   </div>
 </section>
 
