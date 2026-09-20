@@ -87,7 +87,7 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--accent);
-    background: rgba(31, 111, 235, 0.08);
+    background: rgba(91, 61, 245, 0.08);
     padding: 6px 14px;
     border-radius: 999px;
     margin-bottom: 24px;
@@ -128,6 +128,27 @@
 
   .cta-btn:active {
     transform: translateY(1px);
+  }
+
+  /* Le immagini del popup. Sono schermate vere dell'estensione che gira, non
+     disegni: un sito che mostra un mockup promette un prodotto che non esiste.
+     Il fondo e' trasparente, quindi si posano sul colore della sezione. */
+  .schermata {
+    margin: 40px auto 0;
+    max-width: 420px;
+  }
+
+  .schermata img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .schermata figcaption {
+    margin-top: 14px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
   }
 
   section {
@@ -517,6 +538,12 @@
     <p class="subtitle">Apri un sito, premi l&rsquo;icona. Spunti gli interventi che faresti e il punteggio si rif&agrave; davanti a te: <strong>84 &rarr; 92</strong>. Sotto trovi ore, prezzo alla tua tariffa e un preventivo pronto da mandare. A lavoro finito, il rapporto che dimostra il risultato.</p>
     <a href="#prezzi" class="cta-btn">Vedi cosa fa</a>
     <p class="eroe-sotto">Oppure <a href="#audit-form">fatti fare un audit gratuito</a> da una persona.</p>
+
+    <figure class="schermata">
+      <img src="immagini/popup-preventivo.png" width="571" height="814"
+           alt="Il popup dell&rsquo;estensione: quattro interventi spuntati e sotto il conto, 8,75 ore per 90 euro l&rsquo;ora, 788 euro, con il bottone per copiare il preventivo.">
+      <figcaption>Quattro interventi spuntati, e sotto il conto: 8,75&nbsp;h alla tua tariffa. Il bottone lo copia gi&agrave; scritto.</figcaption>
+    </figure>
   </div>
 </header>
 
@@ -577,6 +604,12 @@
         <p>Shopify, WooCommerce, WordPress: i consigli cambiano di conseguenza, invece di parlare sempre di temi Shopify.</p>
       </div>
     </div>
+
+    <figure class="schermata">
+      <img src="immagini/popup-simulazione.png" width="571" height="814" loading="lazy"
+           alt="Il punteggio in cima al popup: 84 oggi, freccia, 90 se li fai. Sotto, la striscia dei controlli e i tre voti per area.">
+      <figcaption>Tre interventi spuntati e il punteggio si rif&agrave;: <strong>84&nbsp;&rarr;&nbsp;90</strong>. Non una stima &mdash; lo stesso calcolo, con quei controlli dati per superati.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -603,6 +636,12 @@
       <div class="differenza-voce">
         <h3>Ti dice su quale pagina, non solo quante</h3>
         <p>&ldquo;Quattro pagine senza description&rdquo; non basta a chi deve aprirle. Legge fino a venticinque pagine prese dalla tua sitemap e ti d&agrave; la lista di lavoro per indirizzo: una pagina per volta, cosa c&rsquo;&egrave; da sistemare sopra, le messe peggio in cima. Un&rsquo;estensione che guarda solo la scheda aperta questo non pu&ograve; darlo.</p>
+
+        <figure class="schermata">
+          <img src="immagini/popup-pagine.png" width="571" height="814" loading="lazy"
+               alt="La lista di lavoro del popup: pagina collezione, pagina prodotto e home, ognuna col proprio difetto scritto sotto e l&rsquo;indirizzo a destra.">
+          <figcaption>Una scheda per pagina, con l&rsquo;indirizzo e il difetto scritto accanto.</figcaption>
+        </figure>
       </div>
 
       <div class="differenza-voce">
