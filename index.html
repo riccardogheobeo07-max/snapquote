@@ -6,8 +6,8 @@
 <title>Audit Shopify – Da un sito a un preventivo, in dieci secondi</title>
 <meta name="description" content="Estensione Chrome per chi vende lavoro SEO: analizza un sito, spunti gli interventi e ne esce un preventivo con ore e prezzo alla tua tariffa. A lavoro finito, il rapporto che dimostra il risultato. Niente dati fuori dal browser.">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#11674a">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23ffffff%22/><rect x=%2214%22 y=%2262%22 width=%2218%22 height=%2224%22 fill=%22%23b9b9b3%22/><rect x=%2241%22 y=%2240%22 width=%2218%22 height=%2246%22 fill=%22%23555550%22/><rect x=%2268%22 y=%2216%22 width=%2218%22 height=%2270%22 fill=%22%2311674a%22/></svg>">
+<meta name="theme-color" content="#1a66d9">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23ffffff%22/><rect x=%2214%22 y=%2262%22 width=%2218%22 height=%2224%22 fill=%22%23c2c6cc%22/><rect x=%2241%22 y=%2240%22 width=%2218%22 height=%2246%22 fill=%22%235a5f66%22/><rect x=%2268%22 y=%2216%22 width=%2218%22 height=%2270%22 fill=%22%231a66d9%22/></svg>">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:title" content="Audit Shopify – Da un sito a un preventivo, in dieci secondi">
@@ -30,22 +30,19 @@
 <style>
   :root {
     --bg: #ffffff;
-    --bg-alt: #f6f6f5;
-    --text: #0b0b0a;
-    --text-muted: #55554f;
-    --border: #e2e2df;
-    /* Un colore solo, lo stesso dell'estensione, e compare solo dove c'e' un
-       guadagno o un'azione da fare. Tutto il resto e' nero su bianco. */
-    --accent: #11674a;
-    --accent-dark: #0b4a35;
-    --error: #a8321d;
-    --success-bg: #f2f7f4;
-    --success-border: #11674a;
-    --success-text: #0b4a35;
-    /* Squadrato come il popup: gli angoli arrotondati sono la firma che hanno
-       tutti, ed e' quella che si stava cercando di togliere. */
-    --radius: 0px;
-    --serif: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --bg-alt: #f6f7f9;
+    --text: #1a1c1f;
+    --text-muted: #5a5f66;
+    --border: #e3e5e8;
+    /* Lo stesso blu dell'estensione: e' il colore delle azioni. */
+    --accent: #1a66d9;
+    --accent-dark: #1552b3;
+    --su-accent: #ffffff;
+    --error: #c0392b;
+    --success-bg: #eef7f1;
+    --success-border: #2e7d46;
+    --success-text: #1e5631;
+    --radius: 6px;
     --max-width: 760px;
     font-size: 16px;
   }
@@ -55,17 +52,18 @@
      questo bastano le variabili. */
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0b0b0a;
-      --bg-alt: #171716;
-      --text: #f6f6f3;
-      --text-muted: #aeaea6;
-      --border: #292928;
-      --accent: #4fc08d;
-      --accent-dark: #74d3a8;
-      --error: #e08268;
-      --success-bg: #14231c;
-      --success-border: #4fc08d;
-      --success-text: #9fdcc0;
+      --bg: #16181c;
+      --bg-alt: #1f2228;
+      --text: #eceef1;
+      --text-muted: #a8aeb6;
+      --border: #2c3038;
+      --accent: #6ba4f5;
+      --accent-dark: #8bb9f8;
+      --su-accent: #16181c;
+      --error: #ef8574;
+      --success-bg: #16241b;
+      --success-border: #6ec48c;
+      --success-text: #9fd9b4;
     }
   }
 
@@ -132,12 +130,11 @@
   }
 
   h1 {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 5vw, 3rem);
-    line-height: 1.1;
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+    line-height: 1.2;
     margin: 0 0 20px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-weight: 800;
+    letter-spacing: -0.01em;
   }
 
   .subtitle {
@@ -150,7 +147,7 @@
   .cta-btn {
     display: inline-block;
     background: var(--accent);
-    color: var(--bg);
+    color: var(--su-accent);
     font-size: 1rem;
     font-weight: 700;
     padding: 14px 32px;
@@ -200,12 +197,10 @@
   }
 
   h2 {
-    font-family: var(--serif);
-    font-size: clamp(1.5rem, 3.2vw, 2rem);
+    font-size: clamp(1.4rem, 3vw, 1.75rem);
     text-align: center;
     margin: 0 0 40px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-weight: 800;
   }
 
   .checks-grid {
@@ -537,7 +532,7 @@
   }
 
   .piano-card.scelto .piano-btn {
-    color: var(--bg);
+    color: var(--su-accent);
     background: var(--accent);
   }
 
