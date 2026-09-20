@@ -38,6 +38,25 @@
     font-size: 16px;
   }
 
+  /* Al buio la pagina segue il sistema come fa l'estensione. Non e' un secondo
+     tema con altri colori: e' lo stesso foglio stampato in negativo, e per
+     questo bastano le variabili. */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b0b0a;
+      --bg-alt: #171716;
+      --text: #f6f6f3;
+      --text-muted: #aeaea6;
+      --border: #292928;
+      --accent: #4fc08d;
+      --accent-dark: #74d3a8;
+      --error: #e08268;
+      --success-bg: #14231c;
+      --success-border: #4fc08d;
+      --success-text: #9fdcc0;
+    }
+  }
+
   * {
     box-sizing: border-box;
   }
@@ -119,7 +138,7 @@
   .cta-btn {
     display: inline-block;
     background: var(--accent);
-    color: #ffffff;
+    color: var(--bg);
     font-size: 1rem;
     font-weight: 700;
     padding: 14px 32px;
@@ -285,8 +304,8 @@
     padding: 11px 14px;
     font-size: 1rem;
     border: 1px solid var(--border);
-    border-radius: 8px;
-    background: #ffffff;
+    border-radius: 0;
+    background: var(--bg);
     color: var(--text);
     font-family: inherit;
   }
@@ -421,7 +440,7 @@
     display: flex;
     flex-direction: column;
     padding: 22px 20px 24px;
-    background: #fff;
+    background: var(--bg);
     border: 1px solid var(--border);
     border-radius: var(--radius);
   }
@@ -500,13 +519,13 @@
     text-align: center;
     text-decoration: none;
     color: var(--accent);
-    background: #fff;
+    background: var(--bg);
     border: 1.5px solid var(--accent);
     border-radius: var(--radius);
   }
 
   .piano-card.scelto .piano-btn {
-    color: #fff;
+    color: var(--bg);
     background: var(--accent);
   }
 
@@ -555,8 +574,11 @@
     <p class="eroe-sotto">Oppure <a href="#audit-form">fatti fare un audit gratuito</a> da una persona.</p>
 
     <figure class="schermata">
-      <img src="immagini/popup-preventivo.png" width="571" height="814"
-           alt="Il popup dell&rsquo;estensione: quattro interventi spuntati e sotto il conto, 8,75 ore per 90 euro l&rsquo;ora, 788 euro, con il bottone per copiare il preventivo.">
+      <picture>
+        <source srcset="immagini/popup-preventivo-scuro.png" media="(prefers-color-scheme: dark)">
+        <img src="immagini/popup-preventivo.png" width="571" height="814"
+             alt="Il popup dell&rsquo;estensione: quattro interventi spuntati e sotto il conto, 8,75 ore per 90 euro l&rsquo;ora, 788 euro, con il bottone per copiare il preventivo.">
+      </picture>
       <figcaption>Quattro interventi spuntati, e sotto il conto: 8,75&nbsp;h alla tua tariffa. Il bottone lo copia gi&agrave; scritto.</figcaption>
     </figure>
   </div>
@@ -621,8 +643,11 @@
     </div>
 
     <figure class="schermata">
-      <img src="immagini/popup-simulazione.png" width="571" height="814" loading="lazy"
-           alt="Il punteggio in cima al popup: 84 oggi, freccia, 90 se li fai. Sotto, la striscia dei controlli e i tre voti per area.">
+      <picture>
+        <source srcset="immagini/popup-simulazione-scuro.png" media="(prefers-color-scheme: dark)">
+        <img src="immagini/popup-simulazione.png" width="571" height="814" loading="lazy"
+             alt="Il punteggio in cima al popup: 84 oggi, freccia, 90 se li fai. Sotto, la striscia dei controlli e i tre voti per area.">
+      </picture>
       <figcaption>Tre interventi spuntati e il punteggio si rif&agrave;: <strong>84&nbsp;&rarr;&nbsp;90</strong>. Non una stima &mdash; lo stesso calcolo, con quei controlli dati per superati.</figcaption>
     </figure>
   </div>
@@ -643,8 +668,11 @@
         <p>Ogni preventivo che copi resta segnato, e una pastiglia lo porta da <strong>fatto</strong> a <strong>mandato</strong>, <strong>vinto</strong> o <strong>perso</strong>. In cima trovi quanto vale il lavoro che stai aspettando, quanto ne hai preso, e quanti ne chiudi su quelli che hanno avuto una risposta. La percentuale si calcola solo sui preventivi che hanno avuto una risposta: contare fra i persi anche quelli ancora in attesa darebbe un numero che peggiora ogni volta che ne mandi uno nuovo.</p>
 
         <figure class="schermata">
-          <img src="immagini/popup-registro.png" width="571" height="814" loading="lazy"
-               alt="Il registro dei preventivi: quattro clienti con il prezzo accanto, segnati come fatto, mandato, vinto e perso, e sopra il totale di 4.613 euro.">
+      <picture>
+          <source srcset="immagini/popup-registro-scuro.png" media="(prefers-color-scheme: dark)">
+        <img src="immagini/popup-registro.png" width="571" height="814" loading="lazy"
+                 alt="Il registro dei preventivi: quattro clienti con il prezzo accanto, segnati come fatto, mandato, vinto e perso, e sopra il totale di 4.613 euro.">
+      </picture>
           <figcaption>Quattro preventivi, 4.613&nbsp;&euro;: due ancora aperti, uno vinto, uno perso.</figcaption>
         </figure>
       </div>
@@ -664,8 +692,11 @@
         <p>&ldquo;Quattro pagine senza description&rdquo; non basta a chi deve aprirle. Legge fino a venticinque pagine prese dalla tua sitemap e ti d&agrave; la lista di lavoro per indirizzo: una pagina per volta, cosa c&rsquo;&egrave; da sistemare sopra, le messe peggio in cima. Un&rsquo;estensione che guarda solo la scheda aperta questo non pu&ograve; darlo.</p>
 
         <figure class="schermata">
-          <img src="immagini/popup-pagine.png" width="571" height="814" loading="lazy"
-               alt="La lista di lavoro del popup: pagina collezione, pagina prodotto e home, ognuna col proprio difetto scritto sotto e l&rsquo;indirizzo a destra.">
+      <picture>
+          <source srcset="immagini/popup-pagine-scuro.png" media="(prefers-color-scheme: dark)">
+        <img src="immagini/popup-pagine.png" width="571" height="814" loading="lazy"
+                 alt="La lista di lavoro del popup: pagina collezione, pagina prodotto e home, ognuna col proprio difetto scritto sotto e l&rsquo;indirizzo a destra.">
+      </picture>
           <figcaption>Una scheda per pagina, con l&rsquo;indirizzo e il difetto scritto accanto.</figcaption>
         </figure>
       </div>
