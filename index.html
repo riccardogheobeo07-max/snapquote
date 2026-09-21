@@ -847,22 +847,70 @@
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjyvqpkw";
 
   /*
-   * Link di pagamento Stripe, uno per piano. Si creano dal pannello Stripe
-   * (Prodotti > Link di pagamento) e si incollano qui: il pagamento avviene
-   * sulle pagine di Stripe, quindi nessun dato di carta passa da questo sito e
-   * non serve un server.
+   * Il pagamento, in tre modi che scalano uno sull'altro.
    *
-   * Finché restano i segnaposto qui sotto i bottoni portano al modulo di
-   * contatto, così la pagina non mostra mai un pagamento che non funziona.
+   * 1. Se ENDPOINT_VENDITA punta al server delle licenze, il bottone chiede a
+   *    lui una sessione di Checkout e ci porta il cliente. È la strada buona:
+   *    l'imposta si calcola da sola, la partita IVA viene chiesta a chi ce
+   *    l'ha, e al pagamento la licenza si firma senza che nessuno faccia
+   *    niente a mano. Vedi licenze/stripe/ nel repository del tool.
+   * 2. Altrimenti, se ci sono dei link di pagamento incollati qui sotto, vale
+   *    quelli: niente server, ma la licenza resta da mandare a mano.
+   * 3. Altrimenti i bottoni restano quello che sono nel markup, cioè portano
+   *    al modulo di contatto. La pagina non mostra mai un pagamento che non
+   *    funziona.
+   *
+   * In nessuno dei tre casi i dati della carta passano da questo sito: il
+   * pagamento avviene sulle pagine di Stripe.
    */
+  const ENDPOINT_VENDITA = "";
+
+  const PIANI_STRIPE = {
+    "btn-pro": "audit_pro_mensile",
+    "btn-agenzia": "audit_agenzia_mensile",
+  };
+
   const PAGAMENTI = {
     "btn-pro": "INCOLLA_QUI_IL_LINK_STRIPE_PRO",
     "btn-agenzia": "INCOLLA_QUI_IL_LINK_STRIPE_AGENZIA",
   };
 
+  async function apriCheckout(bottone, piano) {
+    const testo = bottone.textContent;
+    bottone.setAttribute("aria-busy", "true");
+    bottone.textContent = "Un momento…";
+    try {
+      const risposta = await fetch(ENDPOINT_VENDITA + "/stripe/checkout", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ piano }),
+      });
+      const dati = await risposta.json();
+      if (!risposta.ok || !dati.url) throw new Error(dati.errore || "risposta inattesa");
+      window.location.href = dati.url;
+    } catch (errore) {
+      // Non si lascia un bottone che gira a vuoto: si dice cosa è successo e
+      // si rimanda al modulo, che è dove si finisce comunque per scrivere.
+      bottone.removeAttribute("aria-busy");
+      bottone.textContent = "Riprova, o scrivici";
+      setTimeout(() => { bottone.textContent = testo; }, 3000);
+      console.error("checkout non riuscito:", errore);
+    }
+  }
+
   for (const [id, link] of Object.entries(PAGAMENTI)) {
     const bottone = document.getElementById(id);
-    if (bottone && link.startsWith("https://")) {
+    if (!bottone) continue;
+
+    if (ENDPOINT_VENDITA.startsWith("https://") && PIANI_STRIPE[id]) {
+      bottone.addEventListener("click", (evento) => {
+        evento.preventDefault();
+        apriCheckout(bottone, PIANI_STRIPE[id]);
+      });
+      continue;
+    }
+
+    if (link.startsWith("https://")) {
       bottone.href = link;
       bottone.rel = "noopener";
       bottone.target = "_blank";
