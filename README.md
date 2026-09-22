@@ -98,8 +98,14 @@ la pagina sparirebbe dai risultati senza nessun errore visibile da nessuna
 parte: per questo `verifica_landing.py` li confronta tutti a ogni verifica.
 
 Il repository si chiamava `audit-shopify` fino al cambio di nome del prodotto.
-GitHub lascia in piedi un rimando dal nome vecchio, quindi i vecchi
-collegamenti continuano a funzionare.
+Attenzione a cosa sopravvive e cosa no: GitHub rimanda dal nome vecchio del
+**repository**, ma **non** dalle Pages. Misurato subito dopo la rinomina:
+
+    https://riccardogheobeo07-max.github.io/audit-shopify/  ->  HTTP 404
+
+Qui non e' costato niente, perche' il vecchio indirizzo non era mai stato dato
+a nessuno. Ma se un giorno il sito avra' un dominio suo e dei visitatori, un
+cambio di nome va accompagnato da un rimando fatto a mano.
 
 ---
 
