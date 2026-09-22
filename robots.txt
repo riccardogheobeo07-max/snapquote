@@ -5,4 +5,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://riccardogheobeo07-max.github.io/audit-shopify/sitemap.xml
+Sitemap: https://riccardogheobeo07-max.github.io/snapquote/sitemap.xml

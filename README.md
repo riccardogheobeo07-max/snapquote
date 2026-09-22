@@ -2,7 +2,7 @@
 
 Due pagine statiche, niente da compilare e niente da installare: si aprono con
 un doppio clic e si pubblicano copiandole. Sono servite da GitHub Pages su
-`https://riccardogheobeo07-max.github.io/audit-shopify/`.
+`https://riccardogheobeo07-max.github.io/snapquote/`.
 
 | file | cos'è |
 | --- | --- |
@@ -88,12 +88,18 @@ se c'è, altrimenti dei link di pagamento incollati a mano, altrimenti il
 modulo di contatto. In nessuno dei tre casi i dati della carta passano da
 questo sito.
 
-## Il nome del repository
+## L'indirizzo
 
-Si chiama ancora `audit-shopify`, e l'indirizzo pubblico con lui. Non è una
-svista: quell'indirizzo è vero, e ci punta il tasto «Vedi i piani» di tutte le
-estensioni già installate. Il commento su `LANDING` in `popup.js` scrive
-l'ordine giusto per cambiarlo senza spegnere quel collegamento.
+Il sito sta su `https://riccardogheobeo07-max.github.io/snapquote/`, e quello
+stesso indirizzo è scritto in sette posti: il canonical, `og:url`, `og:image`,
+`twitter:image`, i dati strutturati, la `sitemap.xml` e il `robots.txt`. Se due
+di quei posti dicessero indirizzi diversi, Google seguirebbe quello sbagliato e
+la pagina sparirebbe dai risultati senza nessun errore visibile da nessuna
+parte: per questo `verifica_landing.py` li confronta tutti a ogni verifica.
+
+Il repository si chiamava `audit-shopify` fino al cambio di nome del prodotto.
+GitHub lascia in piedi un rimando dal nome vecchio, quindi i vecchi
+collegamenti continuano a funzionare.
 
 ---
 
