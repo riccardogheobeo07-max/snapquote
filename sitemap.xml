@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Solo la pagina che vende. grazie.html e' marcata noindex: e' la pagina
+     che si vede dopo aver pagato, e in un risultato di ricerca porterebbe
+     qualcuno che non ha comprato niente davanti a delle istruzioni per
+     attivare una licenza che non ha. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://riccardogheobeo07-max.github.io/audit-shopify/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

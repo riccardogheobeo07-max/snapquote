@@ -1,0 +1,8 @@
+# SnapQuote
+# Tutto aperto: non c'e' niente di riservato in due pagine statiche, e una
+# regola di blocco scritta per abitudine e' il modo piu' rapido di sparire
+# dai risultati senza accorgersene.
+User-agent: *
+Allow: /
+
+Sitemap: https://riccardogheobeo07-max.github.io/audit-shopify/sitemap.xml

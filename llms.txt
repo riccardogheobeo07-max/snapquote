@@ -1,0 +1,37 @@
+# SnapQuote
+
+> Estensione Chrome che legge un sito e ne fa uscire un preventivo: ore,
+> prezzo alla tariffa di chi lo usa, e un documento pronto da mandare al
+> cliente. L'analisi avviene dentro il browser e non viene spedita a nessun
+> server.
+
+Di Riccardo Gheoni.
+
+## Che cosa fa
+
+- Controlla la SEO tecnica di piu' pagine del sito, non solo della home:
+  title, meta description, canonical, H1, dati strutturati, indicizzabilita'.
+- Riconosce gli strumenti installati - email marketing, recensioni, analytics,
+  pixel - mentre girano davvero, anche quando li carica un tag manager.
+- Misura la velocita' sulla navigazione vera: risposta del server, comparsa
+  del contenuto, stabilita' del layout, peso di JavaScript e CSS.
+- Guarda se gli assistenti IA possono leggere il sito e se c'e' un llms.txt.
+- Da quello che ha trovato costruisce un preventivo con ore e prezzo, e a
+  lavoro finito un rapporto che confronta il prima e il dopo.
+
+## Pagine
+
+- [Home e piani](https://riccardogheobeo07-max.github.io/audit-shopify/): che cosa fa, come funziona, quanto costa.
+
+## Prezzi
+
+- Free: 0 euro, cinque siti al giorno.
+- Pro: 19 euro al mese, audit senza limiti ed esportazione PDF.
+- Agenzia: 49 euro al mese, fino a dieci marchi salvati.
+
+## Come si usa
+
+Si installa da Chrome, si apre un sito qualsiasi e si preme l'icona. In circa
+dieci secondi compare il punteggio, l'elenco di cosa c'e' da sistemare e il
+preventivo. Nessun account da creare: niente di quello che viene analizzato
+esce dal computer.
