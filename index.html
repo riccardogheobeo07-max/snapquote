@@ -532,17 +532,20 @@
     counter-reset: differenza;
   }
 
-  /* La casella resta alta quanto le altre - e' quello che tiene la griglia
-     regolare - ma il filetto blu sta su un involucro che e' alto quanto il
-     testo. Prima il filetto correva fino in fondo alla casella, e sotto le
-     voci corte restavano centocinquanta pixel di riga blu che non
-     accompagnava niente: era quello, non lo spazio in se', a far sembrare la
-     sezione sbilanciata. */
+  /* Otto voci, quattro righe da due, e ogni filetto blu alto quanto gli
+     altri: e' la simmetria a fare l'ordine, non il fatto che il filetto
+     finisca dove finisce la frase. Con filetti di lunghezze diverse la
+     sezione sembrava composta a caso, anche se ogni riga era giusta.
+
+     Perche' l'aria sotto le voci corte non pesi, i testi sono stati portati
+     tutti nello stesso giro di lunghezza: la voce piu' lunga dettava 359
+     pixel contro i 208 della piu' corta. */
   .differenza-voce {
     counter-increment: differenza;
   }
 
   .differenza-dentro {
+    height: 100%;
     padding-left: 18px;
     border-left: 3px solid var(--accent);
   }
@@ -868,7 +871,7 @@
 
 <section id="differenze">
   <div class="wrap">
-    <h2>Nove cose che nessun altro strumento fa</h2>
+    <h2>Otto cose che nessun altro strumento fa</h2>
 
     <div class="differenze-elenco">
       <div class="differenza-voce">
@@ -881,7 +884,7 @@
       <div class="differenza-voce">
         <div class="differenza-dentro">
           <h3>E poi tiene i conti di quello che hai venduto</h3>
-          <p>Ogni preventivo che copi resta segnato, e una pastiglia lo porta da <strong>fatto</strong> a <strong>mandato</strong>, <strong>vinto</strong> o <strong>perso</strong>. In cima trovi quanto vale il lavoro che stai aspettando, quanto ne hai preso, e quanti ne chiudi su quelli che hanno avuto una risposta. La percentuale si calcola solo sui preventivi che hanno avuto una risposta: contare fra i persi anche quelli ancora in attesa darebbe un numero che peggiora ogni volta che ne mandi uno nuovo.</p>
+          <p>Ogni preventivo che copi resta segnato, e una pastiglia lo porta da <strong>fatto</strong> a <strong>mandato</strong>, <strong>vinto</strong> o <strong>perso</strong>. In cima trovi quanto vale il lavoro che stai aspettando, quanto ne hai preso, e quanti ne chiudi su quelli che hanno avuto una risposta.</p>
         </div>
       </div>
 
@@ -924,13 +927,6 @@
         <div class="differenza-dentro">
           <h3>Scrive le descrizioni mancanti sul tuo computer</h3>
           <p>Chrome ha un modello linguistico che gira in locale. L&rsquo;estensione lo usa per proporti una bozza di meta description o di title, partendo da quello che c&rsquo;&egrave; gi&agrave; nella pagina. Nessuna chiave API, nessun costo a chiamata, e il contenuto dei tuoi clienti non esce dal computer.</p>
-        </div>
-      </div>
-
-      <div class="differenza-voce">
-        <div class="differenza-dentro">
-          <h3>Il referto esce gi&agrave; col tuo nome</h3>
-          <p>Un file HTML autosufficiente: doppio clic e si apre, si manda per email, si stampa in PDF. Con il tuo marchio in cima, il punteggio, da dove partire e ogni rilievo con la prova che lo sostiene. Il cliente legge un documento tuo, non lo schermo di uno strumento.</p>
         </div>
       </div>
     </div>
