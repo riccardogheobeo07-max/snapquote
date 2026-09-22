@@ -21,23 +21,24 @@
     --accent-dark: #1552b3;
     --su-accent: #ffffff;
     --ok: #2e7d46;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #16181c;
-      --bg-alt: #1f2228;
-      --text: #eceef1;
-      --text-muted: #a8aeb6;
-      --border: #2c3038;
-      --accent: #6ba4f5;
-      --accent-dark: #8bb9f8;
-      --su-accent: #16181c;
-      --ok: #6ec48c;
-    }
+    /* Il sito e' chiaro e basta, come l'estensione. Dichiararlo non e' un
+       dettaglio: senza, al buio il browser disegna da se' i campi del modulo,
+       i menu a tendina e le barre di scorrimento in scuro, e restano quattro
+       macchie nere dentro una pagina bianca. */
+    color-scheme: light;
   }
 
   * { box-sizing: border-box; }
+
+  footer {
+    margin: 48px auto 0;
+    padding: 20px 24px 40px;
+    max-width: 560px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
 
   body {
     margin: 0;
@@ -179,10 +180,19 @@
   </p>
 </main>
 
+<!-- Lo stesso piede di index.html: e' la pagina che si vede subito dopo aver
+     pagato, cioe' il momento preciso in cui uno vuole sapere a chi ha dato
+     dei soldi. -->
+<footer>
+  &copy; <span id="anno"></span> SnapQuote &middot; di Riccardo Gheoni
+</footer>
+
 <script>
   /* Il riferimento della sessione serve solo a noi, se scrivi per un problema:
      senza, l'unica cosa che hai in mano e' "ho pagato", e trovare quale
      pagamento fra tutti costa tempo a tutti e due. */
+  document.getElementById('anno').textContent = new Date().getFullYear();
+
   const sessione = new URLSearchParams(location.search).get('sessione');
   if (sessione) {
     const nodo = document.getElementById('riferimento');
