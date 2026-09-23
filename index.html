@@ -332,15 +332,21 @@
     border-radius: var(--radius);
     cursor: pointer;
     text-decoration: none;
-    transition: background 0.15s ease, transform 0.1s ease;
+    transition: background 0.2s ease, transform 0.18s cubic-bezier(0.25, 0.9, 0.3, 1),
+                box-shadow 0.2s ease;
   }
 
+  /* Si alza di un pelo e prende un'ombra della sua stessa tinta: al tasto
+     principale basta accennare che e' vivo, non cambiare faccia. */
   .cta-btn:hover {
     background: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(26, 102, 217, 0.28);
   }
 
   .cta-btn:active {
-    transform: translateY(1px);
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(26, 102, 217, 0.24);
   }
 
   /* Le immagini del popup. Sono schermate vere dell'estensione che gira, non
@@ -656,9 +662,14 @@
     border-radius: 0;
   }
 
-  /* La firma sotto il modulo. La sezione promette «un audit gratuito da una
-     persona» e poi non diceva quale: un nome sotto un modulo gratuito e' la
-     cosa che lo fa compilare. */
+  /* La firma sotto il modulo.
+
+     La sezione promette «un audit gratuito da una persona» e prima non diceva
+     quale. Ma il guaio piu' grosso era un altro: la stessa persona compariva
+     due volte in due voci diverse - «lo guardo io» nell'introduzione, senza
+     nome, e «lo manda Riccardo Gheoni» qui, in terza persona - e chi legge non
+     poteva sapere se erano lo stesso. Adesso la meccanica sta sopra e la
+     persona sta qui, una volta sola. */
   .firma-persona {
     margin-top: 6px;
   }
@@ -767,7 +778,22 @@
     background: var(--border);
   }
 
+  /* IL TASTO SI RIEMPIE DAL BASSO.
+
+     Prima invertiva due colori insieme in quindici centesimi - lo sfondo da
+     bianco a blu e il testo da blu a bianco nello stesso istante - e due
+     colori che si scambiano di colpo non sono una transizione, sono un
+     lampo.
+
+     Adesso il movimento e' uno solo: un velo blu che sale da sotto. E' una
+     `transform`, cioe' la cosa che il browser sposta sul compositore senza
+     ridisegnare niente, quindi scorre liscia anche mentre la pagina fa
+     dell'altro. Il testo diventa bianco un soffio dopo, quando il velo lo ha
+     gia' raggiunto. */
   .piano-btn {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     display: block;
     padding: 11px 14px;
     font-weight: 700;
@@ -777,12 +803,38 @@
     background: var(--bg);
     border: 1.5px solid var(--accent);
     border-radius: var(--radius);
-    transition: background 0.15s ease, color 0.15s ease;
+    transition: color 0.2s ease 0.06s;
   }
 
-  .piano-btn:hover {
-    color: var(--su-accent);
+  .piano-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background: var(--accent);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.26s cubic-bezier(0.25, 0.9, 0.3, 1);
+  }
+
+  .piano-btn:hover::before,
+  .piano-btn:focus-visible::before {
+    transform: scaleY(1);
+  }
+
+  .piano-btn:hover,
+  .piano-btn:focus-visible {
+    color: var(--su-accent);
+  }
+
+  /* Quello del piano consigliato e' gia' pieno: non c'e' niente da riempire,
+     quindi si limita a scurirsi. */
+  .piano-card.scelto .piano-btn {
+    transition: background 0.2s ease;
+  }
+
+  .piano-card.scelto .piano-btn::before {
+    display: none;
   }
 
   .piano-card.scelto .piano-btn:hover {
@@ -811,8 +863,22 @@
       transition-duration: 0.01ms !important;
     }
 
-    .piano-card:hover {
+    .piano-card:hover,
+    .cta-btn:hover,
+    .cta-btn:active {
       transform: none;
+    }
+
+    /* Il velo che sale diventa un cambio di colore secco: il tasto resta
+       leggibile, semplicemente non si muove niente. */
+    .piano-btn::before {
+      transform: scaleY(1);
+      opacity: 0;
+    }
+
+    .piano-btn:hover::before,
+    .piano-btn:focus-visible::before {
+      opacity: 1;
     }
   }
 
@@ -1103,7 +1169,7 @@
   <div class="wrap">
     <div class="form-card entra">
       <h2 id="audit-form">Richiedi il tuo audit gratuito</h2>
-      <p class="form-intro">Compila i campi qui sotto e ricevi il report via email entro 24 ore. Lo guardo io, non un programma che risponde da solo.</p>
+      <p class="form-intro">Compila i campi qui sotto: il report arriva per email entro 24 ore.</p>
 
       <form id="audit-form-el" novalidate>
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1133,7 +1199,7 @@
         <button type="submit" class="cta-btn">Richiedi il tuo audit gratuito</button>
         <p class="submit-error" id="submit-error" role="alert"></p>
         <p class="disclaimer">Niente spam: la tua email serve solo a mandarti il report.</p>
-        <p class="disclaimer firma-persona">Lo manda <strong>Riccardo Gheoni</strong>, che ha scritto SnapQuote.</p>
+        <p class="disclaimer firma-persona">Non risponde un programma: l&rsquo;audit lo faccio a mano con lo stesso SnapQuote che trovi qui sopra. &mdash; <strong>Riccardo Gheoni</strong></p>
       </form>
 
       <div class="success-box" id="success-box" role="status" tabindex="-1">
