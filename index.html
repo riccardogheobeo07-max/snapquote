@@ -100,6 +100,8 @@
     /* Lo stesso blu dell'estensione: e' il colore delle azioni. */
     --accent: #1a66d9;
     --accent-dark: #1552b3;
+    /* Il velo che prendono i tasti secondari sotto il puntatore. */
+    --accent-velo: rgba(26, 102, 217, 0.08);
     --su-accent: #ffffff;
     --error: #c0392b;
     --success-bg: #eef7f1;
@@ -332,21 +334,18 @@
     border-radius: var(--radius);
     cursor: pointer;
     text-decoration: none;
-    transition: background 0.2s ease, transform 0.18s cubic-bezier(0.25, 0.9, 0.3, 1),
-                box-shadow 0.2s ease;
+    transition: background 0.14s ease, transform 0.08s ease;
   }
 
-  /* Si alza di un pelo e prende un'ombra della sua stessa tinta: al tasto
-     principale basta accennare che e' vivo, non cambiare faccia. */
+  /* Scurisce, e si abbassa di un pixel quando lo premi. Niente sollevamenti
+     e niente ombre colorate: un tasto che si alza da solo prima che tu lo
+     tocchi promette un'animazione, non un'azione. */
   .cta-btn:hover {
     background: var(--accent-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(26, 102, 217, 0.28);
   }
 
   .cta-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 6px rgba(26, 102, 217, 0.24);
+    transform: translateY(1px);
   }
 
   /* Le immagini del popup. Sono schermate vere dell'estensione che gira, non
@@ -699,15 +698,15 @@
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    transition: border-color 0.16s ease;
   }
 
-  /* Un cartellino di prezzo si guarda uno per volta: sollevarlo sotto il
-     puntatore aiuta a tenere il segno fra tre colonne che si somigliano. */
+  /* Il bordo prende il colore dell'azione e nient'altro. Sollevare la carta
+     aiutava a tenere il segno fra tre colonne che si somigliano, ma un
+     cartellino di prezzo che si muove sembra un banner: qui si guarda un
+     prezzo, non si gioca. */
   .piano-card:hover {
     border-color: var(--accent);
-    box-shadow: 0 6px 20px rgba(26, 102, 217, 0.10);
-    transform: translateY(-3px);
   }
 
   /* Il piano consigliato si segna col bordo piu' spesso, non con un'ombra
@@ -778,22 +777,24 @@
     background: var(--border);
   }
 
-  /* IL TASTO SI RIEMPIE DAL BASSO.
+  /* Il tasto dei piani.
 
-     Prima invertiva due colori insieme in quindici centesimi - lo sfondo da
-     bianco a blu e il testo da blu a bianco nello stesso istante - e due
-     colori che si scambiano di colpo non sono una transizione, sono un
-     lampo.
+     Ha avuto due versioni sbagliate prima di questa. La prima invertiva due
+     colori insieme in quindici centesimi - un lampo, non una transizione. La
+     seconda li riempiva con un velo che saliva dal basso: piu' liscio, ma un
+     movimento che ha una DIREZIONE e' decorazione, e su un cartellino di
+     prezzo la decorazione toglie serieta' invece di aggiungerla.
 
-     Adesso il movimento e' uno solo: un velo blu che sale da sotto. E' una
-     `transform`, cioe' la cosa che il browser sposta sul compositore senza
-     ridisegnare niente, quindi scorre liscia anche mentre la pagina fa
-     dell'altro. Il testo diventa bianco un soffio dopo, quando il velo lo ha
-     gia' raggiunto. */
+     Questa non si muove. Il fondo prende un velo del colore dell'azione, il
+     testo e il bordo restano dove sono: si capisce che e' quello puntato, e
+     basta. E' quello che fa un tasto secondario in qualunque sistema fatto
+     bene.
+
+     Il velo e' tenue di proposito. Riempirlo di blu pieno lo rendeva uguale
+     a quello del piano consigliato, che e' pieno sul serio: due tasti
+     identici, e la ragione per cui uno dei tre e' messo in evidenza sparisce
+     nel momento esatto in cui ci passi sopra. */
   .piano-btn {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
     display: block;
     padding: 11px 14px;
     font-weight: 700;
@@ -803,38 +804,17 @@
     background: var(--bg);
     border: 1.5px solid var(--accent);
     border-radius: var(--radius);
-    transition: color 0.2s ease 0.06s;
-  }
-
-  .piano-btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: var(--accent);
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 0.26s cubic-bezier(0.25, 0.9, 0.3, 1);
-  }
-
-  .piano-btn:hover::before,
-  .piano-btn:focus-visible::before {
-    transform: scaleY(1);
+    transition: background 0.14s ease;
   }
 
   .piano-btn:hover,
   .piano-btn:focus-visible {
-    color: var(--su-accent);
+    background: var(--accent-velo);
   }
 
-  /* Quello del piano consigliato e' gia' pieno: non c'e' niente da riempire,
-     quindi si limita a scurirsi. */
+  /* Quello del piano consigliato e' gia' pieno: si limita a scurirsi. */
   .piano-card.scelto .piano-btn {
-    transition: background 0.2s ease;
-  }
-
-  .piano-card.scelto .piano-btn::before {
-    display: none;
+    transition: background 0.14s ease;
   }
 
   .piano-card.scelto .piano-btn:hover {
@@ -863,22 +843,8 @@
       transition-duration: 0.01ms !important;
     }
 
-    .piano-card:hover,
-    .cta-btn:hover,
     .cta-btn:active {
       transform: none;
-    }
-
-    /* Il velo che sale diventa un cambio di colore secco: il tasto resta
-       leggibile, semplicemente non si muove niente. */
-    .piano-btn::before {
-      transform: scaleY(1);
-      opacity: 0;
-    }
-
-    .piano-btn:hover::before,
-    .piano-btn:focus-visible::before {
-      opacity: 1;
     }
   }
 
