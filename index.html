@@ -100,8 +100,15 @@
     /* Lo stesso blu dell'estensione: e' il colore delle azioni. */
     --accent: #1a66d9;
     --accent-dark: #1552b3;
-    /* Il velo che prendono i tasti secondari sotto il puntatore. */
-    --accent-velo: rgba(26, 102, 217, 0.08);
+
+    /* Come si muove tutto quello che risponde al puntatore.
+
+       Diciotto centesimi: sotto i dodici e' uno scatto che si legge come un
+       difetto, sopra i trenta il tasto sembra lento a rispondere. La curva
+       parte svelta e si posa piano, cosi' il colore arriva subito sotto il
+       dito e si ferma senza strappo. Una sola, per tutti: tre tasti che si
+       muovono con tre tempi diversi si notano. */
+    --risposta: 0.18s cubic-bezier(0.22, 0.61, 0.36, 1);
     --su-accent: #ffffff;
     --error: #c0392b;
     --success-bg: #eef7f1;
@@ -334,7 +341,7 @@
     border-radius: var(--radius);
     cursor: pointer;
     text-decoration: none;
-    transition: background 0.14s ease, transform 0.08s ease;
+    transition: background var(--risposta), transform 0.08s ease;
   }
 
   /* Scurisce, e si abbassa di un pixel quando lo premi. Niente sollevamenti
@@ -698,7 +705,7 @@
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    transition: border-color 0.16s ease;
+    transition: border-color var(--risposta);
   }
 
   /* Il bordo prende il colore dell'azione e nient'altro. Sollevare la carta
@@ -779,21 +786,17 @@
 
   /* Il tasto dei piani.
 
-     Ha avuto due versioni sbagliate prima di questa. La prima invertiva due
-     colori insieme in quindici centesimi - un lampo, non una transizione. La
-     seconda li riempiva con un velo che saliva dal basso: piu' liscio, ma un
-     movimento che ha una DIREZIONE e' decorazione, e su un cartellino di
-     prezzo la decorazione toglie serieta' invece di aggiungerla.
+     Ha avuto tre versioni sbagliate prima di questa. La prima invertiva due
+     colori insieme: un lampo. La seconda li riempiva con un velo che saliva
+     dal basso, ed era piu' liscia - ma un movimento che ha una DIREZIONE e'
+     decorazione, e su un cartellino di prezzo la decorazione toglie serieta'
+     invece di aggiungerla. La terza tingeva il fondo, e il fondo che cambia
+     e' comunque il tasto che cambia faccia.
 
-     Questa non si muove. Il fondo prende un velo del colore dell'azione, il
-     testo e il bordo restano dove sono: si capisce che e' quello puntato, e
-     basta. E' quello che fa un tasto secondario in qualunque sistema fatto
-     bene.
-
-     Il velo e' tenue di proposito. Riempirlo di blu pieno lo rendeva uguale
-     a quello del piano consigliato, che e' pieno sul serio: due tasti
-     identici, e la ragione per cui uno dei tre e' messo in evidenza sparisce
-     nel momento esatto in cui ci passi sopra. */
+     Questa non tocca il fondo. Si scuriscono il testo e il bordo, insieme,
+     nello stesso tempo: e' il minimo che si possa fare e si veda, ed e' anche
+     l'unica versione in cui il tasto resta quello che era anche mentre
+     risponde. */
   .piano-btn {
     display: block;
     padding: 11px 14px;
@@ -804,20 +807,23 @@
     background: var(--bg);
     border: 1.5px solid var(--accent);
     border-radius: var(--radius);
-    transition: background 0.14s ease;
+    transition: color var(--risposta), border-color var(--risposta);
   }
 
   .piano-btn:hover,
   .piano-btn:focus-visible {
-    background: var(--accent-velo);
+    color: var(--accent-dark);
+    border-color: var(--accent-dark);
   }
 
-  /* Quello del piano consigliato e' gia' pieno: si limita a scurirsi. */
+  /* Quello del piano consigliato e' pieno: il testo e' gia' bianco e il bordo
+     non si vede, quindi l'unica cosa che puo' scurirsi e' il fondo. */
   .piano-card.scelto .piano-btn {
-    transition: background 0.14s ease;
+    transition: background var(--risposta);
   }
 
-  .piano-card.scelto .piano-btn:hover {
+  .piano-card.scelto .piano-btn:hover,
+  .piano-card.scelto .piano-btn:focus-visible {
     background: var(--accent-dark);
   }
 
