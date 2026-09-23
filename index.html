@@ -101,6 +101,14 @@
     --accent: #1a66d9;
     --accent-dark: #1552b3;
 
+    /* I due fondi del tasto secondario: fermo e sotto il puntatore. Il secondo
+       e' il doppio del primo, ed e' la ragione per cui il passaggio si vede -
+       cambia una superficie intera, non piu' una riga di bordo da un pixel e
+       mezzo. Contrasto del testo: 4,63 sul primo, 5,46 sul secondo, quindi
+       passandoci sopra si legge meglio invece che peggio. */
+    --accent-tenue: rgba(26, 102, 217, 0.10);
+    --accent-tenue-forte: rgba(26, 102, 217, 0.20);
+
     /* Come si muove tutto quello che risponde al puntatore.
 
        Diciotto centesimi: sotto i dodici e' uno scatto che si legge come un
@@ -786,50 +794,45 @@
 
   /* Il tasto dei piani.
 
-     Ha avuto tre versioni sbagliate prima di questa. La prima invertiva due
-     colori insieme: un lampo. La seconda li riempiva con un velo che saliva
-     dal basso, ed era piu' liscia - ma un movimento che ha una DIREZIONE e'
-     decorazione, e su un cartellino di prezzo la decorazione toglie serieta'
-     invece di aggiungerla. La terza tingeva il fondo, e il fondo che cambia
-     e' comunque il tasto che cambia faccia.
+     Il contorno se n'e' andato, e con lui il motivo per cui le versioni prima
+     non si notavano: in un rettangolo vuoto col bordo, l'unica cosa che puo'
+     cambiare e' il bordo, cioe' una riga da un pixel e mezzo. Riempiendolo
+     cambia una superficie, e una superficie si vede.
 
-     Questa non tocca il fondo. Si scuriscono il testo e il bordo, insieme,
-     nello stesso tempo: e' il minimo che si possa fare e si veda, ed e' anche
-     l'unica versione in cui il tasto resta quello che era anche mentre
-     risponde. */
+     Blu tenue e non blu pieno perche' «Attiva Pro» e' pieno sul serio: e' il
+     piano consigliato, e due tasti identici toglierebbero la ragione per cui
+     uno dei tre e' messo in evidenza. Questo gli sta sotto per gerarchia
+     invece di competerci. */
   .piano-btn {
     display: block;
-    padding: 11px 14px;
+    padding: 12px 14px;
     font-weight: 700;
     text-align: center;
     text-decoration: none;
     color: var(--accent);
-    background: var(--bg);
-    border: 1.5px solid var(--accent);
+    background: var(--accent-tenue);
+    border: 0;
     border-radius: var(--radius);
-    transition: color var(--risposta), border-color var(--risposta);
+    transition: background var(--risposta), color var(--risposta);
   }
 
   .piano-btn:hover,
   .piano-btn:focus-visible {
     color: var(--accent-dark);
-    border-color: var(--accent-dark);
+    background: var(--accent-tenue-forte);
   }
 
-  /* Quello del piano consigliato e' pieno: il testo e' gia' bianco e il bordo
-     non si vede, quindi l'unica cosa che puo' scurirsi e' il fondo. */
+  /* Quello del piano consigliato e' pieno: il testo e' gia' bianco, quindi
+     l'unica cosa che puo' scurirsi e' il fondo. */
   .piano-card.scelto .piano-btn {
-    transition: background var(--risposta);
+    color: var(--su-accent);
+    background: var(--accent);
   }
 
   .piano-card.scelto .piano-btn:hover,
   .piano-card.scelto .piano-btn:focus-visible {
-    background: var(--accent-dark);
-  }
-
-  .piano-card.scelto .piano-btn {
     color: var(--su-accent);
-    background: var(--accent);
+    background: var(--accent-dark);
   }
 
   .piani-nota {
