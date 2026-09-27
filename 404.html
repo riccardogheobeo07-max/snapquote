@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagina non trovata – SnapQuote</title>
+<!-- Una pagina d'errore non va indicizzata: comparirebbe nei risultati al
+     posto di quella che vende, e chi ci arrivasse da una ricerca troverebbe
+     un vicolo cieco. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1a66d9">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect x=%220.00%22 y=%220.00%22 width=%22100.00%22 height=%22100.00%22 rx=%2215.00%22 fill=%22%231a66d9%22/%3E%3Cg transform=%22scale(1.000000)%22%3E%3Crect x=%2217%22 y=%2210%22 width=%2266%22 height=%2280%22 rx=%229%22 fill=%22%23ffffff%22/%3E%3Crect x=%2228%22 y=%2225%22 width=%2232%22 height=%226%22 rx=%223%22 fill=%22%231a66d9%22 opacity=%22.26%22/%3E%3Crect x=%2228%22 y=%2237%22 width=%2232%22 height=%226%22 rx=%223%22 fill=%22%231a66d9%22 opacity=%22.26%22/%3E%3Crect x=%2228%22 y=%2250%22 width=%2225%22 height=%2210%22 rx=%225%22 fill=%22%231a66d9%22/%3E%3Cpath d=%22M28 80 C37.68 62, 44.72 90, 52.2 74 S65.84 60, 72 75%22 fill=%22none%22 stroke=%22%231a66d9%22 stroke-width=%229%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1a1c1f;
+    --text-muted: #5a5f66;
+    --border: #e3e5e8;
+    --accent: #1a66d9;
+    --accent-dark: #1552b3;
+    --accent-tenue: rgba(26, 102, 217, 0.10);
+    --accent-tenue-forte: rgba(26, 102, 217, 0.20);
+    --su-accent: #ffffff;
+    /* Come le altre due pagine: chiaro e basta. Senza questa riga, al buio il
+       browser disegna da se' le barre di scorrimento in scuro dentro una
+       pagina bianca. */
+    color-scheme: light;
+
+    /* La stessa curva di tutto quello che risponde al puntatore sul sito. */
+    --risposta: 0.18s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 64px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  main {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* Lo stesso foglio del marchio, ma senza il totale in fondo: il segno che
+     il prodotto usa per dire «qui c'e' un preventivo», lasciato a meta'. */
+  .segno {
+    display: block;
+    width: 52px;
+    height: 64px;
+    margin-bottom: 24px;
+  }
+
+  .segno .foglio {
+    fill: none;
+    stroke: var(--border);
+    stroke-width: 2.5;
+  }
+
+  .segno .riga {
+    fill: var(--border);
+  }
+
+  h1 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .sottotitolo {
+    margin: 0 0 30px;
+    font-size: 17px;
+    color: var(--text-muted);
+  }
+
+  .strade {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 0 34px;
+  }
+
+  .bottone {
+    display: inline-block;
+    padding: 11px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--su-accent);
+    background: var(--accent);
+    border-radius: 6px;
+    transition: background var(--risposta);
+  }
+
+  .bottone:hover { background: var(--accent-dark); }
+
+  .bottone-chiaro {
+    color: var(--accent);
+    background: var(--accent-tenue);
+  }
+
+  .bottone-chiaro:hover {
+    color: var(--accent-dark);
+    background: var(--accent-tenue-forte);
+  }
+
+  .coda {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text-muted);
+  }
+
+  .coda a { color: var(--accent); }
+
+  footer {
+    margin: 48px auto 0;
+    padding: 20px 24px 40px;
+    max-width: 560px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <svg class="segno" viewBox="0 0 64 78" aria-hidden="true" focusable="false">
+    <rect class="foglio" x="1.5" y="1.5" width="61" height="75" rx="8"/>
+    <rect class="riga" x="13" y="17" width="38" height="5" rx="2.5"/>
+    <rect class="riga" x="13" y="30" width="38" height="5" rx="2.5"/>
+    <rect class="riga" x="13" y="43" width="24" height="5" rx="2.5"/>
+  </svg>
+
+  <h1>Questa pagina non c&rsquo;&egrave;</h1>
+  <p class="sottotitolo">
+    L&rsquo;indirizzo che hai aperto non esiste, o non esiste pi&ugrave;. Non &egrave;
+    colpa tua: se ci sei arrivato da un collegamento, quel collegamento &egrave;
+    vecchio.
+  </p>
+
+  <!-- Gli indirizzi sono assoluti, e non e' un vezzo: GitHub Pages serve
+       questa pagina per QUALUNQUE indirizzo inesistente, compreso
+       /snapquote/a/b/c/. Un link relativo, da li', punterebbe a
+       /snapquote/a/b/index.html - cioe' a un'altra pagina che non esiste, e
+       chi ci clicca resterebbe chiuso qui dentro. -->
+  <div class="strade">
+    <a class="bottone" href="https://riccardogheobeo07-max.github.io/snapquote/">Torna alla pagina principale</a>
+    <a class="bottone bottone-chiaro" href="https://riccardogheobeo07-max.github.io/snapquote/#prezzi">Vedi i piani</a>
+  </div>
+
+  <p class="coda">
+    Se cercavi qualcosa di preciso e non lo trovi,
+    <a href="https://riccardogheobeo07-max.github.io/snapquote/#audit-form">scrivimi dal modulo</a>: rispondo io.
+  </p>
+</main>
+
+<footer>
+  &copy; <span id="anno"></span> SnapQuote &middot; di Riccardo Gheoni
+</footer>
+
+<script>
+  document.getElementById('anno').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
