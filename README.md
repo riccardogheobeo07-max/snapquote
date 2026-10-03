@@ -1,8 +1,8 @@
 # SnapQuote — la pagina che vende
 
 Due pagine statiche, niente da compilare e niente da installare: si aprono con
-un doppio clic e si pubblicano copiandole. Sono servite da GitHub Pages su
-`https://riccardogheobeo07-max.github.io/snapquote/`.
+un doppio clic e si pubblicano copiandole. Sono servite da GitHub Pages sul
+dominio `https://snapquote.it/`.
 
 | file | cos'è |
 | --- | --- |
@@ -90,12 +90,30 @@ questo sito.
 
 ## L'indirizzo
 
-Il sito sta su `https://riccardogheobeo07-max.github.io/snapquote/`, e quello
+Il sito sta su `https://snapquote.it/`, e quello
 stesso indirizzo è scritto in sette posti: il canonical, `og:url`, `og:image`,
-`twitter:image`, i dati strutturati, la `sitemap.xml` e il `robots.txt`. Se due
+`twitter:image`, i dati strutturati, la `sitemap.xml` e il `robots.txt` (piu'
+l'`llms.txt` e i link della `404.html`). Se due
 di quei posti dicessero indirizzi diversi, Google seguirebbe quello sbagliato e
 la pagina sparirebbe dai risultati senza nessun errore visibile da nessuna
 parte: per questo `verifica_landing.py` li confronta tutti a ogni verifica.
+
+Il dominio e' registrato su Aruba, ma i suoi DNS stanno su Cloudflare: i
+nameserver del dominio sono `gigi.ns.cloudflare.com` e `carl.ns.cloudflare.com`.
+Su Cloudflare:
+
+- `snapquote.it` ha quattro record A verso GitHub Pages: `185.199.108.153`,
+  `185.199.109.153`, `185.199.110.153`, `185.199.111.153`;
+- `www` e' un CNAME verso `riccardogheobeo07-max.github.io`;
+- la posta resta su Aruba: MX verso `mx.snapquote.it`, SPF, DKIM (`a1._domainkey`)
+  e DMARC copiati da li'.
+
+Tutti con la nuvola **grigia** (DNS only). Con quella arancione GitHub non
+riesce a emettere il certificato HTTPS, e la posta non passa: Cloudflare fa da
+proxy solo al traffico web.
+
+Il file `CNAME` dice a GitHub Pages qual e' il dominio. Il dominio va scritto
+anche in Settings -> Pages -> Custom domain del repository.
 
 Il repository si chiamava `audit-shopify` fino al cambio di nome del prodotto.
 Attenzione a cosa sopravvive e cosa no: GitHub rimanda dal nome vecchio del
