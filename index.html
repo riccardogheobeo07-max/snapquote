@@ -593,6 +593,14 @@
     color: var(--text-muted);
   }
 
+  /* Senza un colore suo il link prendeva quelli del browser: un blu
+     diverso dal nostro, e rosso nel momento in cui lo premi. */
+  .eroe-sotto a,
+  .eroe-sotto a:visited,
+  .eroe-sotto a:active {
+    color: var(--accent);
+  }
+
   .differenze-elenco {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -913,7 +921,7 @@
       <h1>Da un sito a un preventivo, in dieci secondi</h1>
       <p class="subtitle">Apri un sito, premi l&rsquo;icona. Spunti gli interventi che faresti e il punteggio si rif&agrave; davanti a te: <strong>84 &rarr; 92</strong>. Sotto ci sono le ore, il prezzo alla tua tariffa e un preventivo pronto da mandare.</p>
       <a href="#prezzi" class="cta-btn">Vedi cosa fa</a>
-      <p class="eroe-sotto">Preferisci un parere a mano? <a href="#audit-form"><strong>Mandami il sito</strong></a>, ti rispondo io.</p>
+      <p class="eroe-sotto">Preferisci un parere a mano? <a href="#audit-form">Mandami il sito</a>, ti rispondo io.</p>
     </div>
 
     <figure class="schermata eroe-immagine">
