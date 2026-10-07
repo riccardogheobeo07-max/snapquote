@@ -4,42 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SnapQuote – Da un sito a un preventivo, in dieci secondi</title>
-<!-- Sotto i 155 caratteri: oltre, Google taglia. La versione lunga di
-     prima si interrompeva proprio sulla fine, cioe' sulla frase che dice
-     che i dati non escono dal browser. -->
+<!-- Sotto i 155 caratteri: oltre, Google taglia, e quello che si perde e'
+     sempre la fine - cioe' la frase che dice che i dati non escono. -->
 <meta name="description" content="Apri un sito, premi l'icona: ne esce un preventivo con ore e prezzo alla tua tariffa. Estensione Chrome, nessun dato fuori dal browser.">
 <meta name="robots" content="index, follow">
-<!-- Lo stesso contenuto risponde su .../ , su .../index.html e su
-     qualunque indirizzo con un ?qualcosa attaccato. Senza questa riga
-     Google li conta come pagine diverse che si copiano a vicenda. -->
-<link rel="canonical" href="https://riccardogheobeo07-max.github.io/snapquote/">
+<link rel="canonical" href="https://snapquote.it/">
 <meta name="theme-color" content="#1a66d9">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect x=%220.00%22 y=%220.00%22 width=%22100.00%22 height=%22100.00%22 rx=%2215.00%22 fill=%22%231a66d9%22/%3E%3Cg transform=%22scale(1.000000)%22%3E%3Crect x=%2217%22 y=%2210%22 width=%2266%22 height=%2280%22 rx=%229%22 fill=%22%23ffffff%22/%3E%3Crect x=%2228%22 y=%2225%22 width=%2232%22 height=%226%22 rx=%223%22 fill=%22%231a66d9%22 opacity=%22.26%22/%3E%3Crect x=%2228%22 y=%2237%22 width=%2232%22 height=%226%22 rx=%223%22 fill=%22%231a66d9%22 opacity=%22.26%22/%3E%3Crect x=%2228%22 y=%2250%22 width=%2225%22 height=%2210%22 rx=%225%22 fill=%22%231a66d9%22/%3E%3Cpath d=%22M28 80 C37.68 62, 44.72 90, 52.2 74 S65.84 60, 72 75%22 fill=%22none%22 stroke=%22%231a66d9%22 stroke-width=%229%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3C/svg%3E">
-<meta property="og:url" content="https://riccardogheobeo07-max.github.io/snapquote/">
+<meta property="og:url" content="https://snapquote.it/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:title" content="SnapQuote – Da un sito a un preventivo, in dieci secondi">
-<meta property="og:description" content="Spunti gli interventi che faresti e il punteggio si rifà: 84 → 92. Sotto, ore e prezzo alla tua tariffa, e un preventivo pronto da mandare.">
-<!-- L'immagine che compare quando qualcuno condivide il link su WhatsApp,
-     LinkedIn o Slack. Senza, l'anteprima e' un rettangolo vuoto col titolo
-     dentro, e un link senza immagine si apre molto meno.
-     L'indirizzo e' assoluto di proposito: alcuni di quei servizi non risolvono
-     un percorso relativo, e a quelli l'anteprima tornava vuota. Se il sito
-     cambia indirizzo, questo e il canonical cambiano insieme. -->
-<meta property="og:image" content="https://riccardogheobeo07-max.github.io/snapquote/immagini/condivisione.png">
+<meta property="og:description" content="Spunti gli interventi che faresti e il punteggio si rifà: 85 → 92. Sotto, ore e prezzo alla tua tariffa, e un preventivo pronto da mandare.">
+<!-- Assoluto di proposito: WhatsApp, LinkedIn e Slack non sempre risolvono un
+     percorso relativo, e l'anteprima del link tornava vuota. -->
+<meta property="og:image" content="https://snapquote.it/immagini/condivisione.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Il popup dell'estensione con quattro interventi spuntati e il conto sotto: 8,75 ore per 90 euro l'ora, 788 euro.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://riccardogheobeo07-max.github.io/snapquote/immagini/condivisione.png">
-<meta name="twitter:title" content="SnapQuote – Analizza un sito in dieci secondi">
-<meta name="twitter:description" content="SEO tecnica, strumenti installati, velocità reale. Confronto con i concorrenti e referto pronto da consegnare.">
-<!-- Quello che Google legge per sapere che cos'e' questa pagina: un
-     programma, di chi e', quanto costa. Senza, il risultato di ricerca e' una
-     riga di testo come tutte le altre.
-     I tre prezzi sono gli stessi dei cartellini qui sotto, e un controllo li
-     confronta a ogni verifica: se qui dicesse 29 e sotto 19, la gente
-     arriverebbe convinta di pagare una cifra diversa. -->
+<meta name="twitter:image" content="https://snapquote.it/immagini/condivisione.png">
+<meta name="twitter:title" content="SnapQuote – Da un sito a un preventivo, in dieci secondi">
+<meta name="twitter:description" content="SEO tecnica, strumenti installati, velocità reale e accessibilità. Ne esce un preventivo con ore e prezzo alla tua tariffa.">
+<!-- I tre prezzi sono gli stessi dei cartellini qui sotto, e
+     verifica_landing.py li confronta a ogni verifica: se qui dicesse 29 e
+     sotto 19, la gente arriverebbe convinta di pagare una cifra diversa. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -47,7 +36,7 @@
   "name": "SnapQuote",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Chrome",
-  "url": "https://riccardogheobeo07-max.github.io/snapquote/",
+  "url": "https://snapquote.it/",
   "description": "Apri un sito, premi l'icona: ne esce un preventivo con ore e prezzo alla tua tariffa. Estensione Chrome, nessun dato fuori dal browser.",
   "author": {
     "@type": "Person",
@@ -75,12 +64,10 @@
   ]
 }
 </script>
-<!-- Acceso qui dentro e non in fondo alla pagina: il foglio di stile nasconde
-     quello che deve entrare, e se l'interruttore arrivasse dopo il primo
-     disegno si vedrebbe il contenuto comparire e sparire. Chi ha chiesto meno
-     movimento, o chi ha JavaScript spento, non entra qui e vede la pagina
-     ferma e intera: e' il modo in cui le animazioni d'ingresso rovinano i
-     siti, e non succede. -->
+<!-- Acceso qui e non in fondo: il foglio di stile nasconde quello che deve
+     entrare, e se l'interruttore arrivasse dopo il primo disegno si vedrebbe
+     il contenuto comparire e sparire. Chi ha chiesto meno movimento, o ha
+     JavaScript spento, non entra qui e vede la pagina ferma e intera. -->
 <script>
   (function () {
     var fermo = window.matchMedia
@@ -97,38 +84,36 @@
     --text: #1a1c1f;
     --text-muted: #5a5f66;
     --border: #e3e5e8;
+    --border-forte: #cfd3d8;
     /* Lo stesso blu dell'estensione: e' il colore delle azioni. */
     --accent: #1a66d9;
     --accent-dark: #1552b3;
-
-    /* I due fondi del tasto secondario: fermo e sotto il puntatore. Il secondo
-       e' il doppio del primo, ed e' la ragione per cui il passaggio si vede -
-       cambia una superficie intera, non piu' una riga di bordo da un pixel e
-       mezzo. Contrasto del testo: 4,63 sul primo, 5,46 sul secondo, quindi
-       passandoci sopra si legge meglio invece che peggio. */
     --accent-tenue: rgba(26, 102, 217, 0.10);
     --accent-tenue-forte: rgba(26, 102, 217, 0.20);
-
-    /* Come si muove tutto quello che risponde al puntatore.
-
-       Diciotto centesimi: sotto i dodici e' uno scatto che si legge come un
-       difetto, sopra i trenta il tasto sembra lento a rispondere. La curva
-       parte svelta e si posa piano, cosi' il colore arriva subito sotto il
-       dito e si ferma senza strappo. Una sola, per tutti: tre tasti che si
-       muovono con tre tempi diversi si notano. */
-    --risposta: 0.18s cubic-bezier(0.22, 0.61, 0.36, 1);
     --su-accent: #ffffff;
+    /* I tre colori della gravita', gli stessi del popup. */
+    --ok: #2e7d46;
+    --migliorare: #976517;
     --error: #c0392b;
     --success-bg: #eef7f1;
     --success-border: #2e7d46;
     --success-text: #1e5631;
     --radius: 6px;
-    --max-width: 760px;
+    --radius-carta: 10px;
+    /* Due misure sole: larga per le griglie, stretta per il testo da leggere.
+       La pagina di prima stava tutta a 760 pixel, e l'eroe a due colonne ci
+       entrava stretto: la schermata usciva piu' piccola del testo accanto. */
+    --largo: 1120px;
+    --stretto: 720px;
+    --ombra-carta: 0 1px 2px rgba(16, 24, 40, 0.04), 0 14px 34px -20px rgba(16, 24, 40, 0.22);
+    /* Diciotto centesimi, una curva sola per tutto quello che risponde al
+       puntatore: tre tasti con tre tempi diversi si notano. */
+    --risposta: 0.18s cubic-bezier(0.22, 0.61, 0.36, 1);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     font-size: 16px;
-    /* Il sito e' chiaro e basta, come l'estensione. Dichiararlo non e' un
-       dettaglio: senza, al buio il browser disegna da se' i campi del modulo,
-       i menu a tendina e le barre di scorrimento in scuro, e restano quattro
-       macchie nere dentro una pagina bianca. */
+    /* Il sito e' chiaro e basta, come l'estensione: senza questa riga, al buio
+       il browser disegna da se' campi e tendine in scuro dentro una pagina
+       bianca. */
     color-scheme: light;
   }
 
@@ -145,21 +130,61 @@
     scroll-behavior: smooth;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* L'ENTRATA ALLO SCORRIMENTO.
+  img {
+    max-width: 100%;
+  }
 
-     Si muovono solo opacita' e posizione: sono le due cose che il browser
-     sposta senza rifare il calcolo della pagina, quindi niente scatti e
-     niente contenuto che salta sotto gli occhi di chi legge.
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  summary:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
 
-     Quattordici pixel e quattro decimi di secondo: abbastanza da accorgersi
-     che e' arrivato qualcosa, poco da non dover aspettare. Una volta entrato
-     resta entrato - rifare l'animazione a ogni passaggio stanca. */
+  /* Il collegamento per chi naviga da tastiera: invisibile finche' non ci si
+     arriva col tasto Tab, poi compare in alto a sinistra. Senza, ogni pagina
+     comincia con quattro voci di menu da attraversare. */
+  .salta {
+    position: absolute;
+    left: 12px;
+    top: -60px;
+    z-index: 10;
+    padding: 10px 16px;
+    font-weight: 700;
+    color: var(--su-accent);
+    background: var(--accent);
+    border-radius: var(--radius);
+    text-decoration: none;
+  }
+
+  .salta:focus {
+    top: 12px;
+  }
+
+  .wrap {
+    max-width: var(--largo);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wrap-stretto {
+    max-width: var(--stretto);
+  }
+
+  /* ---------- l'entrata allo scorrimento ----------
+
+     Si muovono solo opacita' e posizione, che il browser sposta senza rifare
+     il calcolo della pagina. Una volta entrato, resta entrato. */
   [data-anima="si"] .entra {
     opacity: 0;
     transform: translateY(14px);
@@ -172,61 +197,41 @@
     transform: none;
   }
 
-  /* Le seconde di ogni riga partono un soffio dopo: da' il verso della
-     lettura senza che nessuna si faccia aspettare. Due soli scalini, perche'
-     al terzo si comincia a notare il ritardo invece del movimento. */
-  [data-anima="si"] .checks-grid .entra:nth-child(2n),
-  [data-anima="si"] .differenze-elenco .entra:nth-child(2n),
-  [data-anima="si"] .differenze-prove .entra:nth-child(2n) {
+  [data-anima="si"] .griglia-3 .entra:nth-child(2),
+  [data-anima="si"] .griglia-4 .entra:nth-child(2),
+  [data-anima="si"] .piani-grid .entra:nth-child(2) {
     transition-delay: 0.08s;
   }
 
-  [data-anima="si"] .piani-grid .entra:nth-child(2) { transition-delay: 0.08s; }
-  [data-anima="si"] .piani-grid .entra:nth-child(3) { transition-delay: 0.16s; }
-
-  a:focus-visible,
-  button:focus-visible,
-  input:focus-visible,
-  select:focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 2px;
+  [data-anima="si"] .griglia-3 .entra:nth-child(3),
+  [data-anima="si"] .griglia-4 .entra:nth-child(3),
+  [data-anima="si"] .piani-grid .entra:nth-child(3) {
+    transition-delay: 0.16s;
   }
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
+  [data-anima="si"] .griglia-4 .entra:nth-child(4) {
+    transition-delay: 0.24s;
   }
 
-  .wrap {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 24px;
-  }
+  /* ---------- la testata ---------- */
 
-  /* La riga del marchio: sottile, ferma in cima alla pagina e non appiccicata
-     allo scorrimento. Una barra che segue mangia spazio su un telefono, e qui
-     non c'e' niente da tenere a portata di pollice. */
-  .marchio-barra {
+  .testata {
     border-bottom: 1px solid var(--border);
+    background: var(--bg);
   }
 
-  .marchio-barra .wrap {
+  .testata .wrap {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    gap: 28px;
+    min-height: 64px;
   }
 
   .marchio {
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     letter-spacing: -0.01em;
     color: var(--text);
@@ -234,109 +239,30 @@
   }
 
   .marchio-segno {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     display: block;
   }
 
-  .marchio-link {
-    font-size: 0.92rem;
+  .menu {
+    display: flex;
+    gap: 24px;
+    margin-left: auto;
+  }
+
+  .menu a {
+    font-size: 0.93rem;
     font-weight: 600;
-    color: var(--accent);
-    text-decoration: none;
-  }
-
-  .marchio-link:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
-  header.hero {
-    padding: 56px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  /* Due colonne: la promessa a sinistra, la prova a destra. Prima la
-     schermata stava sotto il bottone, cioe' sotto la piega: chi arrivava
-     vedeva un muro di testo centrato e doveva scorrere per vedere il
-     prodotto, che e' la cosa che convince. */
-  .eroe-griglia {
-    display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    gap: 52px;
-    align-items: center;
-  }
-
-  .eroe-immagine {
-    margin: 0;
-    max-width: 360px;
-    justify-self: end;
-  }
-
-  .eroe-testo .subtitle {
-    margin: 0 0 28px;
-    max-width: 34em;
-  }
-
-  .eroe-immagine figcaption {
-    text-align: left;
-  }
-
-  /* Sotto i 900 pixel due colonne diventano due colonne strette, che non sono
-     due colonne: si torna incolonnati e centrati, com'era. */
-  @media (max-width: 900px) {
-    header.hero {
-      text-align: center;
-    }
-
-    .eroe-griglia {
-      grid-template-columns: 1fr;
-      gap: 34px;
-    }
-
-    .eroe-immagine {
-      justify-self: center;
-      max-width: 400px;
-    }
-
-    .eroe-testo .subtitle {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .eroe-immagine figcaption {
-      text-align: center;
-    }
-  }
-
-  /* Niente maiuscoletto spaziato, come nel popup: una riga che grida in cima
-     alla pagina fa cominciare male anche quello che viene dopo. */
-  .badge {
-    display: inline-block;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--accent);
-    background: none;
-    box-shadow: inset 0 0 0 1px var(--accent);
-    padding: 5px 13px;
-    border-radius: 100px;
-    margin-bottom: 22px;
-  }
-
-  h1 {
-    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
-    line-height: 1.2;
-    margin: 0 0 20px;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-  }
-
-  .subtitle {
-    font-size: clamp(1rem, 2.2vw, 1.15rem);
     color: var(--text-muted);
-    max-width: 620px;
-    margin: 0 auto 32px;
+    text-decoration: none;
+    transition: color var(--risposta);
   }
+
+  .menu a:hover {
+    color: var(--text);
+  }
+
+  /* ---------- i tasti ---------- */
 
   .cta-btn {
     display: inline-block;
@@ -344,17 +270,20 @@
     color: var(--su-accent);
     font-size: 1rem;
     font-weight: 700;
-    padding: 14px 32px;
+    line-height: 1.3;
+    padding: 14px 28px;
     border: none;
     border-radius: var(--radius);
     cursor: pointer;
     text-decoration: none;
+    text-align: center;
+    font-family: inherit;
     transition: background var(--risposta), transform 0.08s ease;
   }
 
-  /* Scurisce, e si abbassa di un pixel quando lo premi. Niente sollevamenti
-     e niente ombre colorate: un tasto che si alza da solo prima che tu lo
-     tocchi promette un'animazione, non un'azione. */
+  /* Scurisce, e si abbassa di un pixel quando lo premi. Niente ombre colorate
+     e niente sollevamenti: un tasto che si alza da solo promette
+     un'animazione, non un'azione. */
   .cta-btn:hover {
     background: var(--accent-dark);
   }
@@ -363,14 +292,146 @@
     transform: translateY(1px);
   }
 
-  /* Le immagini del popup. Sono schermate vere dell'estensione che gira, non
-     disegni: un sito che mostra un mockup promette un prodotto che non esiste.
-     Il fondo e' trasparente, quindi si posano sul colore della sezione. */
-  .schermata {
-    margin: 40px auto 0;
-    max-width: 420px;
+  .cta-btn:disabled {
+    cursor: default;
+    background: var(--accent-dark);
   }
 
+  .cta-piccolo {
+    padding: 9px 16px;
+    font-size: 0.92rem;
+  }
+
+  .link-freccia {
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .link-freccia:hover {
+    color: var(--accent-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Ogni collegamento dentro il testo prende il blu del sito in tutti i suoi
+     momenti. Lasciato al browser, il blu e' un altro e diventa rosso nel
+     momento in cui lo premi. */
+  .testo-link a,
+  .testo-link a:visited,
+  .testo-link a:active {
+    color: var(--accent);
+  }
+
+  /* ---------- l'eroe ---------- */
+
+  .eroe {
+    padding: 72px 0 76px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* La promessa a sinistra, la prova a destra: la schermata e' la cosa che
+     convince, e deve stare sopra la piega. */
+  .eroe-griglia {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+    gap: 56px;
+    align-items: center;
+  }
+
+  /* Niente maiuscoletto spaziato, come nel popup: una riga che grida in cima
+     alla pagina fa cominciare male anche quello che viene dopo. */
+  .badge {
+    display: inline-block;
+    margin: 0 0 22px;
+    padding: 5px 13px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    box-shadow: inset 0 0 0 1px var(--accent);
+    border-radius: 100px;
+  }
+
+  /* Le righe dei titoli si pareggiano: senza, «Da un sito a un preventivo, in
+     dieci secondi» lasciava «secondi» da solo sull'ultima riga. */
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  h1 {
+    margin: 0 0 22px;
+    font-size: clamp(2.15rem, 4.6vw, 3.25rem);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+  }
+
+  .eroe-lead {
+    margin: 0 0 30px;
+    max-width: 34em;
+    font-size: clamp(1.05rem, 1.9vw, 1.2rem);
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .eroe-lead strong {
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 0.95em;
+  }
+
+  .eroe-azioni {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 26px;
+  }
+
+  .eroe-sotto {
+    margin: 18px 0 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .eroe-fatti {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin: 30px 0 0;
+    padding: 22px 0 0;
+    list-style: none;
+    border-top: 1px solid var(--border);
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .eroe-fatti li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .spunta {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    color: var(--ok);
+  }
+
+  .eroe-immagine {
+    margin: 0;
+    justify-self: end;
+    width: 100%;
+    max-width: 430px;
+  }
+
+  /* ---------- le schermate ----------
+
+     Sono schermate vere dell'estensione che gira, non disegni: un sito che
+     mostra un mockup promette un prodotto che non esiste. Il fondo e'
+     trasparente, quindi si posano sul colore della sezione. */
   .schermata img {
     display: block;
     width: 100%;
@@ -378,109 +439,896 @@
   }
 
   .schermata figcaption {
-    margin-top: 14px;
-    font-size: 0.85rem;
+    margin-top: 12px;
+    font-size: 0.86rem;
+    line-height: 1.5;
     color: var(--text-muted);
+  }
+
+  /* ---------- le sezioni ---------- */
+
+  .sezione,
+  #differenze {
+    padding: 88px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sezione-alt,
+  #differenze {
+    background: var(--bg-alt);
+  }
+
+  .capo-sezione {
+    max-width: 660px;
+    margin: 0 auto 48px;
     text-align: center;
   }
 
-  section {
+  h2 {
+    margin: 0;
+    font-size: clamp(1.65rem, 3.2vw, 2.25rem);
+    line-height: 1.18;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .capo-sezione p {
+    margin: 14px 0 0;
+    font-size: 1.08rem;
+    color: var(--text-muted);
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 1.12rem;
+    line-height: 1.35;
+    font-weight: 700;
+  }
+
+  .griglia-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .griglia-4 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .carta {
+    padding: 26px 24px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-carta);
+  }
+
+  .carta p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  /* L'icona di una carta: un segno semplice dentro un quadrato blu tenue. La
+     forma la fa riconoscere, il colore la lega al resto delle azioni. */
+  .icona {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 18px;
+    color: var(--accent);
+    background: var(--accent-tenue);
+    border-radius: 9px;
+  }
+
+  .icona svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ---------- per chi ---------- */
+
+  .per-chi {
     padding: 56px 0;
     border-bottom: 1px solid var(--border);
   }
 
-  section:last-of-type {
-    border-bottom: none;
-  }
-
-  h2 {
-    font-size: clamp(1.4rem, 3vw, 1.75rem);
-    text-align: center;
-    margin: 0 0 40px;
-    font-weight: 800;
-  }
-
-  .checks-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  /* Voci di un elenco sotto un filetto, non riquadri con l'ombra: e' lo stesso
-     modo in cui l'estensione separa le cose. */
-  .check-item {
-    background: none;
-    border-top: 1px solid var(--text);
-    border-radius: 0;
-    padding: 16px 0 0;
-    text-align: left;
-  }
-
-  .check-item .icon {
-    display: block;
-    margin-bottom: 10px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-  }
-
-  .check-item h3 {
-    font-size: 1.05rem;
-    margin: 0 0 8px;
-    font-weight: 700;
-  }
-
-  .check-item p {
-    margin: 0;
-    color: var(--text-muted);
+  .per-chi-titolo {
+    margin: 0 0 28px;
     font-size: 0.95rem;
-  }
-
-  .credibility {
-    background: var(--bg-alt);
-  }
-
-  .credibility .wrap {
-    max-width: 640px;
-  }
-
-  .credibility p {
-    font-size: clamp(1.05rem, 2.4vw, 1.2rem);
+    font-weight: 700;
+    color: var(--text-muted);
     text-align: center;
+  }
+
+  .per-chi-voce {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .per-chi-voce .icona {
     margin: 0;
+  }
+
+  .per-chi-voce h3 {
+    margin-bottom: 4px;
+    font-size: 1.04rem;
+  }
+
+  .per-chi-voce p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  /* ---------- come funziona ---------- */
+
+  .passo-numero {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 16px;
+    font-weight: 800;
+    color: var(--su-accent);
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  /* ---------- la prova dal vivo ----------
+
+     I numeri sono quelli che l'estensione calcola davvero sul sito di esempio
+     delle schermate: il punteggio di ogni combinazione e' stato letto dalla
+     formula del popup, non stimato qui. Quello che la pagina rifa' da se' e'
+     solo l'aritmetica del conto (ore per tariffa), che e' la stessa. */
+  .demo {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+    margin-top: 56px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--ombra-carta);
+    overflow: hidden;
+  }
+
+  .demo-scelte {
+    padding: 28px 28px 26px;
+  }
+
+  .demo-titolo {
+    margin: 0 0 4px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .demo-sito {
+    margin: 0 0 18px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  /* Il dominio non va a capo: spezzato sul trattino, «negozio-» e
+     «esempio.com» sembravano due cose. */
+  .demo-sito code {
+    white-space: nowrap;
+    font-family: var(--mono);
+    font-size: 0.92em;
     color: var(--text);
   }
 
-  .credibility strong {
-    color: var(--accent-dark);
+  .demo-elenco {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid var(--border);
   }
 
-  .form-section {
-    padding-top: 56px;
-    padding-bottom: 72px;
+  .demo-voce {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 4px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background var(--risposta);
   }
 
-  .form-card {
+  .demo-voce:hover {
+    background: var(--bg-alt);
+  }
+
+  .demo-voce input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--accent);
+    cursor: pointer;
+  }
+
+  .demo-voce-titolo {
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .demo-ore,
+  .demo-punti {
+    font-family: var(--mono);
+    font-size: 0.86rem;
+    white-space: nowrap;
+  }
+
+  .demo-ore {
+    font-weight: 700;
+  }
+
+  .demo-punti {
+    color: var(--accent);
+  }
+
+  .demo-tariffa {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .demo-tariffa label {
+    display: inline;
+    margin: 0;
+    font-size: inherit;
+  }
+
+  .demo-tariffa input {
+    width: 92px;
+    padding: 8px 10px;
+    font-family: var(--mono);
+    font-size: 1rem;
+    text-align: right;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border-forte);
+    border-radius: var(--radius);
+  }
+
+  .demo-tariffa input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+
+  .demo-unita {
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  .demo-esito {
+    display: flex;
+    flex-direction: column;
+    padding: 28px 28px 26px;
+    background: #fafbfc;
+    border-left: 1px solid var(--border);
+  }
+
+  .demo-etichetta {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .demo-punteggio {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 6px 0 12px;
+    font-family: var(--mono);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .demo-ora {
+    font-size: 1.6rem;
+    color: var(--text-muted);
+  }
+
+  .demo-freccia {
+    font-family: inherit;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+  }
+
+  .demo-dopo {
+    font-size: 2.9rem;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+  }
+
+  .demo-quanti {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  /* La barra: il tratto grigio scuro e' dove il sito e' oggi, quello blu e'
+     quanto guadagna. Si vede il pezzo che compri, non solo dove arrivi. */
+  .demo-barra {
+    position: relative;
+    height: 8px;
+    background: var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .demo-barra-dopo,
+  .demo-barra-ora {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 8px;
+    transition: width 0.45s cubic-bezier(0.2, 0.8, 0.3, 1);
+  }
+
+  .demo-barra-dopo {
+    background: var(--accent);
+  }
+
+  .demo-barra-ora {
+    background: #9aa0a8;
+  }
+
+  .demo-conto {
+    margin: 24px 0 0;
+    padding: 20px 0 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .demo-calcolo {
+    margin: 6px 0 0;
+    font-family: var(--mono);
+    font-size: 0.98rem;
+    color: var(--text-muted);
+  }
+
+  .demo-totale {
+    margin: 4px 0 0;
+    font-family: var(--mono);
+    font-size: 2.3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .demo-vuoto {
+    margin: 10px 0 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .demo-copia {
+    margin-top: 18px;
+    font-size: 0.92rem;
+  }
+
+  .demo-copia summary {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--accent);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .demo-copia summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .demo-copia summary:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .demo-testo {
+    margin: 12px 0 0;
+    padding: 14px 16px;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    color: var(--text);
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 32px;
-    max-width: 480px;
+  }
+
+  .demo-nota {
+    margin: auto 0 0;
+    padding-top: 20px;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+  }
+
+  /* Per chi usa un lettore di schermo: una frase sola che riassume il conto a
+     ogni spunta, invece di cinque numeri letti uno per uno. */
+  .solo-lettore {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* ---------- cosa controlla ---------- */
+
+  .area-voci {
+    margin: 14px 0 0;
+    padding: 14px 0 0;
+    list-style: none;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .area-voci li {
+    padding: 2px 0;
+  }
+
+  .nuova {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    vertical-align: 2px;
+    color: var(--ok);
+    background: var(--success-bg);
+    border-radius: 100px;
+  }
+
+  /* Una schermata accanto a un testo. Serve due volte qui e due nelle
+     differenze: la stessa forma, cosi' la pagina ha un ritmo solo. */
+  .riga-prova {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 64px;
+    align-items: center;
+    margin-top: 72px;
+  }
+
+  .riga-prova .schermata {
+    margin: 0;
+    max-width: 440px;
+    justify-self: center;
+  }
+
+  .riga-prova-testo h3 {
+    font-size: clamp(1.35rem, 2.4vw, 1.65rem);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+
+  .riga-prova-testo > p {
+    margin: 0;
+    font-size: 1.04rem;
+    color: var(--text-muted);
+  }
+
+  /* Due classi e non una: `.riga-prova-testo > p` toglie il margine e
+     spegne il colore a tutti i paragrafi della colonna, e l'occhiello e' uno
+     di loro. */
+  .riga-prova-testo .occhiello {
+    margin: 0 0 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .elenco-spunte {
+    margin: 22px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .elenco-spunte li {
+    display: flex;
+    gap: 10px;
+    padding: 6px 0;
+    font-weight: 600;
+  }
+
+  .elenco-spunte .spunta {
+    margin-top: 3px;
+  }
+
+  /* ---------- le differenze ---------- */
+
+  /* Le due righe con la schermata girano lo specchio: testo a sinistra nella
+     prima, a destra nella seconda. Due righe uguali di fila sembrano un
+     elenco, due righe a specchio sembrano una pagina composta. */
+  .differenza-riga {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 64px;
+    align-items: center;
+  }
+
+  .differenza-riga + .differenza-riga {
+    margin-top: 72px;
+  }
+
+  .differenza-riga .schermata {
+    margin: 0;
+    max-width: 440px;
+    justify-self: center;
+  }
+
+  .differenza-riga.specchio .schermata {
+    order: -1;
+  }
+
+  .differenze-carte {
+    margin-top: 80px;
+  }
+
+  .differenza-carta {
+    padding: 24px 24px 26px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: var(--radius-carta);
+  }
+
+  .differenza-carta p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  .differenza-voce code {
+    font-family: var(--mono);
+    font-size: 0.88em;
+    padding: 1px 5px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+
+  .valore {
+    font-family: var(--mono);
+    font-size: 0.94em;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  /* ---------- la riservatezza ---------- */
+
+  .privacy-voce h3 {
+    font-size: 1.06rem;
+  }
+
+  .privacy-voce p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  /* ---------- i piani ---------- */
+
+  /* L'avviso sta sopra i cartellini e non sotto in piccolo: chi legge un
+     prezzo deve sapere subito che oggi non si paga, prima di cercare un tasto
+     che non c'e'. */
+  .avviso-piani {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    max-width: 760px;
+    margin: 0 auto 36px;
+    padding: 16px 20px;
+    background: var(--accent-tenue);
+    border-radius: var(--radius-carta);
+    font-size: 0.97rem;
+  }
+
+  .avviso-piani svg {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    margin-top: 1px;
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+  }
+
+  .avviso-piani p {
+    margin: 0;
+  }
+
+  .piani-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .piano-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px 26px 26px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-carta);
+    transition: border-color var(--risposta);
+  }
+
+  /* Il bordo prende il colore dell'azione e nient'altro: un cartellino di
+     prezzo che si muove sembra un banner. */
+  .piano-card:hover {
+    border-color: var(--accent);
+  }
+
+  /* Il piano consigliato si segna col bordo piu' spesso, non con un'ombra
+     colorata: su un foglio si evidenzia contornando, non illuminando. */
+  .piano-card.scelto {
+    border: 2px solid var(--accent);
+    padding: 27px 25px 25px;
+  }
+
+  .piano-nome {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .piano-prezzo {
+    margin: 10px 0 2px;
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .piano-prezzo span {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--text-muted);
+  }
+
+  .piano-per {
+    margin: 0 0 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  .piano-voci {
+    flex: 1;
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+    font-size: 0.95rem;
+  }
+
+  .piano-voci li {
+    position: relative;
+    padding: 5px 0 5px 26px;
+  }
+
+  /* La spunta disegnata dal foglio di stile: una sola, uguale ovunque, e il
+     markup resta un elenco di frasi. */
+  .piano-voci li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 10px;
+    width: 12px;
+    height: 7px;
+    border-left: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    transform: rotate(-45deg);
+  }
+
+  .piano-voci li.assente {
+    color: var(--text-muted);
+  }
+
+  .piano-voci li.assente::before {
+    top: 13px;
+    width: 11px;
+    height: 0;
+    border-left: 0;
+    border-bottom: 2px solid var(--border-forte);
+    transform: none;
+  }
+
+  /* Il tasto dei piani: blu tenue, pieno, senza contorno. Pieno sul serio e'
+     solo quello del piano consigliato, che gli sta sopra per gerarchia. */
+  .piano-btn {
+    display: block;
+    padding: 12px 14px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    color: var(--accent);
+    background: var(--accent-tenue);
+    border-radius: var(--radius);
+    transition: background var(--risposta), color var(--risposta);
+  }
+
+  .piano-btn:hover,
+  .piano-btn:focus-visible {
+    color: var(--accent-dark);
+    background: var(--accent-tenue-forte);
+  }
+
+  .piano-card.scelto .piano-btn {
+    color: var(--su-accent);
+    background: var(--accent);
+  }
+
+  .piano-card.scelto .piano-btn:hover,
+  .piano-card.scelto .piano-btn:focus-visible {
+    color: var(--su-accent);
+    background: var(--accent-dark);
+  }
+
+  .piani-nota {
+    max-width: 760px;
+    margin: 28px auto 0;
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--text-muted);
+  }
+
+  /* ---------- le domande ---------- */
+
+  .domanda {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .domanda:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .domanda summary {
+    position: relative;
+    padding: 20px 44px 20px 0;
+    font-size: 1.06rem;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .domanda summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Il piu' che diventa meno: due tratti, uno dei quali si chiude. */
+  .domanda summary::before,
+  .domanda summary::after {
+    content: "";
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    width: 14px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: transform var(--risposta);
+  }
+
+  .domanda summary::after {
+    transform: rotate(90deg);
+  }
+
+  .domanda[open] summary::after {
+    transform: rotate(0deg);
+  }
+
+  .domanda p {
+    margin: 0 0 22px;
+    color: var(--text-muted);
+  }
+
+  /* ---------- il modulo ---------- */
+
+  .form-card {
+    max-width: 580px;
     margin: 0 auto;
+    padding: 36px 36px 32px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--ombra-carta);
   }
 
   .form-card h2 {
-    margin-bottom: 8px;
-    scroll-margin-top: 24px;
+    text-align: center;
   }
 
   .form-intro {
+    margin: 10px 0 28px;
     text-align: center;
     color: var(--text-muted);
-    font-size: 0.95rem;
-    margin: 0 0 28px;
+  }
+
+  /* Le due ragioni per scrivere, come due caselle grandi. Prima il modulo
+     diceva solo «Richiedi il tuo audit gratuito», ma ci arrivavano anche i
+     tasti «Avvisami quando apre»: chi voleva solo un avviso si trovava a
+     chiedere un audit che non aveva chiesto. */
+  .motivi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 0 0 24px;
+    padding: 0;
+    border: 0;
+  }
+
+  .motivi legend {
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .motivo {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 10px;
+    padding: 14px 14px 14px 12px;
+    border: 1px solid var(--border-forte);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: border-color var(--risposta), background var(--risposta);
+  }
+
+  .motivo:hover {
+    border-color: var(--accent);
+  }
+
+  .motivo input {
+    margin: 3px 0 0;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent);
+  }
+
+  .motivo-titolo {
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .motivo-spiega {
+    grid-column: 2;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--text-muted);
+  }
+
+  .motivo:has(input:checked) {
+    border-color: var(--accent);
+    background: var(--accent-tenue);
   }
 
   form .field {
@@ -490,7 +1338,7 @@
 
   label {
     display: block;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     font-weight: 600;
     margin-bottom: 6px;
   }
@@ -498,7 +1346,7 @@
   label .optional {
     font-weight: 400;
     color: var(--text-muted);
-    font-size: 0.82rem;
+    font-size: 0.84rem;
   }
 
   input[type="text"],
@@ -507,8 +1355,8 @@
     width: 100%;
     padding: 11px 14px;
     font-size: 1rem;
-    border: 1px solid var(--border);
-    border-radius: 0;
+    border: 1px solid var(--border-forte);
+    border-radius: var(--radius);
     background: var(--bg);
     color: var(--text);
     font-family: inherit;
@@ -529,22 +1377,25 @@
 
   .error-msg {
     color: var(--error);
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     margin-top: 5px;
     min-height: 1.1em;
   }
 
   .form-card .cta-btn {
     width: 100%;
-    text-align: center;
     margin-top: 6px;
   }
 
   .disclaimer {
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     color: var(--text-muted);
     text-align: center;
-    margin-top: 16px;
+    margin: 16px 0 0;
+  }
+
+  .firma-persona {
+    margin-top: 8px;
   }
 
   .success-box {
@@ -565,7 +1416,7 @@
   .submit-error {
     display: none;
     color: var(--error);
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     text-align: center;
     margin-top: 14px;
   }
@@ -578,280 +1429,152 @@
     display: none;
   }
 
-  footer {
-    text-align: center;
-    padding: 28px 0 40px;
-    color: var(--text-muted);
-    font-size: 0.8rem;
-  }
+  /* ---------- il piede ---------- */
 
-  /* ---------- differenze ---------- */
-
-  .eroe-sotto {
-    margin: 16px 0 0;
-    font-size: 0.9rem;
+  .piede {
+    padding: 36px 0 44px;
+    font-size: 0.88rem;
     color: var(--text-muted);
   }
 
-  /* Senza un colore suo il link prendeva quelli del browser: un blu
-     diverso dal nostro, e rosso nel momento in cui lo premi. */
-  .eroe-sotto a,
-  .eroe-sotto a:visited,
-  .eroe-sotto a:active {
-    color: var(--accent);
-  }
-
-  .differenze-elenco {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 1fr;
-    gap: 26px 28px;
-    counter-reset: differenza;
-  }
-
-  /* Otto voci, quattro righe da due, e ogni filetto blu alto quanto gli
-     altri: e' la simmetria a fare l'ordine, non il fatto che il filetto
-     finisca dove finisce la frase. Con filetti di lunghezze diverse la
-     sezione sembrava composta a caso, anche se ogni riga era giusta.
-
-     Perche' l'aria sotto le voci corte non pesi, i testi sono stati portati
-     tutti nello stesso giro di lunghezza: la voce piu' lunga dettava 359
-     pixel contro i 208 della piu' corta. */
-  .differenza-voce {
-    counter-increment: differenza;
-  }
-
-  .differenza-dentro {
-    height: 100%;
-    padding-left: 18px;
-    border-left: 3px solid var(--accent);
-  }
-
-  .differenza-voce h3 {
-    margin: 0 0 6px;
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
-
-  /* Il titolo promette nove cose: numerarle lascia contarle. Sotto ci sono
-     tre schermate di testo di fila, e senza un numero chi legge non sa se e'
-     alla terza o alla settima - un elenco in cui non ci si trova si smette di
-     leggere a meta'. Il numero lo mette il foglio di stile, non il markup,
-     cosi' non puo' sbagliare il conto. */
-  .differenza-voce h3::before {
-    content: counter(differenza, decimal-leading-zero);
-    display: block;
-    margin-bottom: 7px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-  }
-
-  /* Le due schermate, in fila sotto l'elenco. Stavano dentro due voci e le
-     facevano alte il triplo delle altre: 673 e 574 pixel contro i 208-260 di
-     una voce di solo testo, con quattrocento pixel di filetto blu che correva
-     nel vuoto accanto. Qui sono due sole, della stessa forma, e si pareggiano
-     fra loro. */
-  .differenze-prove {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: start;
-    gap: 28px;
-    margin-top: 30px;
-  }
-
-  .differenze-prove .schermata {
-    margin: 0;
-    max-width: none;
-  }
-
-  .differenze-prove figcaption {
-    text-align: left;
-  }
-
-  .differenza-voce p {
-    margin: 0;
-    color: var(--text-muted);
-  }
-
-  .differenza-voce code {
-    font-size: 0.9em;
-    padding: 1px 4px;
-    background: none;
-    box-shadow: inset 0 0 0 1px var(--border);
-    border-radius: 0;
-  }
-
-  /* La firma sotto il modulo.
-
-     La sezione promette «un audit gratuito da una persona» e prima non diceva
-     quale. Ma il guaio piu' grosso era un altro: la stessa persona compariva
-     due volte in due voci diverse - «lo guardo io» nell'introduzione, senza
-     nome, e «lo manda Riccardo Gheoni» qui, in terza persona - e chi legge non
-     poteva sapere se erano lo stesso. Adesso la meccanica sta sopra e la
-     persona sta qui, una volta sola. */
-  .firma-persona {
-    margin-top: 6px;
-  }
-
-  .differenze-nota {
-    margin: 28px 0 0;
-    padding: 16px 0 0;
-    background: none;
-    border-top: 3px double var(--text);
-    border-radius: 0;
-    font-size: 0.95rem;
-  }
-
-  /* ---------- piani ---------- */
-
-  .piani-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-top: 28px;
-  }
-
-  .piano-card {
+  .piede .wrap {
     display: flex;
-    flex-direction: column;
-    padding: 22px 20px 24px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    transition: border-color var(--risposta);
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px 32px;
   }
 
-  /* Il bordo prende il colore dell'azione e nient'altro. Sollevare la carta
-     aiutava a tenere il segno fra tre colonne che si somigliano, ma un
-     cartellino di prezzo che si muove sembra un banner: qui si guarda un
-     prezzo, non si gioca. */
-  .piano-card:hover {
-    border-color: var(--accent);
-  }
-
-  /* Il piano consigliato si segna col bordo piu' spesso, non con un'ombra
-     colorata: su un foglio si evidenzia contornando, non illuminando. */
-  .piano-card.scelto {
-    border-color: var(--accent);
-    border-width: 2px;
-  }
-
-  /* Era l'ultimo maiuscoletto spaziato rimasto nel progetto. Su un cartellino
-     di prezzo e' una convenzione, ma quando e' l'unico posto in cui una
-     pagina grida, si nota come una svista. */
-  .piano-nome {
+  .piede p {
     margin: 0;
-    font-size: 0.92rem;
-    font-weight: 700;
-    color: var(--accent);
   }
 
-  .piano-prezzo {
-    margin: 8px 0 2px;
-    font-size: 1.9rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
+  .piede-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
   }
 
-  .piano-prezzo span {
-    font-size: 0.85rem;
-    font-weight: 600;
+  .piede-menu a {
     color: var(--text-muted);
-  }
-
-  .piano-per {
-    margin: 0 0 14px;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-  }
-
-  .piano-voci {
-    flex: 1;
-    margin: 0 0 18px;
-    padding: 0;
-    list-style: none;
-    font-size: 0.9rem;
-  }
-
-  .piano-voci li {
-    position: relative;
-    padding: 5px 0 5px 20px;
-  }
-
-  .piano-voci li::before {
-    content: "";
-    position: absolute;
-    left: 2px;
-    top: 12px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-  }
-
-  .piano-voci li.assente {
-    color: var(--text-muted);
-  }
-
-  .piano-voci li.assente::before {
-    background: var(--border);
-  }
-
-  /* Il tasto dei piani.
-
-     Il contorno se n'e' andato, e con lui il motivo per cui le versioni prima
-     non si notavano: in un rettangolo vuoto col bordo, l'unica cosa che puo'
-     cambiare e' il bordo, cioe' una riga da un pixel e mezzo. Riempiendolo
-     cambia una superficie, e una superficie si vede.
-
-     Blu tenue e non blu pieno perche' «Attiva Pro» e' pieno sul serio: e' il
-     piano consigliato, e due tasti identici toglierebbero la ragione per cui
-     uno dei tre e' messo in evidenza. Questo gli sta sotto per gerarchia
-     invece di competerci. */
-  .piano-btn {
-    display: block;
-    padding: 12px 14px;
-    font-weight: 700;
-    text-align: center;
     text-decoration: none;
-    color: var(--accent);
-    background: var(--accent-tenue);
-    border: 0;
-    border-radius: var(--radius);
-    transition: background var(--risposta), color var(--risposta);
   }
 
-  .piano-btn:hover,
-  .piano-btn:focus-visible {
-    color: var(--accent-dark);
-    background: var(--accent-tenue-forte);
+  .piede-menu a:hover {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
-  /* Quello del piano consigliato e' pieno: il testo e' gia' bianco, quindi
-     l'unica cosa che puo' scurirsi e' il fondo. */
-  .piano-card.scelto .piano-btn {
-    color: var(--su-accent);
-    background: var(--accent);
+  /* ---------- schermi stretti ---------- */
+
+  @media (max-width: 980px) {
+    .menu {
+      display: none;
+    }
+
+    .testata .cta-btn {
+      margin-left: auto;
+    }
+
+    .eroe-griglia,
+    .riga-prova,
+    .differenza-riga {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .eroe-immagine {
+      justify-self: center;
+      max-width: 420px;
+    }
+
+    .differenza-riga.specchio .schermata {
+      order: 0;
+    }
+
+    .demo {
+      grid-template-columns: 1fr;
+    }
+
+    .demo-esito {
+      border-left: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .griglia-4 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
-  .piano-card.scelto .piano-btn:hover,
-  .piano-card.scelto .piano-btn:focus-visible {
-    color: var(--su-accent);
-    background: var(--accent-dark);
+  @media (max-width: 760px) {
+    .eroe {
+      padding: 48px 0 56px;
+    }
+
+    .sezione,
+    #differenze {
+      padding: 64px 0;
+    }
+
+    .capo-sezione {
+      margin-bottom: 36px;
+    }
+
+    .griglia-3,
+    .griglia-4,
+    .piani-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .demo-scelte,
+    .demo-esito {
+      padding: 22px 18px;
+    }
+
+    .form-card {
+      padding: 28px 20px 24px;
+    }
+
+    .motivi {
+      grid-template-columns: 1fr;
+    }
+
+    .riga-prova,
+    .differenze-carte {
+      margin-top: 56px;
+    }
+
+    .differenza-riga + .differenza-riga {
+      margin-top: 56px;
+    }
   }
 
-  .piani-nota {
-    margin: 22px 0 0;
-    font-size: 0.85rem;
-    color: var(--text-muted);
+  @media (max-width: 420px) {
+    .testata .wrap {
+      gap: 12px;
+    }
+
+    .cta-intera {
+      display: none;
+    }
+
+    .demo-voce {
+      grid-template-columns: auto minmax(0, 1fr) auto;
+    }
+
+    .demo-punti {
+      display: none;
+    }
   }
 
   /* Tutto quello che si muove, fermo. Non «piu' lento»: fermo. Chi mette
      questa impostazione di solito ha un motivo fisico per farlo. */
   @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
     *,
     *::before,
     *::after {
@@ -864,239 +1587,333 @@
       transform: none;
     }
   }
-
-  @media (max-width: 600px) {
-    .piani-grid {
-      grid-template-columns: 1fr;
-    }
-
-    header.hero {
-      padding: 48px 0 40px;
-    }
-
-    section {
-      padding: 40px 0;
-    }
-
-    .checks-grid {
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    /* A una colonna non c'e' nessuna vicina con cui pareggiarsi: pareggiare
-       lo stesso vorrebbe dire far crescere ogni voce fino alla piu' lunga, e
-       su un telefono e' solo scorrimento in piu' senza niente in cambio. */
-    .differenze-elenco {
-      grid-template-columns: 1fr;
-      grid-auto-rows: auto;
-    }
-
-    /* Su un telefono due schermate affiancate sarebbero due francobolli:
-       vanno una sotto l'altra, come tutto il resto. */
-    .differenze-prove {
-      grid-template-columns: 1fr;
-    }
-
-    .form-card {
-      padding: 24px 20px;
-    }
-  }
 </style>
 </head>
 <body>
 
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
 <!-- Il marchio in cima: lo stesso segno dell'estensione, disegnato qui invece
      di caricato, cosi' la pagina resta senza file di appoggio. -->
-<div class="marchio-barra">
+<header class="testata">
   <div class="wrap">
-    <a class="marchio" href="#"><svg class="marchio-segno" viewBox="0 0 100 100" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect x="0.00" y="0.00" width="100.00" height="100.00" rx="15.00" fill="#1a66d9"/><g transform="scale(1.000000)"><rect x="17" y="10" width="66" height="80" rx="9" fill="#ffffff"/><rect x="28" y="25" width="32" height="6" rx="3" fill="#1a66d9" opacity=".26"/><rect x="28" y="37" width="32" height="6" rx="3" fill="#1a66d9" opacity=".26"/><rect x="28" y="50" width="25" height="10" rx="5" fill="#1a66d9"/><path d="M28 80 C37.68 62, 44.72 90, 52.2 74 S65.84 60, 72 75" fill="none" stroke="#1a66d9" stroke-width="9" stroke-linecap="round"/></g></svg><span>SnapQuote</span></a>
-    <a class="marchio-link" href="#prezzi">Piani</a>
-  </div>
-</div>
-
-<header class="hero">
-  <div class="wrap eroe-griglia">
-    <div class="eroe-testo">
-      <span class="badge">Estensione Chrome · niente esce dal browser</span>
-      <h1>Da un sito a un preventivo, in dieci secondi</h1>
-      <p class="subtitle">Apri un sito, premi l&rsquo;icona. Spunti gli interventi che faresti e il punteggio si rif&agrave; davanti a te: <strong>84 &rarr; 92</strong>. Sotto ci sono le ore, il prezzo alla tua tariffa e un preventivo pronto da mandare.</p>
-      <a href="#prezzi" class="cta-btn">Vedi cosa fa</a>
-      <p class="eroe-sotto">Preferisci un parere a mano? <a href="#audit-form">Mandami il sito</a>, ti rispondo io.</p>
-    </div>
-
-    <figure class="schermata eroe-immagine">
-      <picture>
-        <img src="immagini/popup-preventivo.png" width="571" height="790"
-             alt="Il popup dell&rsquo;estensione: quattro interventi spuntati e sotto il conto, 8,75 ore per 90 euro l&rsquo;ora, 788 euro, con il bottone per copiare il preventivo.">
-      </picture>
-      <figcaption>Quattro interventi spuntati, e sotto il conto: 8,75&nbsp;h alla tua tariffa. Il bottone lo copia gi&agrave; scritto.</figcaption>
-    </figure>
+    <a class="marchio" href="#contenuto"><svg class="marchio-segno" viewBox="0 0 100 100" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect x="0.00" y="0.00" width="100.00" height="100.00" rx="15.00" fill="#1a66d9"/><g transform="scale(1.000000)"><rect x="17" y="10" width="66" height="80" rx="9" fill="#ffffff"/><rect x="28" y="25" width="32" height="6" rx="3" fill="#1a66d9" opacity=".26"/><rect x="28" y="37" width="32" height="6" rx="3" fill="#1a66d9" opacity=".26"/><rect x="28" y="50" width="25" height="10" rx="5" fill="#1a66d9"/><path d="M28 80 C37.68 62, 44.72 90, 52.2 74 S65.84 60, 72 75" fill="none" stroke="#1a66d9" stroke-width="9" stroke-linecap="round"/></g></svg><span>SnapQuote</span></a>
+    <nav class="menu" aria-label="Sezioni della pagina">
+      <a href="#come-funziona">Come funziona</a>
+      <a href="#cosa-controlla">Cosa controlla</a>
+      <a href="#prezzi">Piani</a>
+      <a href="#domande">Domande</a>
+    </nav>
+    <a class="cta-btn cta-piccolo" href="#scrivimi" data-motivo="avviso" data-installa="Aggiungi a Chrome">Avvisami<span class="cta-intera"> quando esce</span></a>
   </div>
 </header>
 
-<section id="cosa-controlliamo">
-  <div class="wrap">
-    <h2>Cosa guarda, una pagina alla volta</h2>
-    <div class="checks-grid">
-      <div class="check-item entra">
-        <span class="icon">01</span>
-        <h3>SEO tecnica</h3>
-        <p>Title, meta description, canonical, H1, dati strutturati, indicizzabilit&agrave;. Su ogni pagina che legge, non solo sulla home.</p>
-      </div>
-      <div class="check-item entra">
-        <span class="icon">02</span>
-        <h3>Strumenti installati</h3>
-        <p>Email marketing, recensioni, analytics e pixel: rilevati mentre girano davvero, anche quando li carica un tag manager.</p>
-      </div>
-      <div class="check-item entra">
-        <span class="icon">03</span>
-        <h3>Velocit&agrave; vera</h3>
-        <p>Risposta del server, comparsa del contenuto, stabilit&agrave; del layout, peso di JavaScript e CSS: misurati sulla navigazione reale, non simulati.</p>
-      </div>
-      <div class="check-item entra">
-        <span class="icon">04</span>
-        <h3>Visibilit&agrave; presso le IA</h3>
-        <p>Se ChatGPT, Perplexity o Gemini possono leggere il sito, e se c&rsquo;&egrave; il file <code>llms.txt</code> che spiega loro di cosa si occupa.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<main id="contenuto">
 
-<section class="credibility">
-  <div class="wrap">
-    <p class="entra">Il <strong>70%</strong> degli store Shopify non ha email marketing attivo. Il <strong>95%</strong> non ha un sistema di recensioni. Sono soldi di pubblicità sprecati senza un modo per far tornare il cliente.</p>
-  </div>
-</section>
-
-<section id="estensione">
-  <div class="wrap">
-    <h2>Come funziona</h2>
-    <p class="subtitle">Premi l&rsquo;icona: l&rsquo;estensione legge la pagina aperta dopo l&rsquo;esecuzione degli script, ne scarica altre dal sito, e giudica una trentina di controlli con soglie dichiarate. In dieci secondi, senza chiedere niente a nessun server.</p>
-
-    <div class="checks-grid">
-      <div class="check-item entra">
-        <h3>Legge il sito, non una pagina</h3>
-        <p>Home, scheda prodotto, collezione: i difetti di modello si vedono solo confrontando pi&ugrave; pagine.</p>
+<section class="eroe">
+  <div class="wrap eroe-griglia">
+    <div>
+      <p class="badge">Estensione Chrome · niente esce dal browser</p>
+      <h1>Da un sito a un preventivo, in dieci secondi</h1>
+      <p class="eroe-lead">Apri il sito di un cliente e premi l’icona. SnapQuote trova cosa c’è da sistemare; tu spunti quello che faresti e il punteggio si rifà davanti a te: <strong>85 → 92</strong>. Sotto ci sono le ore, il prezzo alla tua tariffa e un preventivo pronto da mandare.</p>
+      <div class="eroe-azioni">
+        <a class="cta-btn" href="#scrivimi" data-motivo="avviso" data-installa="Aggiungi a Chrome, è gratis">Avvisami quando esce</a>
+        <a class="link-freccia" href="#prova">Provalo qui sotto ↓</a>
       </div>
-      <div class="check-item entra">
-        <h3>Vede quello che l'HTML nasconde</h3>
-        <p>Gira dentro la pagina gi&agrave; eseguita, quindi trova anche gli strumenti caricati da un tag manager.</p>
-      </div>
-      <div class="check-item entra">
-        <h3>Non manda niente a nessuno</h3>
-        <p>Nessun server, nessun account: l'analisi nasce e muore dentro il tuo browser.</p>
-      </div>
-      <div class="check-item entra">
-        <h3>Riconosce la piattaforma</h3>
-        <p>Shopify, WooCommerce, WordPress: i consigli cambiano di conseguenza, invece di parlare sempre di temi Shopify.</p>
-      </div>
+      <p class="eroe-sotto testo-link">Preferisci un parere a mano? <a href="#audit-form" data-motivo="parere">Mandami il sito</a>, ti rispondo io.</p>
+      <ul class="eroe-fatti">
+        <li><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Gratis per cominciare</li>
+        <li><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Nessun account</li>
+        <li><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Shopify, WooCommerce, WordPress e altri</li>
+      </ul>
     </div>
 
-    <figure class="schermata entra">
-      <picture>
-        <img src="immagini/popup-rilievi.png" width="571" height="790" loading="lazy"
-             alt="La scheda Problemi del popup: il punteggio 84 su 100 con la barra, i tre voti per area e l'elenco dei rilievi, il primo aperto con la prova misurata e il rimedio.">
-      </picture>
-      <figcaption>Ogni rilievo porta <strong>il dato misurato</strong> su quella pagina, perch&eacute; conta e cosa fare. Niente voti senza una prova sotto.</figcaption>
+    <figure class="schermata eroe-immagine">
+      <img src="immagini/popup-preventivo.png" width="571" height="790" fetchpriority="high"
+           alt="Il popup dell’estensione: punteggio 85 su 100 con i voti di SEO, app, velocità e accessibilità, quattro interventi spuntati e sotto il conto, 8,75 ore per 90 euro l’ora, 788 euro.">
+      <figcaption>Quattro interventi spuntati, 8,75&nbsp;h alla tua tariffa. «Copia il preventivo» lo mette negli appunti già scritto.</figcaption>
     </figure>
   </div>
 </section>
 
-<section id="differenze">
+<section class="per-chi" aria-labelledby="per-chi-titolo">
   <div class="wrap">
-    <h2>Otto cose che nessun altro strumento fa</h2>
-
-    <div class="differenze-elenco">
-      <div class="differenza-voce entra">
-        <div class="differenza-dentro">
-          <h3>Dall&rsquo;analisi esce un preventivo</h3>
-          <p>Spunti quello che faresti e sotto compare un conto che si legge come un conto: <strong>8,75 h &times; 90 &euro;/h = 788 &euro;</strong>. Un bottone lo copia gi&agrave; formattato per l&rsquo;email, col tuo marchio, le voci una per riga e il punteggio che il cliente otterr&agrave;. Le ore non sono inventate: quello che &egrave; misurato davvero &egrave; quante pagine sono coinvolte, e il preventivo lo dichiara.</p>
+    <h2 class="per-chi-titolo" id="per-chi-titolo">Per chi vende lavoro sui siti, e per chi ne ha uno</h2>
+    <div class="griglia-3">
+      <div class="per-chi-voce entra">
+        <span class="icona" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2.5 19h19"/></svg></span>
+        <div>
+          <h3>Freelance e web designer</h3>
+          <p>Il preventivo lo prepari mentre sei ancora al telefono col cliente, con le ore e la tua tariffa.</p>
         </div>
       </div>
-
-      <div class="differenza-voce entra">
-        <div class="differenza-dentro">
-          <h3>E poi tiene i conti di quello che hai venduto</h3>
-          <p>Ogni preventivo che copi resta segnato, e una pastiglia lo porta da <strong>fatto</strong> a <strong>mandato</strong>, <strong>vinto</strong> o <strong>perso</strong>. In cima trovi quanto vale il lavoro che stai aspettando, quanto ne hai preso, e quanti ne chiudi su quelli che hanno avuto una risposta.</p>
+      <div class="per-chi-voce entra">
+        <span class="icona" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9" r="2.3"/><path d="M15.6 14.1A4.5 4.5 0 0 1 21 18.5"/></svg></span>
+        <div>
+          <h3>Agenzie</h3>
+          <p>Un marchio per ogni cliente, il registro di cosa hai venduto e il rapporto del lavoro fatto.</p>
         </div>
       </div>
-
-      <div class="differenza-voce entra">
-        <div class="differenza-dentro">
-          <h3>E a lavoro finito, la prova</h3>
-          <p>Dalla seconda analisi in poi puoi scaricare il rapporto del lavoro svolto: <strong>61 &rarr; 94</strong>, cosa hai sistemato, cosa &egrave; comparso dopo, cosa resta aperto. Dice anche quello che &egrave; peggiorato, perch&eacute; un rapporto che mostra solo i successi il cliente smette di leggerlo al secondo invio. &Egrave; il documento con cui ti fai riconfermare.</p>
-        </div>
-      </div>
-
-      <div class="differenza-voce entra">
-        <div class="differenza-dentro">
-          <h3>Dice quanti punti vale ogni correzione</h3>
-          <p>Non &ldquo;priorit&agrave; alta&rdquo;: <strong>+5,2 punti</strong>. Il punteggio &egrave; una formula, quindi quanto rende sistemare una cosa ha una risposta esatta, e l&rsquo;elenco &egrave; ordinato per quella. In fondo c&rsquo;&egrave; scritto dove arrivi: &ldquo;sistemando questi tre passi da 72 a 89&rdquo;. Non &egrave; la somma dei punti mostrati, &egrave; il punteggio ricalcolato, cio&egrave; quello che vedrai davvero al prossimo esame.</p>
-        </div>
-      </div>
-
-      <div class="differenza-voce entra">
-        <div class="differenza-dentro">
-          <h3>Ti dice su quale pagina, non solo quante</h3>
-          <p>&ldquo;Quattro pagine senza description&rdquo; non basta a chi deve aprirle. Legge fino a venticinque pagine prese dalla tua sitemap e ti d&agrave; la lista di lavoro per indirizzo: una pagina per volta, cosa c&rsquo;&egrave; da sistemare sopra, le messe peggio in cima. Un&rsquo;estensione che guarda solo la scheda aperta questo non pu&ograve; darlo.</p>
-        </div>
-      </div>
-
-      <div class="differenza-voce entra">
-        <div class="differenza-dentro">
-          <h3>Ti confronta con un concorrente, sul serio</h3>
-          <p>Analizza il loro sito, torna sul tuo e mettili a confronto: gli stessi controlli, le stesse soglie, e l&rsquo;elenco preciso di dove sono messi meglio. &ldquo;Loro hanno le recensioni e tu no. Il loro server risponde 900 ms prima del tuo.&rdquo; &Egrave; la pagina che chiude un preventivo.</p>
-        </div>
-      </div>
-
-      <div class="differenza-voce entra">
-        <div class="differenza-dentro">
-          <h3>Ti d&agrave; il codice, non il compito</h3>
-          <p>Dove la correzione si pu&ograve; scrivere, la scrive: il tag canonical con l&rsquo;indirizzo giusto, il JSON-LD del prodotto con il nome vero, il file <code>llms.txt</code> gi&agrave; compilato con le tue pagine. Si copia con un tocco. Dove servirebbe inventare un testo, non lo inventa.</p>
-        </div>
-      </div>
-
-      <div class="differenza-voce entra">
-        <div class="differenza-dentro">
-          <h3>Scrive le descrizioni mancanti sul tuo computer</h3>
-          <p>Chrome ha un modello linguistico che gira in locale. L&rsquo;estensione lo usa per proporti una bozza di meta description o di title, partendo da quello che c&rsquo;&egrave; gi&agrave; nella pagina. Nessuna chiave API, nessun costo a chiamata, e il contenuto dei tuoi clienti non esce dal computer.</p>
+      <div class="per-chi-voce entra">
+        <span class="icona" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9.5L5.5 4h13L20 9.5"/><path d="M4 9.5h16v10H4z"/><path d="M10 19.5v-5h4v5"/></svg></span>
+        <div>
+          <h3>Chi ha un sito suo</h3>
+          <p>Sai cosa sistemare, in che ordine e quanto vale, prima di chiamare qualcuno.</p>
         </div>
       </div>
     </div>
-
-    <!-- Le due schermate stavano dentro due voci dell'elenco, e le
-         facevano alte il triplo delle altre: accanto restavano
-         quattrocento pixel di filetto blu che non accompagnava niente.
-         Qui sotto sono due, della stessa forma, e si pareggiano fra
-         loro invece di sbilanciare il testo. -->
-    <div class="differenze-prove">
-      <figure class="schermata entra">
-        <picture>
-          <img src="immagini/popup-registro.png" width="571" height="790" loading="lazy"
-               alt="Il registro dei preventivi: quattro clienti con il prezzo accanto, segnati come fatto, mandato, vinto e perso, e sopra il totale di 4.613 euro.">
-        </picture>
-        <figcaption>Quattro preventivi, 4.613&nbsp;&euro;: due ancora aperti, uno vinto, uno perso.</figcaption>
-      </figure>
-
-      <figure class="schermata entra">
-        <picture>
-          <img src="immagini/popup-pagine.png" width="571" height="790" loading="lazy"
-               alt="La lista di lavoro del popup: pagina collezione, pagina prodotto e home, ognuna col proprio difetto scritto sotto e l&rsquo;indirizzo a destra.">
-        </picture>
-        <figcaption>Una scheda per pagina, con l&rsquo;indirizzo e il difetto scritto accanto.</figcaption>
-      </figure>
-    </div>
-
-    <p class="differenze-nota entra">
-      E una cosa che quasi nessuno fa: <strong>dice quando non sa</strong>. Un controllo che non &egrave; stato possibile eseguire esce dal punteggio invece di passare per superato, e il referto lo dichiara.
-    </p>
   </div>
 </section>
 
-<section id="prezzi">
+<section class="sezione sezione-alt" id="come-funziona">
   <div class="wrap">
-    <h2>Piani</h2>
-    <p class="subtitle">L'estensione Chrome analizza il sito dentro il tuo browser. I piani a pagamento servono a consegnare il referto a un cliente: report PDF col tuo nome, senza limiti giornalieri.</p>
+    <div class="capo-sezione">
+      <h2>Come funziona</h2>
+      <p>Tre passi, tutti dentro il popup. Nessuna pagina da aprire, nessun file da caricare.</p>
+    </div>
+
+    <div class="griglia-3">
+      <div class="carta entra">
+        <span class="passo-numero" aria-hidden="true">1</span>
+        <h3>Apri il sito e premi l’icona</h3>
+        <p>SnapQuote legge la pagina aperta dopo che gli script hanno girato, più altre tre del sito. In una decina di secondi hai il punteggio e l’elenco di cosa sistemare.</p>
+      </div>
+      <div class="carta entra">
+        <span class="passo-numero" aria-hidden="true">2</span>
+        <h3>Spunta quello che faresti</h3>
+        <p>Ogni rilievo dice quanti punti vale. Spunti, e il punteggio viene ricalcolato con la stessa formula: non è una somma, è quello che vedrai alla prossima analisi.</p>
+      </div>
+      <div class="carta entra">
+        <span class="passo-numero" aria-hidden="true">3</span>
+        <h3>Manda il preventivo</h3>
+        <p>Ore stimate sulle pagine coinvolte, la tua tariffa, il totale. Lo copi già scritto per l’email, o lo scarichi in PDF col tuo logo.</p>
+      </div>
+    </div>
+
+    <!-- La prova dal vivo. E' il passo 2 e 3 dell'elenco qui sopra, fatto
+         davanti a chi legge invece che raccontato. -->
+    <div class="demo entra" id="prova">
+      <div class="demo-scelte">
+        <h3 class="demo-titolo">Provalo qui</h3>
+        <p class="demo-sito">Il sito di esempio delle schermate, <code>negozio-esempio.com</code>. Spunta e cambia la tariffa.</p>
+        <fieldset class="demo-elenco">
+          <legend class="solo-lettore">Interventi da mettere nel preventivo</legend>
+          <label class="demo-voce"><input type="checkbox" value="0" checked><span class="demo-voce-titolo">Canonical verso un altro dominio</span><span class="demo-ore">1 h</span><span class="demo-punti">+1,8</span></label>
+          <label class="demo-voce"><input type="checkbox" value="1" checked><span class="demo-voce-titolo">LCP · comparsa del contenuto principale</span><span class="demo-ore">3 h</span><span class="demo-punti">+1,8</span></label>
+          <label class="demo-voce"><input type="checkbox" value="2"><span class="demo-voce-titolo">Tempo di risposta del server</span><span class="demo-ore">4 h</span><span class="demo-punti">+1,8</span></label>
+          <label class="demo-voce"><input type="checkbox" value="3"><span class="demo-voce-titolo">Title delle pagine</span><span class="demo-ore">0,75 h</span><span class="demo-punti">+1,8</span></label>
+        </fieldset>
+        <div class="demo-tariffa">
+          <label for="demo-tariffa">La tua tariffa</label>
+          <input type="number" id="demo-tariffa" min="0" max="999" step="5" value="90" inputmode="numeric">
+          <span class="demo-unita">€ l’ora</span>
+        </div>
+      </div>
+
+      <div class="demo-esito">
+        <p class="demo-etichetta">Punteggio</p>
+        <p class="demo-punteggio" aria-hidden="true"><span class="demo-ora">85</span><span class="demo-freccia">→</span><span class="demo-dopo" id="demo-dopo">89</span><span class="demo-quanti" id="demo-quanti">se fai questi 2</span></p>
+        <div class="demo-barra" aria-hidden="true">
+          <span class="demo-barra-dopo" id="demo-barra-dopo" style="width: 89%"></span>
+          <span class="demo-barra-ora" style="width: 85%"></span>
+        </div>
+
+        <div class="demo-conto" id="demo-conto" aria-hidden="true">
+          <p class="demo-etichetta">Il conto</p>
+          <p class="demo-calcolo" id="demo-calcolo">4 h × 90 €/h =</p>
+          <p class="demo-totale" id="demo-totale">360 €</p>
+        </div>
+        <p class="demo-vuoto" id="demo-vuoto" hidden>Spunta almeno un intervento per vedere il conto.</p>
+
+        <details class="demo-copia">
+          <summary>Il testo che copia</summary>
+          <pre class="demo-testo" id="demo-testo"></pre>
+        </details>
+
+        <p class="solo-lettore" id="demo-riassunto" aria-live="polite"></p>
+        <p class="demo-nota">Numeri veri: il punteggio di ogni combinazione è quello che calcola l’estensione su questo sito, ricalcolato e non sommato.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione" id="cosa-controlla">
+  <div class="wrap">
+    <div class="capo-sezione">
+      <h2>Cosa controlla</h2>
+      <p>Una trentina di controlli in quattro aree, con soglie scritte. Sono i quattro voti che vedi in cima al popup.</p>
+    </div>
+
+    <div class="griglia-4">
+      <div class="carta entra">
+        <span class="icona" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg></span>
+        <h3>SEO tecnica</h3>
+        <p>Quello che Google e gli assistenti IA leggono per capire il sito.</p>
+        <ul class="area-voci">
+          <li>Title, description, H1, canonical</li>
+          <li>Dati strutturati e indicizzabilità</li>
+          <li>Sitemap, lingue, anteprime social</li>
+          <li>ChatGPT e Gemini, e il file llms.txt</li>
+        </ul>
+      </div>
+      <div class="carta entra">
+        <span class="icona" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><path d="M16.5 13v7M13 16.5h7"/></svg></span>
+        <h3>Funzionalità e app</h3>
+        <p>Gli strumenti che fanno tornare chi compra, riconosciuti mentre girano.</p>
+        <ul class="area-voci">
+          <li>Email marketing</li>
+          <li>Recensioni</li>
+          <li>Analytics e pixel</li>
+          <li>Anche dentro un tag manager</li>
+        </ul>
+      </div>
+      <div class="carta entra">
+        <span class="icona" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.5 16.5a7.5 7.5 0 1 1 15 0"/><path d="M12 16.5l4-5"/></svg></span>
+        <h3>Velocità e peso</h3>
+        <p>Misurata sulla navigazione vera della pagina aperta, non simulata.</p>
+        <ul class="area-voci">
+          <li>Risposta del server</li>
+          <li>Comparsa del contenuto (LCP)</li>
+          <li>Stabilità del layout</li>
+          <li>Peso di script, CSS e immagini</li>
+        </ul>
+      </div>
+      <div class="carta entra">
+        <span class="icona" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="4.8" r="1.8"/><path d="M5 8.8l7 1.6 7-1.6M12 10.4v4.4m0 0l-3.2 5.4m3.2-5.4l3.2 5.4"/></svg></span>
+        <h3>Accessibilità <span class="nuova">nuova</span></h3>
+        <p>Quello che ferma chi legge male o usa un lettore di schermo.</p>
+        <ul class="area-voci">
+          <li>Contrasto del testo, soglie WCAG</li>
+          <li>Bottoni e link senza un nome</li>
+          <li>Misurata sulla pagina disegnata</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="riga-prova">
+      <figure class="schermata entra">
+        <img src="immagini/popup-rilievi.png" width="571" height="790" loading="lazy" decoding="async"
+             alt="La scheda Problemi del popup: il punteggio 85 su 100, i quattro voti per area e il primo rilievo aperto, Title delle pagine, con la prova misurata su tre pagine e cosa fare.">
+      </figure>
+      <div class="riga-prova-testo entra">
+        <p class="occhiello">Ogni rilievo ha la sua prova</p>
+        <h3>Il dato misurato, non un voto</h3>
+        <p>«Home: 4 caratteri, troppo corto». Ogni rilievo dice cosa ha trovato e su quale pagina, perché conta e cosa fare. E dove una cosa non si è potuta misurare, lo scrive invece di dartela per buona.</p>
+        <ul class="elenco-spunte">
+          <li><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>La prova, pagina per pagina</li>
+          <li><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Perché conta e cosa fare, in due righe</li>
+          <li><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Quanti punti vale sistemarla</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Senza classe di proposito: verifica_landing.py riconosce questa sezione
+     dal solo id, per contare le voci promesse dal titolo. Il fondo e lo
+     spazio glieli da' il foglio di stile, per id. -->
+<section id="differenze">
+  <div class="wrap">
+    <div class="capo-sezione">
+      <h2>Otto cose che un normale audit non fa</h2>
+      <p>Trovare i difetti di un sito lo fanno in tanti. SnapQuote parte da lì e arriva fino al lavoro venduto, e poi a quello fatto.</p>
+    </div>
+
+    <div class="differenza-voce differenza-riga">
+      <div class="riga-prova-testo entra">
+        <p class="occhiello">Il registro</p>
+        <h3>Tiene i conti di quello che vendi</h3>
+        <p>Ogni preventivo che copi resta segnato, e una pastiglia lo porta da <strong>fatto</strong> a <strong>mandato</strong>, <strong>vinto</strong> o <strong>perso</strong>. In cima vedi quanto vale il lavoro che aspetti e quanti ne chiudi.</p>
+        <ul class="elenco-spunte">
+          <li><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Il valore ancora aperto, a colpo d’occhio</li>
+          <li><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Segni le ore vere, e impara di quanto sbagli</li>
+          <li><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Si copia in un foglio di calcolo</li>
+        </ul>
+      </div>
+      <figure class="schermata entra">
+        <img src="immagini/popup-registro.png" width="571" height="790" loading="lazy" decoding="async"
+             alt="Il registro dei preventivi: quattro siti con il prezzo accanto, segnati come fatto, mandato, vinto e perso, le ore vere di un lavoro vinto e sopra il totale di 4.613 euro.">
+      </figure>
+    </div>
+
+    <div class="differenza-voce differenza-riga specchio">
+      <div class="riga-prova-testo entra">
+        <p class="occhiello">Pagina per pagina</p>
+        <h3>Ti dice su quale pagina, non solo quante</h3>
+        <p>«Quattro pagine senza description» non basta a chi poi deve aprirle. La lista di lavoro va per indirizzo, con le pagine messe peggio in cima e il difetto scritto accanto. Con Pro e Agenzia legge fino a <span class="valore">25</span> pagine prese dalla sitemap.</p>
+      </div>
+      <figure class="schermata entra">
+        <img src="immagini/popup-pagine.png" width="571" height="790" loading="lazy" decoding="async"
+             alt="La lista di lavoro del popup: pagina collezione, pagina prodotto e home, ognuna col suo indirizzo e i difetti scritti sotto.">
+      </figure>
+    </div>
+
+    <div class="griglia-3 differenze-carte">
+      <div class="differenza-voce differenza-carta entra">
+        <h3>Quanti punti vale ogni correzione</h3>
+        <p>Non «priorità alta»: <span class="valore">+1,8</span>. L’elenco è ordinato per quello, e il punteggio promesso è ricalcolato, cioè quello che vedrai davvero alla prossima analisi.</p>
+      </div>
+      <div class="differenza-voce differenza-carta entra">
+        <h3>Il confronto con un concorrente</h3>
+        <p>Analizzi il loro sito e torni sul tuo: stessi controlli, stesse soglie, e l’elenco di dove sono messi meglio. È la pagina che chiude un preventivo.</p>
+      </div>
+      <div class="differenza-voce differenza-carta entra">
+        <h3>Il codice, non il compito</h3>
+        <p>Il canonical con l’indirizzo giusto, il JSON-LD del prodotto col nome vero, il file <code>llms.txt</code> già compilato. Si copia con un tocco. I testi da scrivere non li inventa.</p>
+      </div>
+      <div class="differenza-voce differenza-carta entra">
+        <h3>Le bozze, scritte sul tuo computer</h3>
+        <p>Dove Chrome mette a disposizione il suo modello linguistico locale, propone una description o un title partendo dalla pagina. Nessuna chiave API, niente che esce.</p>
+      </div>
+      <div class="differenza-voce differenza-carta entra">
+        <h3>A lavoro finito, la prova</h3>
+        <p>Dalla seconda analisi dello stesso sito, il rapporto del lavoro svolto: <span class="valore">61 → 94</span>, cosa hai sistemato, cosa è peggiorato, cosa resta. È il documento con cui ti fai riconfermare.</p>
+      </div>
+      <div class="differenza-voce differenza-carta entra">
+        <h3>Dice quando non sa</h3>
+        <p>Un controllo che non si è potuto fare esce dal punteggio invece di passare per superato. Un’area senza misure mostra un trattino, non un cento regalato.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione" id="privacy">
+  <div class="wrap">
+    <div class="capo-sezione">
+      <h2>Il sito dei tuoi clienti resta sul tuo computer</h2>
+      <p>L’analisi gira nel tuo browser e non passa da nessun server: né mio, né di altri.</p>
+    </div>
+    <div class="griglia-3">
+      <div class="privacy-voce entra">
+        <span class="icona" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></span>
+        <h3>Tutto dentro Chrome</h3>
+        <p>L’analisi nasce e finisce nel tuo browser. Gli indirizzi che apri, i preventivi e il registro restano lì.</p>
+      </div>
+      <div class="privacy-voce entra">
+        <span class="icona" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 9h16"/><circle cx="7" cy="7" r=".4"/></svg></span>
+        <h3>Tre permessi, i minimi</h3>
+        <p>Vede solo la scheda su cui premi l’icona, e solo quando la premi. Niente accesso a tutti i siti, niente cronologia.</p>
+      </div>
+      <div class="privacy-voce entra">
+        <span class="icona" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg></span>
+        <h3>Nessun account</h3>
+        <p>Non ti registri. La licenza dei piani a pagamento è una chiave che l’estensione verifica da sola, anche senza rete.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione sezione-alt" id="prezzi">
+  <div class="wrap">
+    <div class="capo-sezione">
+      <h2>Piani</h2>
+      <p>L’analisi e il preventivo da copiare sono gratis. I piani a pagamento servono a consegnare: PDF col tuo nome, più pagine, nessun limite.</p>
+    </div>
+
+    <div class="avviso-piani">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>
+      <p><strong>I piani a pagamento non sono ancora attivi.</strong> Lascia la tua email e ti scrivo appena lo sono: nessun pagamento adesso, nessun impegno.</p>
+    </div>
 
     <div class="piani-grid">
       <div class="piano-card entra">
@@ -1104,73 +1921,124 @@
         <p class="piano-prezzo">0&euro;</p>
         <p class="piano-per">per sempre</p>
         <ul class="piano-voci">
-          <li>Estensione Chrome completa</li>
-          <li>Analisi su pi&ugrave; pagine del sito</li>
+          <li>Tutti i controlli, sulla pagina aperta e altre tre</li>
           <li>5 siti al giorno, rianalizzabili quante volte vuoi</li>
-          <li class="assente">Niente esportazione per il PDF</li>
-          <li class="assente">Niente marchio personalizzato</li>
+          <li>Il preventivo da copiare e il registro</li>
+          <li class="assente">Niente PDF da consegnare</li>
+          <li class="assente">Niente nome né logo sui documenti</li>
         </ul>
-        <a class="piano-btn" href="#audit-form">Inizia gratis</a>
+        <a class="piano-btn" href="#scrivimi" data-motivo="avviso" data-installa="Aggiungi a Chrome">Avvisami quando esce</a>
       </div>
 
       <div class="piano-card scelto entra">
         <p class="piano-nome">Pro</p>
         <p class="piano-prezzo">19&euro; <span>/ mese</span></p>
-        <p class="piano-per">per chi cura i propri siti</p>
+        <p class="piano-per">per chi lavora da solo</p>
         <ul class="piano-voci">
-          <li>Audit senza limiti</li>
-          <li>Esportazione per il report PDF</li>
-          <li>Il tuo nome sul report</li>
-          <li>Tutte le nuove verifiche incluse</li>
+          <li>Tutti i siti che vuoi, non cinque al giorno</li>
+          <li>Fino a 25 pagine per analisi, dalla sitemap</li>
+          <li>Preventivo e referto in PDF, pronti da mandare</li>
+          <li>I documenti escono col tuo nome e il tuo logo</li>
+          <li>Il rapporto che mostra al cliente cos’è migliorato</li>
         </ul>
-        <a class="piano-btn" id="btn-pro" href="#audit-form">Attiva Pro</a>
+        <a class="piano-btn" id="btn-pro" href="#scrivimi" data-motivo="avviso" data-piano="Pro" data-attiva="Attiva Pro">Avvisami quando apre</a>
       </div>
 
       <div class="piano-card entra">
         <p class="piano-nome">Agenzia</p>
         <p class="piano-prezzo">49&euro; <span>/ mese</span></p>
-        <p class="piano-per">per chi lavora su pi&ugrave; clienti</p>
+        <p class="piano-per">per chi lavora su più clienti</p>
         <ul class="piano-voci">
-          <li>Tutto quello che c'&egrave; in Pro</li>
-          <li>Fino a 10 marchi salvati</li>
-          <li>Un marchio diverso per ogni cliente</li>
+          <li>Tutto quello che c’è in Pro</li>
+          <li>Fino a 10 clienti, ognuno col suo nome e il suo logo</li>
           <li>Supporto via email entro un giorno</li>
         </ul>
-        <a class="piano-btn" id="btn-agenzia" href="#audit-form">Attiva Agenzia</a>
+        <a class="piano-btn" id="btn-agenzia" href="#scrivimi" data-motivo="avviso" data-piano="Agenzia" data-attiva="Attiva Agenzia">Avvisami quando apre</a>
       </div>
     </div>
 
-    <p class="piani-nota">
-      Dopo il pagamento ricevi per email una chiave di licenza da incollare nell'estensione.
-      La chiave viene verificata dentro il browser: nessun account da creare, nessun dato dei tuoi
-      clienti che esce dal tuo computer. Si disdice quando vuoi.
-    </p>
+    <p class="piani-nota">Quando apriranno: dopo il pagamento ricevi per email una chiave da incollare nell’estensione. Nessun account da creare, si disdice quando vuoi.</p>
   </div>
 </section>
 
-<section class="form-section" id="audit-form-section">
+<section class="sezione" id="domande">
+  <div class="wrap wrap-stretto">
+    <div class="capo-sezione">
+      <h2>Domande</h2>
+    </div>
+
+    <div>
+      <details class="domanda">
+        <summary>Funziona solo con Shopify?</summary>
+        <p>No. Riconosce Shopify, WooCommerce, WordPress, PrestaShop, Magento, Wix, Squarespace e Webflow, e adatta i consigli alla piattaforma. Sugli altri siti fa gli stessi controlli, con consigli generali.</p>
+      </details>
+      <details class="domanda">
+        <summary>I dati dei miei clienti escono dal computer?</summary>
+        <p>No. L’analisi gira dentro Chrome e non esiste un server che la riceva. Preventivi, registro e marchio restano nella memoria dell’estensione, sul tuo computer.</p>
+      </details>
+      <details class="domanda">
+        <summary>Da dove vengono le ore del preventivo?</summary>
+        <p>Ogni tipo di intervento ha una stima di partenza, che cresce con le pagine coinvolte: quelle sono contate davvero sull’analisi. La tariffa è tua e il preventivo dice da dove vengono i numeri. Se segni le ore che ci hai messo davvero, dopo tre lavori ti dice di quanto sbagli in media.</p>
+      </details>
+      <details class="domanda">
+        <summary>Il punteggio è quello di Google?</summary>
+        <p>No, ed è meglio così: è la quota di controlli superati, pesati per importanza, in quattro aree. Non promette un posizionamento; dice quanta parte del lavoro tecnico è fatta, e quanto ne fa ogni correzione.</p>
+      </details>
+      <details class="domanda">
+        <summary>Quante pagine legge?</summary>
+        <p>Con Free la pagina aperta e altre tre, scelte sempre allo stesso modo dalla sitemap o dai link della home: così il punteggio non cambia a seconda della pagina da cui sei partito. Con Pro e Agenzia fino a venticinque.</p>
+      </details>
+      <details class="domanda">
+        <summary>Posso metterci il mio logo?</summary>
+        <p>Sì, con Pro e Agenzia: nome e logo escono sul preventivo in PDF, sul referto e sul rapporto del lavoro svolto. Con Agenzia ne salvi fino a dieci, uno per cliente.</p>
+      </details>
+      <details class="domanda">
+        <summary>Quando esce?</summary>
+        <p class="testo-link">Lascia la tua email <a href="#scrivimi" data-motivo="avviso">qui sotto</a> e ti scrivo il giorno che è sul Chrome Web Store, e di nuovo quando aprono Pro e Agenzia. Nient’altro.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="sezione sezione-alt" id="scrivimi">
   <div class="wrap">
     <div class="form-card entra">
-      <h2 id="audit-form">Richiedi il tuo audit gratuito</h2>
-      <p class="form-intro">Compila i campi qui sotto: il report arriva per email entro 24 ore.</p>
+      <h2 id="audit-form">Scrivimi</h2>
+      <p class="form-intro">Rispondo io, di solito entro un giorno.</p>
 
       <form id="audit-form-el" novalidate>
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="piano" id="campo-piano" value="">
+        <input type="hidden" name="_subject" id="campo-oggetto" value="SnapQuote: un parere a mano">
+
+        <fieldset class="motivi">
+          <legend>Cosa ti serve?</legend>
+          <label class="motivo">
+            <input type="radio" name="motivo" value="parere" checked>
+            <span class="motivo-titolo">Un parere a mano</span>
+            <span class="motivo-spiega">Guardo il tuo sito con SnapQuote e ti scrivo cosa farei. Gratis.</span>
+          </label>
+          <label class="motivo">
+            <input type="radio" name="motivo" value="avviso">
+            <span class="motivo-titolo">Avvisami quando esce</span>
+            <span class="motivo-spiega">Una email quando è sul Chrome Web Store, una quando aprono i piani.</span>
+          </label>
+        </fieldset>
 
         <div class="field">
-          <label for="shop-url">Indirizzo del sito *</label>
-          <input type="text" id="shop-url" name="shop_url" placeholder="iltuosito.it" autocomplete="url" required aria-required="true" aria-describedby="shop-url-error">
+          <label for="shop-url">Indirizzo del sito <span class="optional" id="url-facoltativo" hidden>(opzionale)</span></label>
+          <input type="text" id="shop-url" name="shop_url" placeholder="iltuosito.it" autocomplete="url" aria-required="true" aria-describedby="shop-url-error">
           <div class="error-msg" id="shop-url-error" role="alert"></div>
         </div>
 
         <div class="field">
-          <label for="email">Email *</label>
+          <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="tuonome@email.com" autocomplete="email" required aria-required="true" aria-describedby="email-error">
           <div class="error-msg" id="email-error" role="alert"></div>
         </div>
 
         <div class="field">
-          <label for="role">Sei un'agenzia o gestisci il tuo sito? <span class="optional">(opzionale)</span></label>
+          <label for="role">Sei un’agenzia o gestisci il tuo sito? <span class="optional">(opzionale)</span></label>
           <select id="role" name="role">
             <option value="">Preferisco non specificare</option>
             <option value="agenzia">Agenzia</option>
@@ -1179,53 +2047,44 @@
           </select>
         </div>
 
-        <button type="submit" class="cta-btn">Richiedi il tuo audit gratuito</button>
+        <button type="submit" class="cta-btn" id="bottone-invia">Mandami il parere</button>
         <p class="submit-error" id="submit-error" role="alert"></p>
-        <p class="disclaimer">Niente spam: la tua email serve solo a mandarti il report.</p>
-        <p class="disclaimer firma-persona">Non risponde un programma: l&rsquo;audit lo faccio a mano con lo stesso SnapQuote che trovi qui sopra. &mdash; <strong>Riccardo Gheoni</strong></p>
+        <p class="disclaimer">L’email la uso solo per risponderti. Il modulo passa da Formspree; puoi chiedermi di cancellare tutto quando vuoi.</p>
+        <p class="disclaimer firma-persona">Non risponde un programma: ti scrivo io, con lo stesso SnapQuote che trovi qui sopra. — <strong>Riccardo Gheoni</strong></p>
       </form>
 
-      <div class="success-box" id="success-box" role="status" tabindex="-1">
-        Grazie, riceverai il report entro 24 ore all'indirizzo indicato.
-      </div>
+      <div class="success-box" id="success-box" role="status" tabindex="-1"></div>
     </div>
   </div>
   <iframe name="formspree-target" id="formspree-target" title="Invio modulo" style="display:none" aria-hidden="true" tabindex="-1"></iframe>
 </section>
 
-<footer>
+</main>
+
+<footer class="piede">
   <div class="wrap">
-    &copy; <span id="year"></span> SnapQuote &middot; di Riccardo Gheoni
+    <p>© <span id="year"></span> SnapQuote · di Riccardo Gheoni. Questo sito non usa cookie né statistiche.</p>
+    <nav class="piede-menu" aria-label="Collegamenti in fondo alla pagina">
+      <a href="#come-funziona">Come funziona</a>
+      <a href="#prezzi">Piani</a>
+      <a href="#domande">Domande</a>
+      <a href="#scrivimi" data-motivo="parere">Scrivimi</a>
+    </nav>
   </div>
 </footer>
 
 <script>
   /* L'entrata allo scorrimento.
 
-     L'interruttore `data-anima` lo mette lo script in testa alla pagina, prima
-     che si disegni: qui si aggiunge solo la classe quando l'elemento arriva a
-     tiro. Se questo programma non partisse, gli elementi resterebbero
-     nascosti - ed e' per questo che chi accende l'interruttore lassu' e' lo
-     stesso che controlla di poterlo fare.
-
-     `unobserve` subito dopo: entrato una volta, resta entrato. Rifare
-     l'animazione ogni volta che si scorre avanti e indietro stanca, e su una
-     pagina di vendita fa sembrare che qualcosa non funzioni. */
+     L'interruttore `data-anima` lo mette lo script in testa alla pagina: qui
+     si aggiunge solo la classe quando l'elemento arriva a tiro. Entrato una
+     volta, resta entrato. */
   if (document.documentElement.getAttribute('data-anima') === 'si') {
     const daRivelare = document.querySelectorAll('.entra');
 
-    /* Si segna che l'osservatore E' VIVO, non che qualcosa e' entrato.
-
-       Sono due cose diverse, e confonderle costava l'animazione a chi si
-       ferma a leggere l'eroe: gli elementi segnati stanno tutti sotto la
-       piega, quindi appena caricata la pagina non ne entra nessuno. Con la
-       rete legata al primo ingresso, chi non scorreva entro un secondo e
-       mezzo si vedeva comparire tutta la pagina in blocco - proprio la cosa
-       che l'animazione doveva evitare.
-
-       Un IntersectionObserver richiama una prima volta per ogni elemento
-       osservato anche quando non ne interseca nessuno: quella chiamata dice
-       «funziono», ed e' il segnale giusto da aspettare. */
+    /* Si segna che l'osservatore e' vivo, non che qualcosa e' entrato: alla
+       prima chiamata IntersectionObserver risponde per ogni elemento anche se
+       nessuno e' in vista, e quella chiamata dice «funziono». */
     let osservatoreVivo = false;
 
     const osservatore = new IntersectionObserver((voci) => {
@@ -1233,31 +2092,154 @@
       for (const voce of voci) {
         if (!voce.isIntersecting) continue;
         voce.target.classList.add('entrato');
-        // Entrato una volta, resta entrato: rifare l'animazione ogni volta che
-        // si scorre avanti e indietro stanca, e su una pagina di vendita fa
-        // sembrare che qualcosa non funzioni.
         osservatore.unobserve(voce.target);
       }
     }, { rootMargin: '0px 0px -6% 0px', threshold: 0.08 });
 
     for (const elemento of daRivelare) osservatore.observe(elemento);
 
-    /* LA RETE DI SICUREZZA.
-
-       Il foglio di stile nasconde venticinque elementi - un quarto della
-       pagina - e conta su questo osservatore per rimostrarli. Se per qualsiasi
-       ragione l'osservatore non chiamasse mai (e succede: e' gia' successo
-       misurandolo in un browser senza finestra), quel quarto di pagina
-       resterebbe invisibile per sempre, e chi guarda non vedrebbe i prezzi.
-
-       Passato un secondo e mezzo senza nemmeno una chiamata, si smette di
-       fidarsi e si mostra tutto. Un'animazione persa non costa niente; una
-       sezione che non compare costa un cliente. */
+    /* La rete di sicurezza: se l'osservatore non chiama mai, dopo un secondo e
+       mezzo si mostra tutto. Un'animazione persa non costa niente; una sezione
+       che non compare costa un cliente. */
     setTimeout(() => {
       if (osservatoreVivo) return;
       osservatore.disconnect();
       for (const elemento of daRivelare) elemento.classList.add('entrato');
     }, 1500);
+  }
+
+  /* ---------- la prova dal vivo ---------- */
+
+  /* Il punteggio di ogni combinazione dei quattro interventi, letto dalla
+     formula del popup sul sito di esempio (`punteggioSe` in giudizi.js). La
+     chiave e' la maschera delle spunte: 1 il primo, 2 il secondo, 4 il terzo,
+     8 il quarto. Non si somma +1,8 per spunta perche' il popup non lo fa: con
+     tutti e quattro arriva a 92, non a 92,2. */
+  const DEMO_OGGI = 85;
+  const DEMO_PUNTEGGI = [85, 87, 87, 89, 87, 89, 89, 90, 87, 89, 89, 90, 89, 90, 90, 92];
+  const DEMO_VOCI = [
+    { titolo: 'Canonical verso un altro dominio', ore: 1, pagine: 0 },
+    { titolo: 'LCP · comparsa del contenuto principale', ore: 3, pagine: 0 },
+    { titolo: 'Tempo di risposta del server', ore: 4, pagine: 0 },
+    { titolo: 'Title delle pagine', ore: 0.75, pagine: 1 },
+  ];
+
+  const demoCaselle = [...document.querySelectorAll('.demo-voce input')];
+  const demoTariffa = document.getElementById('demo-tariffa');
+  const demoDopo = document.getElementById('demo-dopo');
+  const demoQuanti = document.getElementById('demo-quanti');
+  const demoBarra = document.getElementById('demo-barra-dopo');
+  const demoConto = document.getElementById('demo-conto');
+  const demoVuoto = document.getElementById('demo-vuoto');
+  const demoCalcolo = document.getElementById('demo-calcolo');
+  const demoTotale = document.getElementById('demo-totale');
+  const demoTesto = document.getElementById('demo-testo');
+  const demoRiassunto = document.getElementById('demo-riassunto');
+  const fermo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Le stesse due funzioni del popup (preventivo.js), riscritte uguali: il
+  // testo qui sotto deve essere quello che l'estensione copierebbe davvero.
+  function oreALettere(ore) {
+    const arrotondate = Math.round(ore * 100) / 100;
+    const testo = Number.isInteger(arrotondate)
+      ? String(arrotondate)
+      : arrotondate.toFixed(2).replace(/0$/, '').replace('.', ',');
+    return `${testo} h`;
+  }
+
+  function euro(valore) {
+    const intero = String(Math.abs(Math.round(valore)));
+    return `${intero.replace(/\B(?=(\d{3})+(?!\d))/g, '.')} €`;
+  }
+
+  // Il numero grande sale o scende fino al valore nuovo invece di saltarci:
+  // si vede che e' stato ricalcolato, non sostituito.
+  let animazioneDopo = null;
+  function portaA(elemento, arrivo) {
+    const partenza = Number(elemento.textContent) || arrivo;
+    cancelAnimationFrame(animazioneDopo);
+    if (fermo || partenza === arrivo) {
+      elemento.textContent = String(arrivo);
+      return;
+    }
+    const inizio = performance.now();
+    const durata = 380;
+    const passo = (adesso) => {
+      const t = Math.min(1, (adesso - inizio) / durata);
+      const morbido = 1 - Math.pow(1 - t, 3);
+      elemento.textContent = String(Math.round(partenza + (arrivo - partenza) * morbido));
+      if (t < 1) animazioneDopo = requestAnimationFrame(passo);
+    };
+    animazioneDopo = requestAnimationFrame(passo);
+  }
+
+  function aggiornaDemo() {
+    let maschera = 0;
+    const scelte = [];
+    demoCaselle.forEach((casella, i) => {
+      if (!casella.checked) return;
+      maschera += 1 << i;
+      scelte.push(DEMO_VOCI[i]);
+    });
+
+    const dopo = DEMO_PUNTEGGI[maschera];
+    portaA(demoDopo, dopo);
+    demoBarra.style.width = `${dopo}%`;
+    demoQuanti.textContent = scelte.length === 0
+      ? 'spunta qualcosa'
+      : scelte.length === 1 ? 'se fai questo' : `se fai questi ${scelte.length}`;
+
+    const ore = scelte.reduce((somma, voce) => somma + voce.ore, 0);
+    const tariffa = Number(demoTariffa.value) > 0 ? Number(demoTariffa.value) : null;
+    const totale = tariffa === null ? null : Math.round(ore * tariffa);
+
+    demoConto.hidden = scelte.length === 0;
+    demoVuoto.hidden = scelte.length > 0;
+    demoCalcolo.textContent = tariffa === null
+      ? `${oreALettere(ore)} × — €/h =`
+      : `${oreALettere(ore)} × ${tariffa} €/h =`;
+    demoTotale.textContent = totale === null ? 'scrivi la tariffa' : euro(totale);
+
+    // Il testo che il popup metterebbe negli appunti, riga per riga.
+    const righe = ['Preventivo · negozio-esempio.com', ''];
+    for (const voce of scelte) {
+      const dove = voce.pagine ? ` (${voce.pagine} ${voce.pagine === 1 ? 'pagina' : 'pagine'})` : '';
+      righe.push(`- ${voce.titolo}${dove}: ${oreALettere(voce.ore)}`);
+    }
+    righe.push('');
+    righe.push(totale === null
+      ? `Totale: ${oreALettere(ore)}`
+      : `Totale: ${oreALettere(ore)} × ${euro(tariffa)}/h = ${euro(totale)}`);
+    if (dopo > DEMO_OGGI) righe.push(`Punteggio tecnico: da ${DEMO_OGGI} a ${dopo} su 100.`);
+    righe.push('');
+    righe.push('Le pagine coinvolte sono contate sull\'analisi del sito. Le ore sono una stima '
+      + 'di partenza e non comprendono la produzione di testi o immagini nuove.');
+    demoTesto.textContent = scelte.length ? righe.join('\n') : 'Spunta almeno un intervento.';
+
+    demoRiassunto.textContent = scelte.length === 0
+      ? `Nessun intervento scelto: il punteggio resta ${DEMO_OGGI}.`
+      : `Punteggio da ${DEMO_OGGI} a ${dopo}. ${oreALettere(ore).replace(' h', ' ore')}`
+        + (totale === null ? '.' : `, ${totale} euro.`);
+  }
+
+  for (const casella of demoCaselle) casella.addEventListener('change', aggiornaDemo);
+  demoTariffa.addEventListener('input', aggiornaDemo);
+  aggiornaDemo();
+
+  /* ---------- quando l'estensione sara' sul Chrome Web Store ----------
+
+     Il giorno che esiste un indirizzo, si incolla qui e tutti i tasti
+     «Avvisami quando esce» diventano «Aggiungi a Chrome» e portano li'. Il
+     testo nuovo e' scritto accanto a ogni tasto, in `data-installa`. Finche'
+     questa riga e' vuota la pagina non promette un'installazione che non c'e'. */
+  const LINK_CHROME_WEB_STORE = "";
+
+  if (LINK_CHROME_WEB_STORE.startsWith('https://')) {
+    for (const tasto of document.querySelectorAll('[data-installa]')) {
+      tasto.textContent = tasto.dataset.installa;
+      tasto.href = LINK_CHROME_WEB_STORE;
+      tasto.removeAttribute('data-motivo');
+    }
   }
 
   // Endpoint Formspree dove arrivano le submission.
@@ -1269,18 +2251,15 @@
    * Il pagamento, in tre modi che scalano uno sull'altro.
    *
    * 1. Se ENDPOINT_VENDITA punta al server delle licenze, il bottone chiede a
-   *    lui una sessione di Checkout e ci porta il cliente. È la strada buona:
-   *    l'imposta si calcola da sola, la partita IVA viene chiesta a chi ce
-   *    l'ha, e al pagamento la licenza si firma senza che nessuno faccia
-   *    niente a mano. Vedi licenze/stripe/ nel repository del tool.
+   *    lui una sessione di Checkout e ci porta il cliente.
    * 2. Altrimenti, se ci sono dei link di pagamento incollati qui sotto, vale
    *    quelli: niente server, ma la licenza resta da mandare a mano.
-   * 3. Altrimenti i bottoni restano quello che sono nel markup, cioè portano
-   *    al modulo di contatto. La pagina non mostra mai un pagamento che non
-   *    funziona.
+   * 3. Altrimenti i bottoni restano quello che sono nel markup: «Avvisami
+   *    quando apre», e portano al modulo. La pagina non mostra mai un
+   *    pagamento che non funziona.
    *
-   * In nessuno dei tre casi i dati della carta passano da questo sito: il
-   * pagamento avviene sulle pagine di Stripe.
+   * Nei primi due casi il tasto prende il testo scritto in `data-attiva`. In
+   * nessuno dei tre i dati della carta passano da questo sito.
    */
   const ENDPOINT_VENDITA = "";
 
@@ -1308,10 +2287,9 @@
       if (!risposta.ok || !dati.url) throw new Error(dati.errore || "risposta inattesa");
       window.location.href = dati.url;
     } catch (errore) {
-      // Non si lascia un bottone che gira a vuoto: si dice cosa è successo e
-      // si rimanda al modulo, che è dove si finisce comunque per scrivere.
+      // Non si lascia un bottone che gira a vuoto: si dice cosa e' successo.
       bottone.removeAttribute("aria-busy");
-      bottone.textContent = "Riprova, o scrivici";
+      bottone.textContent = "Riprova, o scrivimi";
       setTimeout(() => { bottone.textContent = testo; }, 3000);
       console.error("checkout non riuscito:", errore);
     }
@@ -1322,6 +2300,8 @@
     if (!bottone) continue;
 
     if (ENDPOINT_VENDITA.startsWith("https://") && PIANI_STRIPE[id]) {
+      bottone.textContent = bottone.dataset.attiva;
+      bottone.removeAttribute("data-motivo");
       bottone.addEventListener("click", (evento) => {
         evento.preventDefault();
         apriCheckout(bottone, PIANI_STRIPE[id]);
@@ -1330,6 +2310,8 @@
     }
 
     if (link.startsWith("https://")) {
+      bottone.textContent = bottone.dataset.attiva;
+      bottone.removeAttribute("data-motivo");
       bottone.href = link;
       bottone.rel = "noopener";
       bottone.target = "_blank";
@@ -1338,15 +2320,70 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  /* ---------- il modulo ---------- */
+
   const form = document.getElementById('audit-form-el');
   const urlInput = document.getElementById('shop-url');
   const emailInput = document.getElementById('email');
   const urlError = document.getElementById('shop-url-error');
   const emailError = document.getElementById('email-error');
+  const urlFacoltativo = document.getElementById('url-facoltativo');
+  const campoPiano = document.getElementById('campo-piano');
+  const campoOggetto = document.getElementById('campo-oggetto');
   const successBox = document.getElementById('success-box');
   const submitError = document.getElementById('submit-error');
-  const submitBtn = form.querySelector('button[type="submit"]');
+  const submitBtn = document.getElementById('bottone-invia');
   const iframeTarget = document.getElementById('formspree-target');
+  const motivi = [...form.querySelectorAll('input[name="motivo"]')];
+
+  /* Le due ragioni per scrivere cambiano tre cose: se l'indirizzo del sito
+     serve, cosa dice il tasto e l'oggetto dell'email che arriva. */
+  const MOTIVI = {
+    parere: {
+      tasto: 'Mandami il parere',
+      oggetto: 'SnapQuote: un parere a mano',
+      grazie: 'Grazie: guardo il sito e ti scrivo entro 24 ore all’indirizzo che hai lasciato.',
+      sitoServe: true,
+    },
+    avviso: {
+      tasto: 'Avvisami',
+      oggetto: 'SnapQuote: avvisami quando esce',
+      grazie: 'Fatto: ti scrivo appena SnapQuote è disponibile. Nient’altro.',
+      sitoServe: false,
+    },
+  };
+
+  function motivoScelto() {
+    const scelto = motivi.find((m) => m.checked);
+    return MOTIVI[scelto ? scelto.value : 'parere'];
+  }
+
+  function applicaMotivo() {
+    const motivo = motivoScelto();
+    submitBtn.textContent = motivo.tasto;
+    // Chi arriva da un cartellino aspetta un piano, non l'estensione: l'email
+    // che arriva lo deve dire nell'oggetto, se no le due richieste si confondono.
+    campoOggetto.value = (!motivo.sitoServe && campoPiano.value)
+      ? `SnapQuote: avvisami quando apre ${campoPiano.value}`
+      : motivo.oggetto;
+    urlFacoltativo.hidden = motivo.sitoServe;
+    urlInput.setAttribute('aria-required', String(motivo.sitoServe));
+    if (!motivo.sitoServe && urlInput.value.trim() === '') setFieldError(urlInput, urlError, '');
+  }
+
+  for (const m of motivi) m.addEventListener('change', applicaMotivo);
+
+  // I tasti che portano al modulo dicono anche perche' ci portano: «Avvisami
+  // quando apre» sceglie l'avviso e si porta dietro il piano, «Mandami il
+  // sito» sceglie il parere. Chi arriva trova gia' segnata la cosa giusta.
+  document.addEventListener('click', (evento) => {
+    const tasto = evento.target.closest('[data-motivo]');
+    if (!tasto || !(tasto.getAttribute('href') || '').startsWith('#')) return;
+    const voluto = motivi.find((m) => m.value === tasto.dataset.motivo);
+    if (voluto) voluto.checked = true;
+    campoPiano.value = tasto.dataset.piano || '';
+    applicaMotivo();
+  });
 
   // Il fetch verso Formspree richiede http/https: aperta come file locale
   // (doppio click), il browser blocca la richiesta per policy di sicurezza (CORS).
@@ -1365,16 +2402,21 @@
 
   function resetSubmitButton() {
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Richiedi il tuo audit gratuito';
+    submitBtn.textContent = motivoScelto().tasto;
+  }
+
+  function mostraGrazie() {
+    successBox.textContent = motivoScelto().grazie;
+    form.classList.add('hidden');
+    successBox.classList.add('visible');
+    successBox.focus();
   }
 
   iframeTarget.addEventListener('load', function () {
     if (!iframeSubmissionPending) return;
     iframeSubmissionPending = false;
     clearTimeout(iframeTimeoutId);
-    form.classList.add('hidden');
-    successBox.classList.add('visible');
-    successBox.focus();
+    mostraGrazie();
     resetSubmitButton();
   });
 
@@ -1430,13 +2472,18 @@
   });
 
   form.addEventListener('submit', function (e) {
+    const motivo = motivoScelto();
     const urlValue = urlInput.value.trim();
     const emailValue = emailInput.value.trim();
     let valid = true;
 
     if (urlValue === '') {
-      setFieldError(urlInput, urlError, 'Questo campo è obbligatorio');
-      valid = false;
+      if (motivo.sitoServe) {
+        setFieldError(urlInput, urlError, 'Mi serve l’indirizzo per guardarlo');
+        valid = false;
+      } else {
+        setFieldError(urlInput, urlError, '');
+      }
     } else {
       const normalizedUrl = normalizeUrl(urlValue);
       if (!normalizedUrl) {
@@ -1468,14 +2515,14 @@
     submitError.classList.remove('visible');
     submitError.textContent = '';
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Invio in corso...';
+    submitBtn.textContent = 'Invio in corso…';
 
     if (useIframeFallback) {
       // Non blocchiamo l'invio nativo: il browser lo instrada verso l'iframe
       // nascosto, che gestiamo con il listener "load" registrato sopra.
       iframeSubmissionPending = true;
       // Se l'iframe non carica (rete assente, invio bloccato) senza questo
-      // timeout il bottone resterebbe su "Invio in corso..." per sempre.
+      // timeout il bottone resterebbe su "Invio in corso…" per sempre.
       iframeTimeoutId = setTimeout(function () {
         if (!iframeSubmissionPending) return;
         iframeSubmissionPending = false;
@@ -1488,18 +2535,14 @@
 
     e.preventDefault();
 
-    const formData = new FormData(form);
-
     fetch(FORMSPREE_ENDPOINT, {
       method: 'POST',
-      body: formData,
+      body: new FormData(form),
       headers: { 'Accept': 'application/json' }
     })
       .then(function (response) {
         if (response.ok) {
-          form.classList.add('hidden');
-          successBox.classList.add('visible');
-          successBox.focus();
+          mostraGrazie();
         } else {
           submitError.textContent = 'Si è verificato un errore nell\'invio. Riprova tra qualche istante.';
           submitError.classList.add('visible');
@@ -1511,6 +2554,8 @@
       })
       .finally(resetSubmitButton);
   });
+
+  applicaMotivo();
 </script>
 
 </body>

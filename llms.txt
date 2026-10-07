@@ -1,7 +1,7 @@
 # SnapQuote
 
 > Estensione Chrome che legge un sito e ne fa uscire un preventivo: ore,
-> prezzo alla tariffa di chi lo usa, e un documento pronto da mandare al
+> prezzo alla tariffa di chi lo usa, e un testo pronto da mandare al
 > cliente. L'analisi avviene dentro il browser e non viene spedita a nessun
 > server.
 
@@ -9,25 +9,36 @@ Di Riccardo Gheoni.
 
 ## Che cosa fa
 
-- Controlla la SEO tecnica di piu' pagine del sito, non solo della home:
-  title, meta description, canonical, H1, dati strutturati, indicizzabilita'.
+- Controlla quattro aree, con una trentina di controlli e soglie dichiarate:
+  SEO tecnica, funzionalita' e app, velocita' e peso, accessibilita'.
+- SEO tecnica su piu' pagine del sito, non solo sulla home: title, meta
+  description, canonical, H1, dati strutturati, indicizzabilita', sitemap,
+  e se gli assistenti IA possono leggere il sito (con il file llms.txt).
 - Riconosce gli strumenti installati - email marketing, recensioni, analytics,
   pixel - mentre girano davvero, anche quando li carica un tag manager.
-- Misura la velocita' sulla navigazione vera: risposta del server, comparsa
-  del contenuto, stabilita' del layout, peso di JavaScript e CSS.
-- Guarda se gli assistenti IA possono leggere il sito e se c'e' un llms.txt.
-- Da quello che ha trovato costruisce un preventivo con ore e prezzo, e a
-  lavoro finito un rapporto che confronta il prima e il dopo.
+- Misura la velocita' sulla navigazione vera della pagina aperta: risposta del
+  server, comparsa del contenuto, stabilita' del layout, peso di JavaScript,
+  CSS e immagini.
+- Accessibilita': contrasto del testo e bottoni o link senza un nome leggibile
+  da un lettore di schermo.
+- Dice quanti punti vale ogni correzione; il punteggio promesso e' ricalcolato,
+  non sommato.
+- Da quello che si sceglie costruisce un preventivo con ore e prezzo, tiene un
+  registro dei preventivi (fatto, mandato, vinto, perso) e, a lavoro finito,
+  un rapporto che confronta il prima e il dopo.
 
 ## Pagine
 
-- [Home e piani](https://riccardogheobeo07-max.github.io/snapquote/): che cosa fa, come funziona, quanto costa.
+- [Home e piani](https://snapquote.it/): che cosa fa, come funziona, quanto costa.
 
 ## Prezzi
 
-- Free: 0 euro, cinque siti al giorno.
-- Pro: 19 euro al mese, audit senza limiti ed esportazione PDF.
-- Agenzia: 49 euro al mese, fino a dieci marchi salvati.
+I piani a pagamento non sono ancora attivi.
+
+- Free: 0 euro, cinque siti al giorno, la pagina aperta e altre tre per analisi.
+- Pro: 19 euro al mese, siti senza limite, fino a 25 pagine per analisi,
+  preventivo e referto in PDF col proprio nome e logo.
+- Agenzia: 49 euro al mese, come Pro, con fino a dieci marchi salvati.
 
 ## Come si usa
 
