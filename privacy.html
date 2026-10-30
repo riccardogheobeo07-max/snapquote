@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy – SnapQuote</title>
+<meta name="description" content="Come SnapQuote tratta i dati: il sito raccoglie solo quello che scrivi nel modulo, l'estensione non manda niente a nessuno.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://snapquote.it/privacy.html">
+<meta name="theme-color" content="#1a66d9">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect x=%220.00%22 y=%220.00%22 width=%22100.00%22 height=%22100.00%22 rx=%2215.00%22 fill=%22%231a66d9%22/%3E%3Cg transform=%22scale(1.000000)%22%3E%3Crect x=%2217%22 y=%2210%22 width=%2266%22 height=%2280%22 rx=%229%22 fill=%22%23ffffff%22/%3E%3Crect x=%2228%22 y=%2225%22 width=%2232%22 height=%226%22 rx=%223%22 fill=%22%231a66d9%22 opacity=%22.26%22/%3E%3Crect x=%2228%22 y=%2237%22 width=%2232%22 height=%226%22 rx=%223%22 fill=%22%231a66d9%22 opacity=%22.26%22/%3E%3Crect x=%2228%22 y=%2250%22 width=%2225%22 height=%2210%22 rx=%225%22 fill=%22%231a66d9%22/%3E%3Cpath d=%22M28 80 C37.68 62, 44.72 90, 52.2 74 S65.84 60, 72 75%22 fill=%22none%22 stroke=%22%231a66d9%22 stroke-width=%229%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f6f7f9;
+    --text: #1a1c1f;
+    --text-muted: #5a5f66;
+    --border: #e3e5e8;
+    --accent: #1a66d9;
+    --accent-dark: #1552b3;
+    --accent-tenue: rgba(26, 102, 217, 0.10);
+    /* Come le altre pagine: chiaro e basta. */
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* La barra del marchio, la stessa della 404: chi arriva qui deve capire di
+     essere ancora su SnapQuote, e trovare subito la strada per tornare. */
+  .marchio-barra { border-bottom: 1px solid var(--border); }
+
+  .marchio-barra .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 64px;
+  }
+
+  .marchio {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .marchio-segno { width: 26px; height: 26px; display: block; }
+
+  .marchio-link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .marchio-link:hover { color: var(--accent-dark); }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 72px;
+  }
+
+  h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 4.5vw, 2.6rem);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+  }
+
+  .aggiornata {
+    margin: 0 0 28px;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  /* Il riassunto in cima: chi apre un'informativa di solito vuole sapere tre
+     cose, e le vuole prima delle sette sezioni che le spiegano. */
+  .in-breve {
+    margin: 0 0 44px;
+    padding: 20px 24px;
+    background: var(--accent-tenue);
+    border-radius: 10px;
+  }
+
+  .in-breve p {
+    margin: 0 0 8px;
+    font-weight: 700;
+  }
+
+  .in-breve ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .in-breve li { padding: 2px 0; }
+
+  h2 {
+    margin: 40px 0 10px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    font-size: 1.3rem;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    margin: 22px 0 6px;
+    font-size: 1.04rem;
+    font-weight: 700;
+  }
+
+  main p { margin: 0 0 12px; }
+
+  main ul {
+    margin: 0 0 12px;
+    padding-left: 22px;
+  }
+
+  main li { padding: 2px 0; }
+
+  /* I collegamenti prendono il blu del sito in tutti i loro momenti: lasciati
+     al browser, sono di un altro blu e diventano rossi mentre li premi. */
+  main a,
+  main a:visited,
+  main a:active {
+    color: var(--accent);
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.9em;
+    padding: 1px 5px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0 40px;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  footer a { color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<header class="marchio-barra">
+  <div class="wrap">
+    <a class="marchio" href="https://snapquote.it/"><svg class="marchio-segno" viewBox="0 0 100 100" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect x="0.00" y="0.00" width="100.00" height="100.00" rx="15.00" fill="#1a66d9"/><g transform="scale(1.000000)"><rect x="17" y="10" width="66" height="80" rx="9" fill="#ffffff"/><rect x="28" y="25" width="32" height="6" rx="3" fill="#1a66d9" opacity=".26"/><rect x="28" y="37" width="32" height="6" rx="3" fill="#1a66d9" opacity=".26"/><rect x="28" y="50" width="25" height="10" rx="5" fill="#1a66d9"/><path d="M28 80 C37.68 62, 44.72 90, 52.2 74 S65.84 60, 72 75" fill="none" stroke="#1a66d9" stroke-width="9" stroke-linecap="round"/></g></svg><span>SnapQuote</span></a>
+    <a class="marchio-link" href="https://snapquote.it/">Torna al sito</a>
+  </div>
+</header>
+
+<main>
+  <h1>Privacy</h1>
+  <p class="aggiornata">Ultimo aggiornamento: 30 ottobre 2026</p>
+
+  <div class="in-breve">
+    <p>In breve</p>
+    <ul>
+      <li>Il sito raccoglie solo quello che scrivi nel modulo, e lo uso solo per risponderti.</li>
+      <li>Niente cookie, niente statistiche, niente pubblicità.</li>
+      <li>L’estensione analizza i siti dentro il tuo browser e non manda niente a nessuno.</li>
+    </ul>
+  </div>
+
+  <h2>Chi è il titolare</h2>
+  <p>Il titolare del trattamento è <strong>Riccardo Gheoni</strong>, che ha scritto SnapQuote e gestisce questo sito. Per qualsiasi domanda sui tuoi dati, o per chiedere di vederli, correggerli o cancellarli, scrivi a <a href="mailto:postmaster@snapquote.it">postmaster@snapquote.it</a>.</p>
+
+  <h2>Il modulo «Scrivimi»</h2>
+
+  <h3>Cosa raccolgo</h3>
+  <ul>
+    <li>il tuo indirizzo email;</li>
+    <li>il tuo nome, se lo scrivi (lo chiede solo «Avvisami quando esce»);</li>
+    <li>l’indirizzo del sito che vuoi farmi guardare, se lo scrivi;</li>
+    <li>se sei un’agenzia, un freelance o hai un sito tuo, se scegli di dirlo;</li>
+    <li>cosa mi chiedi (un parere o un avviso) e, se arrivi da un piano, quale.</li>
+  </ul>
+
+  <h3>Perché, e su quale base</h3>
+  <ul>
+    <li><strong>Un parere a mano</strong>: per guardare il sito e risponderti. La base è la tua richiesta (articolo 6, paragrafo 1, lettera b del GDPR).</li>
+    <li><strong>Avvisami quando esce</strong>: per scriverti quando SnapQuote è sul Chrome Web Store e quando aprono i piani a pagamento. La base è il tuo consenso (articolo 6, paragrafo 1, lettera a), che puoi ritirare quando vuoi scrivendomi.</li>
+  </ul>
+  <p>Non uso questi dati per nient’altro: niente newsletter, niente profilazione, e non li vendo né li cedo a nessuno.</p>
+
+  <h3>Chi li riceve</h3>
+  <p>Il modulo passa da <strong>Formspree</strong> (Formspree, Inc., Stati Uniti), che lo riceve, lo conserva nel suo archivio e me lo inoltra per email. Come ogni servizio web può registrare dati tecnici, per esempio l’indirizzo IP, anche per filtrare lo spam. Formspree tratta i dati negli Stati Uniti e, secondo <a href="https://formspree.io/legal/privacy-policy">la sua informativa</a>, li trasferisce solo dove la legge lo permette e con protezioni adeguate.</p>
+  <p>Il messaggio arriva poi nella mia casella di posta, gestita da Google (Gmail).</p>
+
+  <h3>Quanto li tengo</h3>
+  <ul>
+    <li>Le richieste di parere: al massimo dodici mesi dall’ultimo messaggio fra noi, poi le cancello dalla posta e da Formspree.</li>
+    <li>Le richieste di avviso: finché non ti ho scritto che SnapQuote è disponibile e che i piani sono aperti, poi le cancello.</li>
+  </ul>
+  <p>Se mi chiedi di cancellarle prima, lo faccio subito.</p>
+
+  <h2>Visitare il sito</h2>
+  <p>Il sito non usa cookie, non ha statistiche e non mostra pubblicità: non carica script né contenuti da altri servizi.</p>
+  <p>Le pagine sono ospitate da <strong>GitHub Pages</strong> (GitHub, Inc., Stati Uniti). Come ogni server, GitHub registra l’indirizzo IP di chi visita per motivi di sicurezza: quei registri li tiene GitHub e io non li vedo. Trovi i dettagli nella <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">dichiarazione sulla privacy di GitHub</a> (in inglese). Il nome di dominio è gestito da Cloudflare, che non vede le pagine che apri.</p>
+
+  <h2>L’estensione SnapQuote</h2>
+  <p>L’analisi avviene dentro Chrome, sul tuo computer. Quando premi l’icona, l’estensione legge la pagina aperta; per leggere altre pagine dello stesso sito, il tuo browser le scarica direttamente da quel sito, come se le aprissi tu.</p>
+  <p>Risultati, preventivi, registro, tariffa, nome e logo restano nella memoria dell’estensione, sul tuo computer. L’estensione <strong>non manda dati né a me né ad altri</strong>: non ha un server, non chiede un account e non raccoglie statistiche d’uso.</p>
+  <ul>
+    <li><strong>Permessi</strong>: tre in tutto. <code>activeTab</code> e <code>scripting</code> le fanno leggere la scheda su cui premi l’icona, e solo quando la premi; <code>storage</code> le serve per ricordare i tuoi dati sul computer. Non ha accesso a tutti i siti né alla cronologia.</li>
+    <li><strong>Bozze di testo</strong>: dove Chrome mette a disposizione il suo modello linguistico locale, l’estensione lo usa per proporre una description o un title. Il modello gira sul computer e il testo non esce.</li>
+    <li><strong>Licenza</strong>: la chiave dei piani a pagamento viene verificata dentro l’estensione, senza collegarsi a nessun server.</li>
+  </ul>
+  <p>Per cancellare tutto quello che l’estensione ha salvato basta rimuoverla da Chrome.</p>
+  <p>I piani a pagamento non sono ancora attivi. Quando lo saranno, questa pagina dirà chi gestisce il pagamento e quali dati riceve.</p>
+
+  <h2>I tuoi diritti</h2>
+  <p>Puoi chiedermi in qualsiasi momento di vedere i dati che ho su di te, di correggerli, di cancellarli, di limitarne l’uso, di opporti al loro trattamento o di riceverli in un formato leggibile, e puoi ritirare il consenso all’avviso. Scrivi a <a href="mailto:postmaster@snapquote.it">postmaster@snapquote.it</a>: rispondo entro un mese, di solito molto prima.</p>
+  <p>Se pensi che i tuoi dati siano trattati male, puoi fare reclamo al <a href="https://www.garanteprivacy.it/">Garante per la protezione dei dati personali</a>.</p>
+
+  <h2>Se questa pagina cambia</h2>
+  <p>Se cambia qualcosa, per esempio quando apriranno i pagamenti, aggiorno questa pagina e la data in cima.</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 SnapQuote · di Riccardo Gheoni · <a href="https://snapquote.it/">Torna al sito</a>
+  </div>
+</footer>
+
+</body>
+</html>
