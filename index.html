@@ -187,7 +187,10 @@
     opacity: 0;
     transform: translateY(14px);
     transition: opacity 0.42s cubic-bezier(0.2, 0.8, 0.3, 1),
-                transform 0.42s cubic-bezier(0.2, 0.8, 0.3, 1);
+                transform 0.42s cubic-bezier(0.2, 0.8, 0.3, 1),
+                translate 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
+                box-shadow 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
+                border-color 0.18s ease;
   }
 
   [data-anima="si"] .entra.entrato {
@@ -198,17 +201,260 @@
   [data-anima="si"] .griglia-3 .entra:nth-child(2),
   [data-anima="si"] .griglia-4 .entra:nth-child(2),
   [data-anima="si"] .piani-grid .entra:nth-child(2) {
-    transition-delay: 0.08s;
+    transition-delay: 0.08s, 0.08s, 0s, 0s, 0s;
   }
 
   [data-anima="si"] .griglia-3 .entra:nth-child(3),
   [data-anima="si"] .griglia-4 .entra:nth-child(3),
   [data-anima="si"] .piani-grid .entra:nth-child(3) {
-    transition-delay: 0.16s;
+    transition-delay: 0.16s, 0.16s, 0s, 0s, 0s;
   }
 
   [data-anima="si"] .griglia-4 .entra:nth-child(4) {
-    transition-delay: 0.24s;
+    transition-delay: 0.24s, 0.24s, 0s, 0s, 0s;
+  }
+
+  /* ---------- il movimento ----------
+
+     L'8 novembre 2026 Riccardo ha chiesto piu' movimento: la pagina era
+     troppo ferma. Si muovono il marchio, il titolo, i numeri, una striscia
+     coi nomi veri dei controlli, le icone e le carte sotto il puntatore. La
+     schermata del popup resta una fotografia ferma. Tutto sta sotto
+     [data-anima="si"], che lo script in testa mette solo a chi non ha chiesto
+     al sistema meno movimento: per gli altri la pagina e' quella di prima. */
+
+  /* La barra di lettura, in cima: quanto della pagina hai gia' visto. */
+  .avanzamento {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(var(--letto, 0));
+    transform-origin: left center;
+    pointer-events: none;
+  }
+
+  html:not([data-anima="si"]) .avanzamento {
+    display: none;
+  }
+
+  /* Il marchio in testata si compone all'apertura, come nella conferma del
+     modulo: la carta blu, il foglio che sale, le righe, il prezzo, la firma. */
+  .segno-foglio,
+  .segno-riga {
+    transform-box: fill-box;
+  }
+
+  .segno-riga {
+    transform-origin: left center;
+  }
+
+  .segno-firma {
+    stroke-dasharray: 1;
+  }
+
+  [data-anima="si"] .marchio-segno {
+    animation: segno-entra 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  [data-anima="si"] .segno-foglio {
+    animation: foglio-sale 0.5s 0.15s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+
+  [data-anima="si"] .segno-riga {
+    animation: riga-scrive 0.3s 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+
+  [data-anima="si"] .segno-riga-2 {
+    animation-delay: 0.55s;
+  }
+
+  [data-anima="si"] .segno-prezzo {
+    animation-delay: 0.65s;
+  }
+
+  [data-anima="si"] .segno-firma {
+    animation: firma 0.55s 0.75s cubic-bezier(0.45, 0, 0.25, 1) both;
+  }
+
+  /* Il titolo entra parola per parola; il resto della colonna lo segue. */
+  .parola {
+    display: inline-block;
+  }
+
+  [data-anima="si"] .parola {
+    animation: parola-sale 0.55s calc(0.12s + var(--i) * 0.06s) cubic-bezier(0.34, 1.4, 0.64, 1) both;
+  }
+
+  [data-anima="si"] .eroe-griglia > div > :not(h1) {
+    animation: sale 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+
+  [data-anima="si"] .eroe-griglia .eroe-lead {
+    animation-delay: 0.55s;
+  }
+
+  [data-anima="si"] .eroe-griglia .eroe-azioni {
+    animation-delay: 0.68s;
+  }
+
+  [data-anima="si"] .eroe-griglia .eroe-sotto {
+    animation-delay: 0.78s;
+  }
+
+  [data-anima="si"] .eroe-griglia .eroe-fatti {
+    animation-delay: 0.88s;
+  }
+
+  /* La schermata arriva da destra ma resta piena: e' l'immagine piu' grande
+     della pagina, e farla sfumare ne ritarderebbe la comparsa. */
+  [data-anima="si"] .eroe-immagine {
+    animation: da-destra 0.7s 0.2s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+
+  /* La freccia di «Provalo qui sotto» indica, ogni tanto, verso il basso. */
+  .freccia-giu {
+    display: inline-block;
+  }
+
+  [data-anima="si"] .freccia-giu {
+    animation: rimbalza 1.8s 1.4s ease-in-out infinite;
+  }
+
+  /* La striscia dei controlli: scorre piano, in un giro continuo che non si
+     ferma mai, nemmeno sotto il puntatore (l'ha chiesto Riccardo). Solo chi ha
+     chiesto al sistema meno movimento la vede ferma: va a capo e la seconda
+     copia sparisce. */
+  .nastro {
+    overflow: hidden;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-alt);
+  }
+
+  .nastro-scorre {
+    display: flex;
+    width: max-content;
+  }
+
+  .nastro-gruppo {
+    display: flex;
+    gap: 12px;
+    margin: 0;
+    padding: 0 12px 0 0;
+    list-style: none;
+  }
+
+  .nastro-voce {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .nastro-voce .spunta {
+    width: 15px;
+    height: 15px;
+  }
+
+  [data-anima="si"] .nastro-scorre {
+    animation: scorre 60s linear infinite;
+  }
+
+  html:not([data-anima="si"]) .nastro-scorre {
+    width: auto;
+  }
+
+  html:not([data-anima="si"]) .nastro-gruppo {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 24px;
+  }
+
+  html:not([data-anima="si"]) .nastro-copia {
+    display: none;
+  }
+
+  /* Le icone e i numeri dei passi saltano dentro quando la loro carta entra. */
+  [data-anima="si"] .entra .passo-numero,
+  [data-anima="si"] .entra .icona {
+    opacity: 0;
+    transform: scale(0.4);
+    transition: opacity 0.3s 0.25s, transform 0.5s 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  [data-anima="si"] .entra.entrato .passo-numero,
+  [data-anima="si"] .entra.entrato .icona {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Le carte si alzano di poco sotto il puntatore. Si muove `translate`, che
+     non tocca il `transform` dell'entrata allo scorrimento. */
+  [data-anima="si"] .carta:hover,
+  [data-anima="si"] .differenza-carta:hover,
+  [data-anima="si"] .piano-card:hover {
+    translate: 0 -4px;
+    box-shadow: var(--ombra-carta);
+  }
+
+  /* La risposta di una domanda sale quando si apre. */
+  [data-anima="si"] .domanda[open] p {
+    animation: sale 0.35s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+
+  @keyframes parola-sale {
+    from {
+      opacity: 0;
+      transform: translateY(0.45em) scale(0.92);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes da-destra {
+    from {
+      transform: translateX(40px);
+    }
+
+    to {
+      transform: none;
+    }
+  }
+
+  @keyframes rimbalza {
+    0%,
+    60%,
+    100% {
+      transform: none;
+    }
+
+    30% {
+      transform: translateY(4px);
+    }
+  }
+
+  @keyframes scorre {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
   }
 
   /* ---------- la testata ---------- */
@@ -1076,8 +1322,8 @@
     transition: border-color var(--risposta);
   }
 
-  /* Il bordo prende il colore dell'azione e nient'altro: un cartellino di
-     prezzo che si muove sembra un banner. */
+  /* Il bordo prende il colore dell'azione; col movimento acceso la carta si
+     alza anche di poco, come le altre (vedi «il movimento»). */
   .piano-card:hover {
     border-color: var(--accent);
   }
@@ -1790,13 +2036,15 @@
 </head>
 <body>
 
+<div class="avanzamento" aria-hidden="true"></div>
+
 <a class="salta" href="#contenuto">Vai al contenuto</a>
 
 <!-- Il marchio in cima: lo stesso segno dell'estensione, disegnato qui invece
      di caricato, cosi' la pagina resta senza file di appoggio. -->
 <header class="testata">
   <div class="wrap">
-    <a class="marchio" href="#contenuto"><svg class="marchio-segno" viewBox="0 0 100 100" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect x="0.00" y="0.00" width="100.00" height="100.00" rx="15.00" fill="#1a66d9"/><g transform="scale(1.000000)"><rect x="17" y="10" width="66" height="80" rx="9" fill="#ffffff"/><rect x="28" y="25" width="32" height="6" rx="3" fill="#1a66d9" opacity=".26"/><rect x="28" y="37" width="32" height="6" rx="3" fill="#1a66d9" opacity=".26"/><rect x="28" y="50" width="25" height="10" rx="5" fill="#1a66d9"/><path d="M28 80 C37.68 62, 44.72 90, 52.2 74 S65.84 60, 72 75" fill="none" stroke="#1a66d9" stroke-width="9" stroke-linecap="round"/></g></svg><span>SnapQuote</span></a>
+    <a class="marchio" href="#contenuto"><svg class="marchio-segno" viewBox="0 0 100 100" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect x="0.00" y="0.00" width="100.00" height="100.00" rx="15.00" fill="#1a66d9"/><g class="segno-foglio" transform="scale(1.000000)"><rect x="17" y="10" width="66" height="80" rx="9" fill="#ffffff"/><rect class="segno-riga" x="28" y="25" width="32" height="6" rx="3" fill="#1a66d9" opacity=".26"/><rect class="segno-riga segno-riga-2" x="28" y="37" width="32" height="6" rx="3" fill="#1a66d9" opacity=".26"/><rect class="segno-riga segno-prezzo" x="28" y="50" width="25" height="10" rx="5" fill="#1a66d9"/><path class="segno-firma" pathLength="1" d="M28 80 C37.68 62, 44.72 90, 52.2 74 S65.84 60, 72 75" fill="none" stroke="#1a66d9" stroke-width="9" stroke-linecap="round"/></g></svg><span>SnapQuote</span></a>
     <nav class="menu" aria-label="Sezioni della pagina">
       <a href="#come-funziona">Come funziona</a>
       <a href="#cosa-controlla">Cosa controlla</a>
@@ -1813,11 +2061,11 @@
   <div class="wrap eroe-griglia">
     <div>
       <p class="badge">Estensione Chrome · niente esce dal browser</p>
-      <h1>Da un sito a un preventivo, in dieci secondi</h1>
-      <p class="eroe-lead">Apri il sito di un cliente e premi l’icona. SnapQuote trova cosa c’è da sistemare; tu spunti quello che faresti e il punteggio si rifà davanti a te: <strong>85 → 92</strong>. Sotto ci sono le ore, il prezzo alla tua tariffa e un preventivo pronto da mandare.</p>
+      <h1><span class="parola" style="--i: 0">Da</span> <span class="parola" style="--i: 1">un</span> <span class="parola" style="--i: 2">sito</span> <span class="parola" style="--i: 3">a</span> <span class="parola" style="--i: 4">un</span> <span class="parola" style="--i: 5">preventivo,</span> <span class="parola" style="--i: 6">in</span> <span class="parola" style="--i: 7">dieci</span> <span class="parola" style="--i: 8">secondi</span></h1>
+      <p class="eroe-lead">Apri il sito di un cliente e premi l’icona. SnapQuote trova cosa c’è da sistemare; tu spunti quello che faresti e il punteggio si rifà davanti a te: <strong>85 → <span data-conta-da="85">92</span></strong>. Sotto ci sono le ore, il prezzo alla tua tariffa e un preventivo pronto da mandare.</p>
       <div class="eroe-azioni">
         <a class="cta-btn" href="#scrivimi" data-motivo="avviso" data-installa="Aggiungi a Chrome, è gratis">Avvisami quando esce</a>
-        <a class="link-freccia" href="#prova">Provalo qui sotto ↓</a>
+        <a class="link-freccia" href="#prova">Provalo qui sotto <span class="freccia-giu" aria-hidden="true">↓</span></a>
       </div>
       <p class="eroe-sotto testo-link">Preferisci un parere a mano? <a href="#audit-form" data-motivo="parere">Mandami il sito</a>, ti rispondo io.</p>
       <ul class="eroe-fatti">
@@ -1834,6 +2082,15 @@
     </figure>
   </div>
 </section>
+
+<!-- La striscia dei controlli: i nomi sono quelli veri dell'estensione. La
+     seconda copia serve solo a far girare la striscia senza scatti. -->
+<div class="nastro">
+  <div class="nastro-scorre">
+    <ul class="nastro-gruppo" aria-label="Alcuni dei controlli di SnapQuote"><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Title delle pagine</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Meta description</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Canonical verso un altro dominio</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tag canonical</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Titolo H1</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Testo alternativo delle immagini</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dati strutturati</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sitemap XML</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Connessione sicura HTTPS</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Indicizzabilità delle pagine</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Lingua della pagina</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Anteprima dei link condivisi</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Adattamento ai dispositivi mobili</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Peso delle immagini</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>LCP · comparsa del contenuto principale</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tempo di risposta del server</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Contrasto del testo</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Bottoni e link senza nome</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Title ripetuti fra le pagine</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>File llms.txt</li></ul>
+    <ul class="nastro-gruppo nastro-copia" aria-hidden="true"><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Title delle pagine</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Meta description</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Canonical verso un altro dominio</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tag canonical</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Titolo H1</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Testo alternativo delle immagini</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dati strutturati</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sitemap XML</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Connessione sicura HTTPS</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Indicizzabilità delle pagine</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Lingua della pagina</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Anteprima dei link condivisi</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Adattamento ai dispositivi mobili</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Peso delle immagini</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>LCP · comparsa del contenuto principale</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tempo di risposta del server</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Contrasto del testo</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Bottoni e link senza nome</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Title ripetuti fra le pagine</li><li class="nastro-voce"><svg class="spunta" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>File llms.txt</li></ul>
+  </div>
+</div>
 
 <section class="per-chi" aria-labelledby="per-chi-titolo">
   <div class="wrap">
@@ -2066,7 +2323,7 @@
       </div>
       <div class="differenza-voce differenza-carta entra">
         <h3>A lavoro finito, la prova</h3>
-        <p>Dalla seconda analisi dello stesso sito, il rapporto del lavoro svolto: <span class="valore">61 → 94</span>, cosa hai sistemato, cosa è peggiorato, cosa resta. È il documento con cui ti fai riconfermare.</p>
+        <p>Dalla seconda analisi dello stesso sito, il rapporto del lavoro svolto: <span class="valore">61 → <span data-conta-da="61">94</span></span>, cosa hai sistemato, cosa è peggiorato, cosa resta. È il documento con cui ti fai riconfermare.</p>
       </div>
       <div class="differenza-voce differenza-carta entra">
         <h3>Dice quando non sa</h3>
@@ -2282,6 +2539,57 @@
     </nav>
   </div>
 </footer>
+
+<script>
+  /* Il movimento (vedi il CSS «il movimento»): la barra di lettura, le
+     intestazioni che entrano come le carte e i numeri che contano. Solo con
+     l'interruttore acceso. */
+  if (document.documentElement.getAttribute('data-anima') === 'si') {
+    for (const elemento of document.querySelectorAll('.capo-sezione, .per-chi-titolo, .domanda, .form-card')) {
+      elemento.classList.add('entra');
+    }
+
+    const barra = document.querySelector('.avanzamento');
+    let inAttesa = false;
+    const segnaLettura = () => {
+      inAttesa = false;
+      const pagina = document.documentElement;
+      const fondo = pagina.scrollHeight - pagina.clientHeight;
+      barra.style.setProperty('--letto', fondo > 0 ? (pagina.scrollTop / fondo).toFixed(4) : '0');
+    };
+    window.addEventListener('scroll', () => {
+      if (inAttesa) return;
+      inAttesa = true;
+      requestAnimationFrame(segnaLettura);
+    }, { passive: true });
+    segnaLettura();
+
+    /* Un numero con data-conta-da riparte da li' e arriva al suo valore
+       quando entra in vista: 85 → 92 sale davanti a chi legge. */
+    const contaFino = (elemento) => {
+      const fine = parseInt(elemento.textContent, 10);
+      const inizio = parseInt(elemento.dataset.contaDa, 10);
+      const durata = 1100;
+      const via = performance.now();
+      const passo = (adesso) => {
+        const t = Math.min(1, (adesso - via) / durata);
+        const morbido = 1 - Math.pow(1 - t, 3);
+        elemento.textContent = String(Math.round(inizio + (fine - inizio) * morbido));
+        if (t < 1) requestAnimationFrame(passo);
+      };
+      elemento.textContent = String(inizio);
+      requestAnimationFrame(passo);
+    };
+    const numeri = new IntersectionObserver((voci) => {
+      for (const voce of voci) {
+        if (!voce.isIntersecting) continue;
+        numeri.unobserve(voce.target);
+        setTimeout(() => contaFino(voce.target), 500);
+      }
+    }, { threshold: 0.6 });
+    for (const numero of document.querySelectorAll('[data-conta-da]')) numeri.observe(numero);
+  }
+</script>
 
 <script>
   /* L'entrata allo scorrimento.
