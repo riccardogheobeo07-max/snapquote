@@ -10,7 +10,9 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://snapquote.it/">
 <meta name="theme-color" content="#1a66d9">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect x=%220.00%22 y=%220.00%22 width=%22100.00%22 height=%22100.00%22 rx=%2215.00%22 fill=%22%231a66d9%22/%3E%3Cg transform=%22scale(1.000000)%22%3E%3Crect x=%2217%22 y=%2210%22 width=%2266%22 height=%2280%22 rx=%229%22 fill=%22%23ffffff%22/%3E%3Crect x=%2228%22 y=%2225%22 width=%2232%22 height=%226%22 rx=%223%22 fill=%22%231a66d9%22 opacity=%22.26%22/%3E%3Crect x=%2228%22 y=%2237%22 width=%2232%22 height=%226%22 rx=%223%22 fill=%22%231a66d9%22 opacity=%22.26%22/%3E%3Crect x=%2228%22 y=%2250%22 width=%2225%22 height=%2210%22 rx=%225%22 fill=%22%231a66d9%22/%3E%3Cpath d=%22M28 80 C37.68 62, 44.72 90, 52.2 74 S65.84 60, 72 75%22 fill=%22none%22 stroke=%22%231a66d9%22 stroke-width=%229%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:url" content="https://snapquote.it/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
@@ -37,6 +39,8 @@
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Chrome",
   "url": "https://snapquote.it/",
+  "installUrl": "https://chromewebstore.google.com/detail/snapquote/kiplllngipondmfkmaocdbmanhmjgokg",
+  "sameAs": ["https://chromewebstore.google.com/detail/snapquote/kiplllngipondmfkmaocdbmanhmjgokg"],
   "description": "Apri un sito, premi l'icona: ne esce un preventivo con ore e prezzo alla tua tariffa. Estensione Chrome, nessun dato fuori dal browser.",
   "author": {
     "@type": "Person",
@@ -60,6 +64,38 @@
       "name": "Agenzia",
       "price": "49",
       "priceCurrency": "EUR"
+    }
+  ]
+}
+</script>
+<!-- Blocco separato di proposito. Il primo descrive il prodotto e i prezzi,
+     ed e' quello che legge verifica_landing.py; questo dice a Google come si
+     chiama il sito (il nome sopra il titolo nei risultati) e qual e' il logo.
+     Fonderli in uno solo romperebbe il controllo dei prezzi. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://snapquote.it/#sito",
+      "name": "SnapQuote",
+      "url": "https://snapquote.it/",
+      "inLanguage": "it-IT",
+      "publisher": { "@id": "https://snapquote.it/#marchio" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://snapquote.it/#marchio",
+      "name": "SnapQuote",
+      "url": "https://snapquote.it/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://snapquote.it/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "founder": { "@type": "Person", "name": "Riccardo Gheoni" }
     }
   ]
 }
@@ -2750,7 +2786,7 @@
      «Avvisami quando esce» diventano «Aggiungi a Chrome» e portano li'. Il
      testo nuovo e' scritto accanto a ogni tasto, in `data-installa`. Finche'
      questa riga e' vuota la pagina non promette un'installazione che non c'e'. */
-  const LINK_CHROME_WEB_STORE = "";
+  const LINK_CHROME_WEB_STORE = "https://chromewebstore.google.com/detail/snapquote/kiplllngipondmfkmaocdbmanhmjgokg";
 
   if (LINK_CHROME_WEB_STORE.startsWith('https://')) {
     for (const tasto of document.querySelectorAll('[data-installa]')) {
